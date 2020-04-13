@@ -1,7 +1,7 @@
 {
-  "name": "tosspayments-example",
+  "name": "@tosspayments/sdk-modern-example",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "토스 페이먼츠 연동 예제",
   "main": "index.js",
   "author": "Toss Payments",
   "license": "MIT",
