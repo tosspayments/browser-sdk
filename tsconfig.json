@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2019",
     "jsx": "react",
+    "module": "esnext",
     "moduleResolution": "node",
     "declaration": true,
     "forceConsistentCasingInFileNames": true,

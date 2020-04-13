@@ -1,23 +1,35 @@
-const ALPHA_URL = '//web.tosspayments.com/sdk/alpha/tosspayments.js';
+const SCRIPT_URL = '//web.tosspayments.com/sdk/alpha/tosspayments.js';
 
 let cachedPromise: Promise<any> | undefined;
 
-export default async function loadTossPayments(clientKey: string): Promise<any> {
+export async function loadTossPayments(clientKey: string): Promise<any> {
   if (typeof window === 'undefined') {
     return;
   }
 
-  if (cachedPromise !== undefined) {
+  const selectedScript = document.querySelector(`script[src="${SCRIPT_URL}"]`);
+
+  if (selectedScript != null && cachedPromise !== undefined) {
     return cachedPromise;
   }
 
-  const script = document.createElement('script');
-  script.src = ALPHA_URL;
+  // @ts-ignore
+  if (selectedScript != null && window.TossPayments) {
+    // @ts-ignore
+    return window.TossPayments(clientKey);
+  }
 
-  return new Promise((resolve) => {
+  const script = document.createElement('script');
+  script.src = SCRIPT_URL;
+
+  cachedPromise = new Promise((resolve) => {
+    document.head.appendChild(script);
+
     script.addEventListener('load', () => {
       // @ts-ignore
       resolve(window.TossPayments(clientKey));
     });
   });
+
+  return cachedPromise;
 }

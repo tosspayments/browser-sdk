@@ -1,13 +1,14 @@
 {
   "name": "@tossteam/payments-web",
   "description": "웹 클라이언트용 Toss Payments SDK (임시)",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",
   "author": "Toss Payments",
   "scripts": {
-    "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly -p tsconfig.typebuild.json"
+    "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly -p tsconfig.typebuild.json",
+    "test": "jest"
   },
   "license": "UNLICENSED",
   "private": false,
@@ -15,9 +16,12 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@rollup/plugin-typescript": "^3.0.0",
+    "@types/jest": "^25.2.1",
+    "jest": "^25.3.0",
     "prettier": "^2.0.2",
     "rollup": "^2.3.0",
     "rollup-plugin-babel": "^4.4.0",
+    "ts-jest": "^25.3.1",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
