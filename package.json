@@ -1,13 +1,13 @@
 {
-  "name": "@tossteam/payments-web",
-  "description": "웹 클라이언트용 Toss Payments SDK (임시)",
+  "name": "@tosspayments/loader",
+  "description": "TossPayments module 로더",
   "version": "0.1.2",
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",
   "author": "Toss Payments",
   "scripts": {
-    "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly -p tsconfig.typebuild.json",
+    "build": "rm -rf dist && rollup -c",
     "test": "jest"
   },
   "license": "UNLICENSED",

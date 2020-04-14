@@ -1,10 +1,15 @@
+///<reference path='../types/index.d.ts' />
+
+import { TossPaymentsInstance } from '@tosspayments/browser-sdk';
+
 const SCRIPT_URL = '//web.tosspayments.com/sdk/alpha/tosspayments.js';
 
 let cachedPromise: Promise<any> | undefined;
 
-export async function loadTossPayments(clientKey: string): Promise<any> {
+export async function loadTossPayments(clientKey: string): Promise<TossPaymentsInstance | null> {
+  // SSR 지원
   if (typeof window === 'undefined') {
-    return;
+    return null;
   }
 
   const selectedScript = document.querySelector(`script[src="${SCRIPT_URL}"]`);
@@ -13,21 +18,22 @@ export async function loadTossPayments(clientKey: string): Promise<any> {
     return cachedPromise;
   }
 
-  // @ts-ignore
-  if (selectedScript != null && window.TossPayments) {
-    // @ts-ignore
+  if (selectedScript != null && window.TossPayments !== undefined) {
     return window.TossPayments(clientKey);
   }
 
   const script = document.createElement('script');
   script.src = SCRIPT_URL;
 
-  cachedPromise = new Promise((resolve) => {
+  cachedPromise = new Promise((resolve, reject) => {
     document.head.appendChild(script);
 
     script.addEventListener('load', () => {
-      // @ts-ignore
-      resolve(window.TossPayments(clientKey));
+      if (window.TossPayments !== undefined) {
+        resolve(window.TossPayments(clientKey));
+      } else {
+        reject(new Error('[TossPayments] Instance 초기화에 실패했습니다.'));
+      }
     });
   });
 
