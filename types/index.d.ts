@@ -1,9 +1,9 @@
 ///<reference path='./tosspayments/index.d.ts' />
 
-import { TossPaymentsConstuctor, TossPaymentsInstance } from '@tosspayments/browser-sdk';
+import { TossPaymentsConstuctor, TossPaymentsInstance } from '@tossteam/payments-web';
 
-declare module '@tosspayments/loader' {
-  export * from '@tosspayments/browser-sdk';
+declare module '@tossteam/payments-web' {
+  export * from '@tossteam/payments-web';
   export function loadTossPayments(clientKey: string): Promise<TossPaymentsInstance | null>;
 }
 

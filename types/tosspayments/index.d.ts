@@ -1,4 +1,4 @@
-declare module '@tosspayments/browser-sdk' {
+declare module '@tossteam/payments-web' {
   interface PaymentMessage {
     tossPayments: true;
     from: 'sdk' | 'frame';

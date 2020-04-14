@@ -1,11 +1,11 @@
 {
-  "name": "@tosspayments/loader",
-  "description": "TossPayments module 로더",
-  "version": "0.1.2",
+  "name": "@tossteam/payments-web",
+  "description": "TossPayments 모듈 로더 & Browser SDK Typings",
+  "version": "0.1.0",
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",
-  "author": "Toss Payments",
+  "author": "TossPayments",
   "scripts": {
     "build": "rm -rf dist && rollup -c",
     "test": "jest"
