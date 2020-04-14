@@ -1,7 +1,7 @@
 {
   "name": "@tossteam/payments-web",
   "description": "TossPayments 모듈 로더 & Browser SDK Typings",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",

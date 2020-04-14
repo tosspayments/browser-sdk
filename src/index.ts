@@ -1,6 +1,6 @@
 ///<reference path='../types/index.d.ts' />
 
-import { TossPaymentsInstance } from '@tossteam/payments-web';
+import { TossPaymentsInstance } from '../types';
 
 const SCRIPT_URL = '//web.tosspayments.com/sdk/alpha/tosspayments.js';
 

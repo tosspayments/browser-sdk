@@ -1,11 +1,9 @@
-///<reference path='./tosspayments/index.d.ts' />
+import TossPayments from './tosspayments';
 
-import { TossPaymentsConstuctor, TossPaymentsInstance } from '@tossteam/payments-web';
+export type TossPaymentsConstuctor = typeof TossPayments;
+export type TossPaymentsInstance = ReturnType<TossPaymentsConstuctor>;
 
-declare module '@tossteam/payments-web' {
-  export * from '@tossteam/payments-web';
-  export function loadTossPayments(clientKey: string): Promise<TossPaymentsInstance | null>;
-}
+export function loadTossPayments(clientKey: string): Promise<TossPaymentsInstance | null>;
 
 declare global {
   interface Window {
