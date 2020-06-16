@@ -53,6 +53,22 @@ declare function TossPayments(
       message: string;
     };
   }>;
+  checkout(
+    data: PaymentData
+  ): Promise<{
+    result: 'CANCELED' | 'FAIL' | 'SUCCESS';
+    data: {
+      message: string;
+    };
+  }>;
+  startCardPayment(
+    data: PaymentData
+  ): Promise<{
+    result: 'CANCELED' | 'FAIL' | 'SUCCESS';
+    data: {
+      message: string;
+    };
+  }>;
 };
 
 export default TossPayments;
