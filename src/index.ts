@@ -2,7 +2,7 @@
 
 import { TossPaymentsInstance } from '../types';
 
-const SCRIPT_URL = '//web.tosspayments.com/sdk/alpha/tosspayments.js';
+const SCRIPT_URL = '//web.tosspayments.com/sdk/v1/tosspayments.js';
 
 let cachedPromise: Promise<any> | undefined;
 
@@ -28,7 +28,7 @@ export async function loadTossPayments(clientKey: string): Promise<TossPaymentsI
   cachedPromise = new Promise((resolve, reject) => {
     document.head.appendChild(script);
 
-    script.addEventListener('load', () => {
+    window.addEventListener('tossPaymentsInitialize', () => {
       if (window.TossPayments !== undefined) {
         resolve(window.TossPayments(clientKey));
       } else {

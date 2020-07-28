@@ -3,7 +3,7 @@ const SCRIPT_URL = '//web.tosspayments.com/sdk/alpha/tosspayments.js';
 function dispatchLoadEvent() {
   // @ts-ignore
   window.TossPayments = jest.fn();
-  document.querySelector(`script[src="${SCRIPT_URL}"]`)?.dispatchEvent(new Event('load'));
+  window?.dispatchEvent(new Event('tossPaymentsInitialize'));
 }
 
 describe('loadTossPayments', () => {

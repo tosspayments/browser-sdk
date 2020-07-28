@@ -1017,6 +1017,11 @@
   dependencies:
     type-detect "4.0.8"
 
+"@tossteam/payments-web@^0.1.12":
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@tossteam/payments-web/-/payments-web-0.1.12.tgz#fa1f0d8ac1185d0adbf9dfe92786f4557f16b147"
+  integrity sha512-JOZLBBlX/GWJXqhj9rDxDxdKwwDzH9NNkRqZcAfY+Ihoel7nFf1l+wktXXz0oirHHyLADBG1dWbSlwkXH8WV5w==
+
 "@types/babel__core@^7.1.7":
   version "7.1.7"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.7.tgz#1dacad8840364a57c98d0dd4855c6dd3752c6b89"
