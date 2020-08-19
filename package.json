@@ -1,17 +1,16 @@
 {
-  "name": "@tossteam/payments-web",
-  "description": "tosspayments.js 모듈 로더 & Web SDK Typings",
-  "version": "0.1.20",
+  "name": "@tosspayments/sdk",
+  "description": "tosspayments.js 스크립트 로더",
+  "version": "0.0.6",
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",
-  "author": "TossPayments",
+  "author": "Toss Payments",
   "scripts": {
-    "build": "rm -rf dist && rollup -c",
+    "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly -p types/tsconfig.json",
     "test": "jest"
   },
-  "license": "UNLICENSED",
-  "private": false,
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
@@ -29,5 +28,8 @@
     "src",
     "dist",
     "types"
-  ]
+  ],
+  "dependencies": {
+    "@tosspayments/js-sdk-types": "^0.0.6"
+  }
 }

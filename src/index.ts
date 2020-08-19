@@ -1,6 +1,4 @@
-///<reference path='../types/index.d.ts' />
-
-import { TossPaymentsInstance } from '../types';
+import { TossPaymentsInstance } from '@tosspayments/js-sdk-types';
 
 const SCRIPT_URL = '//web.tosspayments.com/sdk/v1/tosspayments.js';
 
@@ -39,3 +37,5 @@ export async function loadTossPayments(clientKey: string): Promise<TossPaymentsI
 
   return cachedPromise;
 }
+
+export { TossPaymentsInstance };
