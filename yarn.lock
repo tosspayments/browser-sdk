@@ -1017,10 +1017,10 @@
   dependencies:
     type-detect "4.0.8"
 
-"@tosspayments/js-sdk-types@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@tosspayments/js-sdk-types/-/js-sdk-types-0.0.6.tgz#4af2562c69c2b13b1a9d5316ef55d3cd193b1a6e"
-  integrity sha512-zngkMgXbnw5d7z2fNRkTdQWi4fd2+47POtQQuJwSvbRVR7FsgQG1nygzZ1oDDEwnKIx5XvVtU/8/Lr1Hs6Uq4A==
+"@tosspayments/sdk-types@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@tosspayments/sdk-types/-/sdk-types-0.0.8.tgz#0dd4b6780ca520161b4421c098d19a832023c3a3"
+  integrity sha512-xtVh3/29q8EcPwQHVJzr6C362s07stGCYLOciLFaikATVbp2hDVxyFjEe0aN3qL0AWxEicEIUENsgYK42zVA7A==
 
 "@types/babel__core@^7.1.7":
   version "7.1.7"

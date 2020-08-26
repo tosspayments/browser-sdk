@@ -1,13 +1,20 @@
-import { TossPaymentsInstance } from '@tosspayments/js-sdk-types';
+import { TossPaymentsInstance } from '@tosspayments/sdk-types';
 
-const SCRIPT_URL = '//web.tosspayments.com/sdk/v1/tosspayments.js';
+const SCRIPT_URL = '//js.tosspayments.com/v1';
 
 let cachedPromise: Promise<any> | undefined;
 
-export async function loadTossPayments(clientKey: string): Promise<TossPaymentsInstance | null> {
+export async function loadTossPayments(clientKey: string): Promise<TossPaymentsInstance> {
   // SSR 지원
   if (typeof window === 'undefined') {
-    return null;
+    return {
+      requestPayment() {
+        throw new Error('[TossPayments.js] 서버사이드에서는 실행할 수 없습니다.');
+      },
+      requestBillingAuth() {
+        throw new Error('[TossPayments.js] 서버사이드에서는 실행할 수 없습니다.');
+      },
+    };
   }
 
   const selectedScript = document.querySelector(`script[src="${SCRIPT_URL}"]`);

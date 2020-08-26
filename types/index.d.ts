@@ -1,3 +1,3 @@
-import { TossPaymentsInstance } from '@tosspayments/js-sdk-types';
-export declare function loadTossPayments(clientKey: string): Promise<TossPaymentsInstance | null>;
+import { TossPaymentsInstance } from '@tosspayments/sdk-types';
+export declare function loadTossPayments(clientKey: string): Promise<TossPaymentsInstance>;
 export { TossPaymentsInstance };
