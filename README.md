@@ -1,3 +1,5 @@
-# Toss Paymemts SDK
+# Toss Paymemts JavaScript SDK
 
-임시 토스 페이먼츠 JavaScript SDK (Client Side) 레포지토리입니다.
+토스페이먼츠 개발 연동을 위한 JavaScript SDK (브라우저) 레포지토리입니다.
+
+[Toss Payments Docs](https://docs.tosspayments.com/js)를 참고해주세요.
