@@ -1329,10 +1329,10 @@
   dependencies:
     type-detect "4.0.8"
 
-"@tosspayments/sdk-types@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@tosspayments/sdk-types/-/sdk-types-1.0.2.tgz#571785c11e4833ac32789d3488a62524ad50bea4"
-  integrity sha512-jTWD69nWLKUrdV8wGhuv4wv2mXJoBxhW8p4uqIEmPj+VnmZ0ToDshxD2Hqs1GtTUP3pLzy6ZuACaGiOIpMhLWQ==
+"@tosspayments/sdk-types@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@tosspayments/sdk-types/-/sdk-types-1.0.3.tgz#dcabbaad28af19998093dc49dfa7cf19af8db363"
+  integrity sha512-yAlJ35hjVwgIuQ/j2Q0y9P5TakMLvp07VJOZxdfnpacR/wno+tbDjZe2QUAY9/rz6HGjx57/YcQLROZDgWpVsg==
 
 "@types/babel__core@^7.1.7":
   version "7.1.7"
