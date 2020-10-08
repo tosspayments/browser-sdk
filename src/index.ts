@@ -1,6 +1,6 @@
 import { TossPaymentsInstance } from '@tosspayments/sdk-types';
 
-const SCRIPT_URL = '//js.tosspayments.com/v1';
+const SCRIPT_URL = 'https://js.tosspayments.com/v1';
 
 let cachedPromise: Promise<any> | undefined;
 
