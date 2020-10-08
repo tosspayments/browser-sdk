@@ -9,10 +9,10 @@ export async function loadTossPayments(clientKey: string): Promise<TossPaymentsI
   if (typeof window === 'undefined') {
     return {
       requestPayment() {
-        throw new Error('[TossPayments.js] 서버사이드에서는 실행할 수 없습니다.');
+        throw new Error('[TossPayments.js] 서버에서는 실행할 수 없습니다.');
       },
       requestBillingAuth() {
-        throw new Error('[TossPayments.js] 서버사이드에서는 실행할 수 없습니다.');
+        throw new Error('[TossPayments.js] 서버에서는 실행할 수 없습니다.');
       },
     };
   }
@@ -37,7 +37,7 @@ export async function loadTossPayments(clientKey: string): Promise<TossPaymentsI
       if (window.TossPayments !== undefined) {
         resolve(window.TossPayments(clientKey));
       } else {
-        reject(new Error('[TossPayments] Instance 초기화에 실패했습니다.'));
+        reject(new Error('[TossPayments] 인스턴스 초기화에 실패했습니다.'));
       }
     });
   });

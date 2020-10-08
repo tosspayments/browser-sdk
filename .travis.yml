@@ -11,17 +11,8 @@ jobs:
       name: 'Test'
       script:
         - yarn test
-      if: type = push AND branch != master
     - stage: 'Deploy'
       name: 'Deploy'
-      script:
-        - yarn build
-        - yarn deploy
-        - 'yarn lerna version --conventional-commits --yes --git-remote pub'
-        - 'yarn lerna publish from-git --dist-tag latest --yes'
-      if: type = push AND branch = master
-    - stage: 'Deploy Prerelease'
-      name: 'Deploy (Prerelease)'
       script:
         - git switch ${TRAVIS_BRANCH}
         - yarn build
