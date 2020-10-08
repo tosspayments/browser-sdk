@@ -1,0 +1,37 @@
+language: node_js
+node_js:
+  - '12'
+before_install:
+  - echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+install:
+  - yarn
+jobs:
+  include:
+    - stage: 'Test'
+      name: 'Test'
+      script:
+        - yarn test
+      if: type = push AND branch != master
+    - stage: 'Deploy'
+      name: 'Deploy'
+      script:
+        - yarn build
+        - yarn deploy
+        - 'yarn lerna version --conventional-commits --yes --git-remote pub'
+        - 'yarn lerna publish from-git --dist-tag latest --yes'
+      if: type = push AND branch = master
+    - stage: 'Deploy Prerelease'
+      name: 'Deploy (Prerelease)'
+      script:
+        - git switch ${TRAVIS_BRANCH}
+        - yarn build
+        - yarn semantic-release
+      if: |
+        type = push AND \
+        branch IN (master, beta, alpha)
+git:
+  depth: false
+cache:
+  npm: false
+  directories:
+    - .yarn
