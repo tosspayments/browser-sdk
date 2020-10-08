@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - '12'
+before_install:
+  - echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+install:
+  - yarn
+jobs:
+  include:
+    - stage: 'Test'
+      name: 'Test'
+      script:
+        - yarn test
+    - stage: 'Deploy'
+      name: 'Deploy'
+      script:
+        - git switch ${TRAVIS_BRANCH}
+        - yarn build
+        - yarn semantic-release
+      if: |
+        type = push AND \
+        branch IN (master, beta, alpha)
+git:
+  depth: false
+cache:
+  npm: false
+  directories:
+    - .yarn

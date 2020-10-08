@@ -1,4 +1,4 @@
-const SCRIPT_URL = '//web.tosspayments.com/sdk/alpha/tosspayments.js';
+const SCRIPT_URL = 'https://js.tosspayments.com/v1';
 
 function dispatchLoadEvent() {
   // @ts-ignore
