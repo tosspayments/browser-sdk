@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/tosspayments/browser-sdk/compare/v1.1.0...v1.1.1) (2020-11-26)
+
+
+### Bug Fixes
+
+* sdk-types 1.1.1, vulnerability fix ([865afac](https://github.com/tosspayments/browser-sdk/commit/865afac93afff369a13128ec246dc84092629e53))
+
 # [1.1.0](https://github.com/tosspayments/browser-sdk/compare/v1.0.0...v1.1.0) (2020-10-08)
 
 
