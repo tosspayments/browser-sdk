@@ -1579,10 +1579,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@tosspayments/sdk-types@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@tosspayments/sdk-types/-/sdk-types-1.1.1.tgz#114ab10b41d977a036dbd9f6d33df027510b1bd9"
-  integrity sha512-S8v/LgFqvb2nbuYvQscLP3b3JRhB67J666A02QE9d14ywkIEKF8q7n9qVHE7MMtxY9gPhwazwyja0zA4uP8oWw==
+"@tosspayments/sdk-types@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/@tosspayments/sdk-types/-/sdk-types-1.1.2.tgz#09a09d0878269f7b14b248953f2aada2303a8446"
+  integrity sha512-ekZg3J2TMei+Q9l0Lxt57ykD5zeMkvnqvB8J3z6nsokl7V4Hsrs4LUKKBNdaIZQmQnQ7dq+DQWAZv/OhQSIpUw==
 
 "@types/babel__core@^7.1.7":
   version "7.1.7"
@@ -6948,10 +6948,10 @@ saxes@^3.1.9:
   dependencies:
     xmlchars "^2.1.1"
 
-semantic-release@^17.1.2:
-  version "17.1.2"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.1.2.tgz#7d77555185722012b34e3ca74e4d13f813daf3cd"
-  integrity sha512-szYBXm10QjQO5Tb1S2PSkvOBW3MajWJat5EWtx+MzaVT/jquuxf9o+Zn8FC1j157xvJ5p9r1d/MZGslgs7oQQg==
+semantic-release@^17.3.0:
+  version "17.3.0"
+  resolved "https://registry.npmjs.org/semantic-release/-/semantic-release-17.3.0.tgz#121252b5bb6acc1048d7657111173b03d47502c5"
+  integrity sha512-enhDayMZRP4nWcWAMBFHHB7THRaIcRdUAZv3lxd65pXs2ttzay7IeCvRRrGayRWExtnY0ulwRz5Ycp88Dv/UeQ==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
