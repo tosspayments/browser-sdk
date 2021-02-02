@@ -13,5 +13,5 @@ runs:
         git config user.email "70372587+tosspayments-bot@users.noreply.github.com"
       shell: bash
     - name: NPM Token 설정
-      run: echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} | tee .npmrc $HOME/.npmrc > /dev/null
+      run: echo //registry.npmjs.org/:_authToken=${{ inputs.npm_token }} | tee .npmrc $HOME/.npmrc > /dev/null
       shell: bash

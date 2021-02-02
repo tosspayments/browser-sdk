@@ -20,6 +20,8 @@ jobs:
           fetch-depth: 0
       - name: Toss Payments 공통 설정
         uses: ./.github/actions/configure
+        with:
+          npm_token: ${{ secrets.NPM_TOKEN }}
       - name: Node.js 환경 설정
         uses: actions/setup-node@v1
         with:
