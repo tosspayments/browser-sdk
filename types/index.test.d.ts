@@ -1,2 +1,2 @@
-declare const SCRIPT_URL = "//web.tosspayments.com/sdk/alpha/tosspayments.js";
+declare const SCRIPT_URL = "https://js.tosspayments.com/v1";
 declare function dispatchLoadEvent(): void;

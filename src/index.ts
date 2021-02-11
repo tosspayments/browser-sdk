@@ -37,7 +37,7 @@ export async function loadTossPayments(clientKey: string): Promise<TossPaymentsI
       if (window.TossPayments !== undefined) {
         resolve(window.TossPayments(clientKey));
       } else {
-        reject(new Error('[TossPayments] 인스턴스 초기화에 실패했습니다.'));
+        reject(new Error('[TossPayments.js] 인스턴스 초기화에 실패했습니다.'));
       }
     });
   });
