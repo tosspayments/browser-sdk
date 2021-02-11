@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/tosspayments/browser-sdk/compare/v1.1.1...v1.1.2) (2021-02-11)
+
+
+### Bug Fixes
+
+* vulnerability fix ([189bbff](https://github.com/tosspayments/browser-sdk/commit/189bbff176ab8ba3b4331fda2323f136e7c08782))
+* 에러 메시지 일관성 및 사소한 타이핑 오류 수정 ([37c0bb1](https://github.com/tosspayments/browser-sdk/commit/37c0bb18fb9bc7f7904a412b6e0c6e98acc578fb))
+
 ## [1.1.1](https://github.com/tosspayments/browser-sdk/compare/v1.1.0...v1.1.1) (2020-11-26)
 
 

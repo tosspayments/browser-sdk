@@ -1,7 +1,7 @@
 {
   "name": "@tosspayments/sdk",
   "description": "tosspayments.js 스크립트 로더",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",
