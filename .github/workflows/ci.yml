@@ -31,7 +31,7 @@ jobs:
       - name: 테스트
         run: yarn test
       - name: 배포하기
-        if: github.head_ref == 'refs/heads/main' || github.head_ref == 'refs/heads/beta' || github.head_ref == 'refs/heads/alpha'
+        if: github.head_ref == 'refs/heads/master' || github.head_ref == 'refs/heads/beta' || github.head_ref == 'refs/heads/alpha'
         run: |
           yarn build
           yarn semantic-release
