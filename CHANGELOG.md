@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/tosspayments/browser-sdk/compare/v1.1.2...v1.1.3) (2021-03-03)
+
+
+### Bug Fixes
+
+* regenerator-runtime 을 사용하지 않도록 변경 ([fc56da4](https://github.com/tosspayments/browser-sdk/commit/fc56da42fc4399d9e785e3e14f1555230784645a))
+
 ## [1.1.2](https://github.com/tosspayments/browser-sdk/compare/v1.1.1...v1.1.2) (2021-02-11)
 
 
