@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/tosspayments/browser-sdk/compare/v1.1.3...v1.1.4) (2021-03-17)
+
+
+### Bug Fixes
+
+* sdk-types 를 1.1.3 버전으로 변경 ([7403a3f](https://github.com/tosspayments/browser-sdk/commit/7403a3fbab821563d7860dbed5ff317831986d25))
+
 ## [1.1.3](https://github.com/tosspayments/browser-sdk/compare/v1.1.2...v1.1.3) (2021-03-03)
 
 
