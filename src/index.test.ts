@@ -41,4 +41,21 @@ describe('loadTossPayments', () => {
 
     expect(scripts).toHaveLength(1);
   });
+
+  test(`src를 지정하면 주어진 URL로 script를 로드한다`, async () => {
+    const testSource = `https://test.tosspayments.com/sdk`;
+    const { loadTossPayments } = await import('./index');
+
+    const loadPromise = loadTossPayments('test_key', {
+      src: `https://test.tosspayments.com/sdk`,
+    });
+
+    dispatchLoadEvent();
+
+    await loadPromise;
+
+    const script = document.querySelector(`script[src="${testSource}"]`);
+
+    expect(script).not.toBeNull();
+  });
 });

@@ -4,7 +4,10 @@ const SCRIPT_URL = 'https://js.tosspayments.com/v1';
 
 let cachedPromise: Promise<TossPaymentsInstance> | undefined;
 
-export function loadTossPayments(clientKey: string): Promise<TossPaymentsInstance> {
+export function loadTossPayments(
+  clientKey: string,
+  { src = SCRIPT_URL }: { src?: string } = {}
+): Promise<TossPaymentsInstance> {
   // SSR 지원
   if (typeof window === 'undefined') {
     return Promise.resolve({
@@ -17,7 +20,7 @@ export function loadTossPayments(clientKey: string): Promise<TossPaymentsInstanc
     });
   }
 
-  const selectedScript = document.querySelector(`script[src="${SCRIPT_URL}"]`);
+  const selectedScript = document.querySelector(`script[src="${src}"]`);
 
   if (selectedScript != null && cachedPromise !== undefined) {
     return cachedPromise;
@@ -28,7 +31,7 @@ export function loadTossPayments(clientKey: string): Promise<TossPaymentsInstanc
   }
 
   const script = document.createElement('script');
-  script.src = SCRIPT_URL;
+  script.src = src;
 
   cachedPromise = new Promise((resolve, reject) => {
     document.head.appendChild(script);
