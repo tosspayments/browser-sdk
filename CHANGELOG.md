@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/tosspayments/browser-sdk/compare/v1.1.5...v1.2.0) (2021-06-21)
+
+
+### Features
+
+* `src` 지정 옵션 구현 ([6709817](https://github.com/tosspayments/browser-sdk/commit/6709817f385bedac2c373901adce59cb0f99636f))
+
 ## [1.1.5](https://github.com/tosspayments/browser-sdk/compare/v1.1.4...v1.1.5) (2021-06-18)
 
 
