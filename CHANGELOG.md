@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/tosspayments/browser-sdk/compare/v1.2.0...v1.3.0) (2021-10-27)
+
+
+### Features
+
+* clearTossPayments 메서드 구현 ([53995e9](https://github.com/tosspayments/browser-sdk/commit/53995e9653a1e59dcf830bb75ec6dfe9b75b5fa0))
+
 # [1.2.0](https://github.com/tosspayments/browser-sdk/compare/v1.1.5...v1.2.0) (2021-06-21)
 
 
