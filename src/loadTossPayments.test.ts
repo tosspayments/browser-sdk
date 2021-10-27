@@ -1,4 +1,4 @@
-const SCRIPT_URL = 'https://js.tosspayments.com/v1';
+import { SCRIPT_URL } from './constants';
 
 function dispatchLoadEvent() {
   // @ts-ignore
@@ -15,7 +15,7 @@ describe('loadTossPayments', () => {
   });
 
   test('URL이 들어간 <script>를 <head>에 inject한다', async () => {
-    const { loadTossPayments } = await import('./index');
+    const { loadTossPayments } = await import('./loadTossPayments');
 
     const loadPromise = loadTossPayments('test_key');
 
@@ -29,7 +29,7 @@ describe('loadTossPayments', () => {
   });
 
   test('2회 이상의 중복 호출 시에도 1회만 inject한다', async () => {
-    const { loadTossPayments } = await import('./index');
+    const { loadTossPayments } = await import('./loadTossPayments');
 
     const loadPromise = Promise.all(Array(10).fill(loadTossPayments('test_key')));
 
@@ -44,7 +44,7 @@ describe('loadTossPayments', () => {
 
   test(`src를 지정하면 주어진 URL로 script를 로드한다`, async () => {
     const testSource = `https://test.tosspayments.com/sdk`;
-    const { loadTossPayments } = await import('./index');
+    const { loadTossPayments } = await import('./loadTossPayments');
 
     const loadPromise = loadTossPayments('test_key', {
       src: `https://test.tosspayments.com/sdk`,
