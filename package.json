@@ -34,6 +34,6 @@
     "types"
   ],
   "dependencies": {
-    "@tosspayments/sdk-types": "^1.1.8"
+    "@tosspayments/sdk-types": "^1.2.1"
   }
 }

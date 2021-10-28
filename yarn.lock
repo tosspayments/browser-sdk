@@ -1674,10 +1674,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@tosspayments/sdk-types@^1.1.8":
-  version "1.1.8"
-  resolved "https://registry.npmjs.org/@tosspayments/sdk-types/-/sdk-types-1.1.8.tgz#514e74df2df8ec2970f46fd0cb320f97f9cfb4d1"
-  integrity sha512-1zTApVpKsOloC5Ls/sOXxI8iiBTT4p+6TWE4BBWTjN/cDkp6OSoUARETHtPpdrVvYLQsk6P5ct3g4/NS1GwLzQ==
+"@tosspayments/sdk-types@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/@tosspayments/sdk-types/-/sdk-types-1.2.1.tgz#5b3c7907a341442b408d6828019143ffc6219503"
+  integrity sha512-n7BFSXAs0hU6Pxt/Gg2fJpl0GIxjpTfRJCmE7srAIDkgFzSSxXEwxxcitryAGD80GiFmZieNtUUgCA9W1eCVlQ==
 
 "@types/babel__core@^7.0.0":
   version "7.1.12"
