@@ -28,14 +28,14 @@ jobs:
           node-version: '12.16.3'
       - name: 'SINCE_FROM_REF 환경변수 설정'
         run: |
-          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
+          if [[ ${{ github.ref }} == 'refs/heads/multi-packages' ]]; then
             echo "SINCE_FROM_REF=$(git rev-parse HEAD~1)" >> $GITHUB_ENV
           elif [[ ${{ github.ref }} == 'refs/heads/staging'* ]]; then
             echo "SINCE_FROM_REF=$(git rev-parse HEAD~1)" >> $GITHUB_ENV
           elif [[ ${{ github.event_name }} == 'pull_request' ]]; then
             echo "SINCE_FROM_REF=$(git rev-parse origin/${{ github.base_ref }})" >> $GITHUB_ENV
           else
-            echo "SINCE_FROM_REF=$(git rev-parse origin/main)" >> $GITHUB_ENV
+            echo "SINCE_FROM_REF=$(git rev-parse origin/multi-packages)" >> $GITHUB_ENV
           fi
       - name: yarn install
         run: yarn install --immutable
