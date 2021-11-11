@@ -15,7 +15,6 @@
     "paths": {
       "src/*": ["src/*"]
     },
-    "typeRoots": ["node_modules/@types", "types"],
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true
   },
