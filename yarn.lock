@@ -2463,7 +2463,7 @@ __metadata:
     semantic-release: ^17.3.8
     ts-jest: ^25.3.1
     tslib: ^1.11.1
-    typescript: ^3.8.3
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -9854,6 +9854,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:^4.4.4":
+  version: 4.4.4
+  resolution: "typescript@npm:4.4.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 89ecb8436bb48ef5594d49289f5f89103071716b6e4844278f4fb3362856e31203e187a9c76d205c3f0b674d221a058fd28310dbcbcf5d95e9a57229bb5203f1
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@^3.8.3#~builtin<compat/typescript>":
   version: 3.8.3
   resolution: "typescript@patch:typescript@npm%3A3.8.3#~builtin<compat/typescript>::version=3.8.3&hash=ddd1e8"
@@ -9861,6 +9871,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: fba33b9756bbffcbdc87254af0f491852bac475c1302b570b9c656c10fad9dbe7113975a64beb6035979db555b0fc87fa168734f10bf556f173213c13d371e4e
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.4.4#~builtin<compat/typescript>":
+  version: 4.4.4
+  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: bd629ad0da4a15d79aaad56baf3ee7d96f6a181760d430ae77f8c5325df7bffd9edee57544a3970e3651e8b796fe03a5838a7eb39c6d46cc3866c0b23d36a0dd
   languageName: node
   linkType: hard
 
