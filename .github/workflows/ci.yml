@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - 'master'
+      - 'multi-packages'
       - 'beta'
       - 'alpha'
   pull_request:
@@ -42,10 +42,10 @@ jobs:
       - name: Run Test
         run: yarn workspaces since run test $SINCE_FROM_REF --jobs=5
       - name: 릴리즈
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha'
+        if: github.ref == 'refs/heads/multi-packages' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          yarn lerna version --conventional-commits --exclude-dependents --yes --git-remote origin
+          yarn lerna version --conventional-commits --conventional-prerelease --exclude-dependents --yes --git-remote origin
           yarn lerna publish from-git --yes --concurrency=2
