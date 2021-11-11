@@ -1,0 +1,16 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": ["packages/*"],
+  "command": {
+    "version": {
+      "message": "chore(release): publish [skip ci]",
+      "registry": "https://registry.npmjs.org/"
+    },
+    "publish": {
+      "graphType": "all",
+      "registry": "https://registry.npmjs.org/"
+    }
+  }
+}

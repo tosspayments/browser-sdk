@@ -12,13 +12,7 @@
     "esModuleInterop": true,
     "strict": true,
     "baseUrl": ".",
-    "paths": {
-      "src/*": ["src/*"]
-    },
-    "typeRoots": ["node_modules/@types", "types"],
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "src/**/*.test.(ts|tsx)"]
+  }
 }
