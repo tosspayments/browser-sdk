@@ -47,5 +47,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          yarn lerna version --conventional-commits --conventional-prerelease --exclude-dependents --yes --git-remote origin
+          yarn lerna version --conventional-commits --exclude-dependents --yes --git-remote origin
           yarn lerna publish from-git --yes --concurrency=2
