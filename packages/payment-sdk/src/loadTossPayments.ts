@@ -1,4 +1,4 @@
-import { TossPaymentsInstance } from '@tosspayments/sdk-types';
+import { TossPaymentsInstance } from '@tosspayments/payment__types';
 import { SCRIPT_ID, SCRIPT_URL } from './constants';
 
 let cachedPromise: Promise<TossPaymentsInstance> | undefined;
