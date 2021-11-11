@@ -47,3 +47,5 @@ export function loadTossPayments(
 
   return cachedPromise;
 }
+
+// test
