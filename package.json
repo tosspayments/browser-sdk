@@ -6,8 +6,16 @@
   "author": "Toss Payments",
   "dependencies": {
     "jest": "^26.6.3",
+    "lerna": "^3.22.1",
     "prettier": "^2.0.2",
     "typescript": "^3.8.3"
+  },
+  "resolutions": {
+    "@lerna/version": "patch:@lerna/version@npm:3.20.2#.yarn/patches/@lerna/version.patch",
+    "@lerna/npm-publish": "patch:@lerna/npm-publish@npm:3.18.5#.yarn/patches/@lerna/npm-publish.patch",
+    "@lerna/package": "patch:@lerna/package@npm:3.16.0#.yarn/patches/@lerna/package.patch",
+    "@lerna/package-graph": "patch:@lerna/package-graph@npm:3.18.5#.yarn/patches/@lerna/package-graph.patch",
+    "@lerna/pack-directory": "patch:@lerna/pack-directory@npm:3.16.4#.yarn/patches/@lerna/pack-directory.patch"
   },
   "workspaces": [
     "packages/*"
