@@ -4067,10 +4067,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@lerna/npm-publish", [
-        ["patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=977e24&locator=browser-sdk%40workspace%3A.", {
-          "packageLocation": "./.yarn/cache/@lerna-npm-publish-patch-6c7457387d-d7b26020a7.zip/node_modules/@lerna/npm-publish/",
+        ["patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=browser-sdk%40workspace%3A.", {
+          "packageLocation": "./.yarn/cache/@lerna-npm-publish-patch-a79d614170-5ac75e105a.zip/node_modules/@lerna/npm-publish/",
           "packageDependencies": [
-            ["@lerna/npm-publish", "patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=977e24&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/npm-publish", "patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=browser-sdk%40workspace%3A."],
             ["@evocateur/libnpmpublish", "npm:1.2.2"],
             ["@lerna/otplease", "npm:3.18.5"],
             ["@lerna/run-lifecycle", "npm:3.16.2"],
@@ -4250,7 +4250,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@lerna/log-packed", "npm:3.16.0"],
             ["@lerna/npm-conf", "npm:3.16.0"],
             ["@lerna/npm-dist-tag", "npm:3.18.5"],
-            ["@lerna/npm-publish", "patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=977e24&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/npm-publish", "patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=browser-sdk%40workspace%3A."],
             ["@lerna/otplease", "npm:3.18.5"],
             ["@lerna/output", "npm:3.13.0"],
             ["@lerna/pack-directory", "patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=browser-sdk%40workspace%3A."],

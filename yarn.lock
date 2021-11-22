@@ -2711,7 +2711,7 @@ __metadata:
 
 "@lerna/npm-publish@patch:@lerna/npm-publish@npm:3.18.5#.yarn/patches/@lerna/npm-publish.patch::locator=browser-sdk%40workspace%3A.":
   version: 3.18.5
-  resolution: "@lerna/npm-publish@patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=977e24&locator=browser-sdk%40workspace%3A."
+  resolution: "@lerna/npm-publish@patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=browser-sdk%40workspace%3A."
   dependencies:
     "@evocateur/libnpmpublish": ^1.2.2
     "@lerna/otplease": 3.18.5
@@ -2722,7 +2722,7 @@ __metadata:
     npmlog: ^4.1.2
     pify: ^4.0.1
     read-package-json: ^2.0.13
-  checksum: d7b26020a776a571d9ca1fc3e5726f450a67980a368f9c99a2bd4c7ce6dd1b3df40d24962382a90297abc7b2b01636c77867193c25d33b16255dd8bba3c63d10
+  checksum: 5ac75e105ada7e85bcf43683c4f7a5f265ae783ff807eb16d7dfefc9d9d53cb9c696b1c7c7be25e40a36ebb1269c45ec41773219848ad93106224f83d11a711a
   languageName: node
   linkType: hard
 
