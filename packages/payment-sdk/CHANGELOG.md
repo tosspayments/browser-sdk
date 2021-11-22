@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@0.1.1...@tosspayments/payment-sdk@0.1.2) (2021-11-22)
+
+
+### Bug Fixes
+
+* **payment-sdk:** make Public ([cdb9723](https://github.com/tosspayments/browser-sdk/commit/cdb9723837f91b0717a08b992cbb9c17e7ac96dd))
+
+
+
+
+
 ## 0.1.1 (2021-11-22)
 
 
