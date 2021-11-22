@@ -1,9 +1,10 @@
 import { SCRIPT_URL } from './constants';
+import { loadTossPayments } from './loadTossPayments';
 
 function dispatchLoadEvent() {
   // @ts-ignore
   window.TossPayments = jest.fn();
-  window?.dispatchEvent(new Event('tossPaymentsInitialize'));
+  window?.dispatchEvent(new Event(`TossPayments:initialize:TossPayments`));
 }
 
 describe('loadTossPayments', () => {
@@ -15,8 +16,6 @@ describe('loadTossPayments', () => {
   });
 
   test('URL이 들어간 <script>를 <head>에 inject한다', async () => {
-    const { loadTossPayments } = await import('./loadTossPayments');
-
     const loadPromise = loadTossPayments('test_key');
 
     dispatchLoadEvent();
@@ -29,8 +28,6 @@ describe('loadTossPayments', () => {
   });
 
   test('2회 이상의 중복 호출 시에도 1회만 inject한다', async () => {
-    const { loadTossPayments } = await import('./loadTossPayments');
-
     const loadPromise = Promise.all(Array(10).fill(loadTossPayments('test_key')));
 
     dispatchLoadEvent();
@@ -44,7 +41,6 @@ describe('loadTossPayments', () => {
 
   test(`src를 지정하면 주어진 URL로 script를 로드한다`, async () => {
     const testSource = `https://test.tosspayments.com/sdk`;
-    const { loadTossPayments } = await import('./loadTossPayments');
 
     const loadPromise = loadTossPayments('test_key', {
       src: `https://test.tosspayments.com/sdk`,
