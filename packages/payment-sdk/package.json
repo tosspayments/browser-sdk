@@ -36,5 +36,8 @@
   "dependencies": {
     "@tosspayments/payment__types": "^1.2.1",
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
