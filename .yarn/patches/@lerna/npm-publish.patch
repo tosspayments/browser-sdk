@@ -8,11 +8,9 @@ index ee6ad133e..6a31d1775 100644
  
 +function stripWorkspaceProtocolFromDeps(deps) {
 +  if (!deps) return;
-+  for (const [name, version] of Object.entries(deps)) {
++  for (const [name] of Object.entries(deps)) {
 +    if (version.startsWith("workspace:")) {
-+      const packagePath = version.slice(10);
-+      const resolvedVersion = require(`${process.cwd()}/${packagePath}/package.json`).version;
-+      deps[name] = `^${resolvedVersion}`;
++      delete deps[name];
 +    }
 +  }
 +}
