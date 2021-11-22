@@ -2,7 +2,7 @@
   "name": "@tosspayments/sdk-loader",
   "private": true,
   "description": "JavaScript SDK Loader by <script> tag injection",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "src/index.ts",
   "author": "Toss Payments",
   "scripts": {
