@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.3.4...@tosspayments/payment-sdk@1.3.5) (2021-11-22)
+
+
+### Bug Fixes
+
+* remove workspace dependency ([828bdcd](https://github.com/tosspayments/browser-sdk/commit/828bdcdfcc7b934f493620595b67cccd4515717e))
+
+
+
+
+
 ## 1.3.4 (2021-11-22)
 
 ### Bug Fixes
