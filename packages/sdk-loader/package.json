@@ -7,7 +7,7 @@
   "author": "Toss Payments",
   "scripts": {
     "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly --declarationDir types",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "license": "MIT",
   "devDependencies": {
