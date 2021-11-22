@@ -10,10 +10,14 @@ export function loadTossPayments(
   if (typeof window === 'undefined') {
     return Promise.resolve({
       requestPayment() {
-        throw new Error(`[TossPayments SDK] Can't execute method on server.`);
+        throw new Error(
+          `[TossPayments SDK] It looks like runtime is not from browser. This method is only execuatable on browser.`
+        );
       },
       requestBillingAuth() {
-        throw new Error(`[TossPayments SDK] Can't execute method on server.`);
+        throw new Error(
+          `[TossPayments SDK] It looks like runtime is not from browser. This method is only execuatable on browser.`
+        );
       },
     });
   }
