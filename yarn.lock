@@ -3431,7 +3431,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
     "@tosspayments/payment__types": ^1.2.1
-    "@tosspayments/sdk-loader": "workspace:^"
+    "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
     "@types/jest": ^27.0.0
     jest: ^27.0.7
     prettier: ^2.0.2
@@ -3450,7 +3450,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tosspayments/sdk-loader@workspace:^, @tosspayments/sdk-loader@workspace:packages/sdk-loader":
+"@tosspayments/sdk-loader@workspace:packages/sdk-loader":
   version: 0.0.0-use.local
   resolution: "@tosspayments/sdk-loader@workspace:packages/sdk-loader"
   dependencies:
