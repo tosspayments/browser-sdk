@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 1.3.4 (2021-11-22)
 
-
 ### Bug Fixes
 
-* **payment-sdk:** 1.3.4 release ([#11](https://github.com/tosspayments/browser-sdk/issues/11)) ([6f6cc56](https://github.com/tosspayments/browser-sdk/commit/6f6cc56869f6d6c9621a481b062e06035dca8cc8))
-
-
-
-
+- **payment-sdk:** 1.3.4 release ([#11](https://github.com/tosspayments/browser-sdk/issues/11)) ([6f6cc56](https://github.com/tosspayments/browser-sdk/commit/6f6cc56869f6d6c9621a481b062e06035dca8cc8))
 
 ## [1.3.1](https://github.com/tosspayments/browser-sdk/compare/v1.3.0...v1.3.1) (2021-10-28)
 
