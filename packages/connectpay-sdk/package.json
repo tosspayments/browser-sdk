@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly --declaration --declarationDir types",
     "prepack": "yarn build",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "license": "MIT",
   "devDependencies": {
