@@ -1,0 +1,42 @@
+{
+  "name": "@tosspayments/connectpay-sdk",
+  "description": "TossPayments.js Connect Pay SDK",
+  "version": "0.1.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "types/index.d.ts",
+  "author": "Toss Payments",
+  "scripts": {
+    "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly --declaration --declarationDir types",
+    "prepack": "yarn build",
+    "test": "jest --passWithNoTests"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.16.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/jest": "^27.0.0",
+    "jest": "^27.0.7",
+    "prettier": "^2.0.2",
+    "rollup": "^2.60.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "ts-jest": "^27.0.7",
+    "tslib": "^1.11.1"
+  },
+  "files": [
+    "src",
+    "dist",
+    "types"
+  ],
+  "dependencies": {
+    "@tosspayments/connectpay__types": "^1.4.3",
+    "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

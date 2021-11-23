@@ -3420,6 +3420,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tosspayments/connectpay-sdk@workspace:packages/connectpay-sdk":
+  version: 0.0.0-use.local
+  resolution: "@tosspayments/connectpay-sdk@workspace:packages/connectpay-sdk"
+  dependencies:
+    "@babel/core": ^7.11.6
+    "@babel/preset-env": ^7.11.5
+    "@babel/preset-typescript": ^7.16.0
+    "@rollup/plugin-babel": ^5.3.0
+    "@rollup/plugin-commonjs": ^21.0.1
+    "@rollup/plugin-typescript": ^8.3.0
+    "@tosspayments/connectpay__types": ^1.4.3
+    "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
+    "@types/jest": ^27.0.0
+    jest: ^27.0.7
+    prettier: ^2.0.2
+    rollup: ^2.60.0
+    rollup-plugin-babel: ^4.4.0
+    ts-jest: ^27.0.7
+    tslib: ^1.11.1
+  languageName: unknown
+  linkType: soft
+
+"@tosspayments/connectpay__types@npm:^1.4.3":
+  version: 1.4.3
+  resolution: "@tosspayments/connectpay__types@npm:1.4.3"
+  checksum: e57c5112e088c8584697fe12de388f2db78a056f29ef4068374649ec21101317819bf39de0e95ced014173f9dd0a4f592db7c976e7df95cf9e3dafb1d0e27247
+  languageName: node
+  linkType: hard
+
 "@tosspayments/payment-sdk@workspace:packages/payment-sdk":
   version: 0.0.0-use.local
   resolution: "@tosspayments/payment-sdk@workspace:packages/payment-sdk"
