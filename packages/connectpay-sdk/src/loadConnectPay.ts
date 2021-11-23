@@ -17,7 +17,7 @@ export function loadConnectPay(
     return Promise.resolve({} as ConnectPayInstance);
   }
 
-  // regenerator-runtime 의 존성을 없애기 위해 `async` 키워드를 사용하지 않는다
+  // regenerator-runtime 의존성을 없애기 위해 `async` 키워드를 사용하지 않는다
   return loadScript<ConnectPayConstructor>(src, 'ConnectPay').then((ConnectPay) => {
     return ConnectPay(clientKey, customerKey, options);
   });
