@@ -3439,13 +3439,14 @@ __metadata:
     rollup-plugin-babel: ^4.4.0
     ts-jest: ^27.0.7
     tslib: ^1.11.1
+    typescript: ^4.5.2
   languageName: unknown
   linkType: soft
 
 "@tosspayments/connectpay__types@npm:^1.4.3":
-  version: 1.4.3
-  resolution: "@tosspayments/connectpay__types@npm:1.4.3"
-  checksum: e57c5112e088c8584697fe12de388f2db78a056f29ef4068374649ec21101317819bf39de0e95ced014173f9dd0a4f592db7c976e7df95cf9e3dafb1d0e27247
+  version: 1.4.5
+  resolution: "@tosspayments/connectpay__types@npm:1.4.5"
+  checksum: 16e4adf5129c2a5c9c4829055b196804a2f1defd608a6f6941eb6cbd8a9605ec7eecde9aeba12d0fadb76df994307f7bad0e104d8182d6a2f404e56b40452c43
   languageName: node
   linkType: hard
 
@@ -3468,7 +3469,7 @@ __metadata:
     rollup-plugin-babel: ^4.4.0
     ts-jest: ^27.0.7
     tslib: ^1.11.1
-    typescript: ^4.4.4
+    typescript: ^4.5.2
   languageName: unknown
   linkType: soft
 
@@ -4429,7 +4430,7 @@ __metadata:
     jest: ^26.6.3
     lerna: ^3.22.1
     prettier: ^2.0.2
-    typescript: ^3.8.3
+    typescript: ^4.5.2
   languageName: unknown
   linkType: soft
 
@@ -12606,16 +12607,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^3.8.3":
-  version: 3.8.3
-  resolution: "typescript@npm:3.8.3"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 3ef07f997a9a3af80d663cc611be984d3e22df3dc2b5ecfa6cbe7dbd54f1984fa1c679ba67e6a9d36d73ffdbbab88a0fbb58eb30ffc4f748f3a3c28d562b546a
-  languageName: node
-  linkType: hard
-
 "typescript@npm:^4.4.4":
   version: 4.4.4
   resolution: "typescript@npm:4.4.4"
@@ -12626,13 +12617,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^3.8.3#~builtin<compat/typescript>":
-  version: 3.8.3
-  resolution: "typescript@patch:typescript@npm%3A3.8.3#~builtin<compat/typescript>::version=3.8.3&hash=493e53"
+"typescript@npm:^4.5.2":
+  version: 4.5.2
+  resolution: "typescript@npm:4.5.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: fba33b9756bbffcbdc87254af0f491852bac475c1302b570b9c656c10fad9dbe7113975a64beb6035979db555b0fc87fa168734f10bf556f173213c13d371e4e
+  checksum: 74f9ce65d532bdf5d0214b3f60cf37992180023388c87a11ee6f838a803067ef0b63c600fa501b0deb07f989257dce1e244c9635ed79feca40bbccf6e0aa1ebc
   languageName: node
   linkType: hard
 
@@ -12643,6 +12634,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: bd629ad0da4a15d79aaad56baf3ee7d96f6a181760d430ae77f8c5325df7bffd9edee57544a3970e3651e8b796fe03a5838a7eb39c6d46cc3866c0b23d36a0dd
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
+  version: 4.5.2
+  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 53838d56aba6fcc947d63aa0771e5d966b1b648fddafed6e221d7f38c71219c4e036ece8cfe9e35ed80cf5a35ff4eb958934c993f99c3233773ec4f9ccd53f69
   languageName: node
   linkType: hard
 

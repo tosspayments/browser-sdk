@@ -53,7 +53,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "npm:26.6.3"],
             ["lerna", "npm:3.22.1"],
             ["prettier", "npm:2.0.2"],
-            ["typescript", "patch:typescript@npm%3A3.8.3#~builtin<compat/typescript>::version=3.8.3&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"]
           ],
           "linkType": "SOFT",
         }]
@@ -4731,29 +4731,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:2b6589ff9eab5e985d7e8da5e4b37e6557ff5f533b029bc831bdc7b947db483ddd7e506664519519bce9de4e3b34ba54e638b5c9ad9f633dab590b7f5df8f135#npm:8.3.0", {
-          "packageLocation": "./.yarn/__virtual__/@rollup-plugin-typescript-virtual-b78f0bc87d/0/cache/@rollup-plugin-typescript-npm-8.3.0-cbb84161d5-f8253a7753.zip/node_modules/@rollup/plugin-typescript/",
-          "packageDependencies": [
-            ["@rollup/plugin-typescript", "virtual:2b6589ff9eab5e985d7e8da5e4b37e6557ff5f533b029bc831bdc7b947db483ddd7e506664519519bce9de4e3b34ba54e638b5c9ad9f633dab590b7f5df8f135#npm:8.3.0"],
-            ["@rollup/pluginutils", "virtual:a4bd6232cc95887676fd04cfcc1ca94a499004b265dacbe45de4ec76e7fab216eb194b9a35f35bb350dd999c3bd56d7eee0618646637a1015a848b47f5c4f6e7#npm:3.1.0"],
-            ["@types/rollup", null],
-            ["@types/tslib", null],
-            ["@types/typescript", null],
-            ["resolve", "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"],
-            ["rollup", "npm:2.60.0"],
-            ["tslib", "npm:1.14.1"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
-          ],
-          "packagePeers": [
-            "@types/rollup",
-            "@types/tslib",
-            "@types/typescript",
-            "rollup",
-            "tslib",
-            "typescript"
-          ],
-          "linkType": "HARD",
-        }],
         ["virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:8.3.0", {
           "packageLocation": "./.yarn/__virtual__/@rollup-plugin-typescript-virtual-f02da00195/0/cache/@rollup-plugin-typescript-npm-8.3.0-cbb84161d5-f8253a7753.zip/node_modules/@rollup/plugin-typescript/",
           "packageDependencies": [
@@ -4765,7 +4742,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["resolve", "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"],
             ["rollup", "npm:2.60.0"],
             ["tslib", "npm:1.14.1"],
-            ["typescript", null]
+            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"]
           ],
           "packagePeers": [
             "@types/rollup",
@@ -4851,7 +4828,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-babel", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:5.3.0"],
             ["@rollup/plugin-commonjs", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:21.0.1"],
             ["@rollup/plugin-typescript", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:8.3.0"],
-            ["@tosspayments/connectpay__types", "npm:1.4.3"],
+            ["@tosspayments/connectpay__types", "npm:1.4.5"],
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],
             ["@types/jest", "npm:27.0.3"],
             ["jest", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:27.3.1"],
@@ -4859,16 +4836,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup", "npm:2.60.0"],
             ["rollup-plugin-babel", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:4.4.0"],
             ["ts-jest", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:27.0.7"],
-            ["tslib", "npm:1.14.1"]
+            ["tslib", "npm:1.14.1"],
+            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"]
           ],
           "linkType": "SOFT",
         }]
       ]],
       ["@tosspayments/connectpay__types", [
-        ["npm:1.4.3", {
-          "packageLocation": "./.yarn/cache/@tosspayments-connectpay__types-npm-1.4.3-68fc30daa0-e57c5112e0.zip/node_modules/@tosspayments/connectpay__types/",
+        ["npm:1.4.5", {
+          "packageLocation": "./.yarn/cache/@tosspayments-connectpay__types-npm-1.4.5-ec67f46b79-16e4adf512.zip/node_modules/@tosspayments/connectpay__types/",
           "packageDependencies": [
-            ["@tosspayments/connectpay__types", "npm:1.4.3"]
+            ["@tosspayments/connectpay__types", "npm:1.4.5"]
           ],
           "linkType": "HARD",
         }]
@@ -4883,7 +4861,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-typescript", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:7.16.0"],
             ["@rollup/plugin-babel", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:5.3.0"],
             ["@rollup/plugin-commonjs", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:21.0.1"],
-            ["@rollup/plugin-typescript", "virtual:2b6589ff9eab5e985d7e8da5e4b37e6557ff5f533b029bc831bdc7b947db483ddd7e506664519519bce9de4e3b34ba54e638b5c9ad9f633dab590b7f5df8f135#npm:8.3.0"],
+            ["@rollup/plugin-typescript", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:8.3.0"],
             ["@tosspayments/payment__types", "npm:1.4.1"],
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],
             ["@types/jest", "npm:27.0.3"],
@@ -4891,9 +4869,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.0.2"],
             ["rollup", "npm:2.60.0"],
             ["rollup-plugin-babel", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:4.4.0"],
-            ["ts-jest", "virtual:2b6589ff9eab5e985d7e8da5e4b37e6557ff5f533b029bc831bdc7b947db483ddd7e506664519519bce9de4e3b34ba54e638b5c9ad9f633dab590b7f5df8f135#npm:27.0.7"],
+            ["ts-jest", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:27.0.7"],
             ["tslib", "npm:1.14.1"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"]
           ],
           "linkType": "SOFT",
         }]
@@ -6083,7 +6061,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "npm:26.6.3"],
             ["lerna", "npm:3.22.1"],
             ["prettier", "npm:2.0.2"],
-            ["typescript", "patch:typescript@npm%3A3.8.3#~builtin<compat/typescript>::version=3.8.3&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"]
           ],
           "linkType": "SOFT",
         }]
@@ -14846,39 +14824,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:2b6589ff9eab5e985d7e8da5e4b37e6557ff5f533b029bc831bdc7b947db483ddd7e506664519519bce9de4e3b34ba54e638b5c9ad9f633dab590b7f5df8f135#npm:27.0.7", {
-          "packageLocation": "./.yarn/__virtual__/ts-jest-virtual-a0adf0bfef/0/cache/ts-jest-npm-27.0.7-ed0add2515-3711361cb5.zip/node_modules/ts-jest/",
-          "packageDependencies": [
-            ["ts-jest", "virtual:2b6589ff9eab5e985d7e8da5e4b37e6557ff5f533b029bc831bdc7b947db483ddd7e506664519519bce9de4e3b34ba54e638b5c9ad9f633dab590b7f5df8f135#npm:27.0.7"],
-            ["@babel/core", "npm:7.16.0"],
-            ["@types/babel-jest", null],
-            ["@types/babel__core", null],
-            ["@types/jest", "npm:27.0.3"],
-            ["@types/typescript", null],
-            ["babel-jest", null],
-            ["bs-logger", "npm:0.2.6"],
-            ["fast-json-stable-stringify", "npm:2.1.0"],
-            ["jest", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:27.3.1"],
-            ["jest-util", "npm:27.3.1"],
-            ["json5", "npm:2.2.0"],
-            ["lodash.memoize", "npm:4.1.2"],
-            ["make-error", "npm:1.3.6"],
-            ["semver", "npm:7.3.5"],
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"],
-            ["yargs-parser", "npm:20.2.9"]
-          ],
-          "packagePeers": [
-            "@babel/core",
-            "@types/babel-jest",
-            "@types/babel__core",
-            "@types/jest",
-            "@types/typescript",
-            "babel-jest",
-            "jest",
-            "typescript"
-          ],
-          "linkType": "HARD",
-        }],
         ["virtual:336deabb10399b30cea915d2739955a98d7d7096bbd9918304bff46b4389b3371588832183c8c4de476d9b7d2480338dd8d7da333ce9a903801fffeca19a7466#npm:25.5.1", {
           "packageLocation": "./.yarn/__virtual__/ts-jest-virtual-db069f76df/0/cache/ts-jest-npm-25.5.1-bd5c9383d8-2bbb57f7ad.zip/node_modules/ts-jest/",
           "packageDependencies": [
@@ -14924,7 +14869,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash.memoize", "npm:4.1.2"],
             ["make-error", "npm:1.3.6"],
             ["semver", "npm:7.3.5"],
-            ["typescript", null],
+            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"],
             ["yargs-parser", "npm:20.2.9"]
           ],
           "packagePeers": [
@@ -15044,17 +14989,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typescript", [
-        ["patch:typescript@npm%3A3.8.3#~builtin<compat/typescript>::version=3.8.3&hash=493e53", {
-          "packageLocation": "./.yarn/cache/typescript-patch-62dfbd9f53-fba33b9756.zip/node_modules/typescript/",
-          "packageDependencies": [
-            ["typescript", "patch:typescript@npm%3A3.8.3#~builtin<compat/typescript>::version=3.8.3&hash=493e53"]
-          ],
-          "linkType": "HARD",
-        }],
         ["patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53", {
           "packageLocation": "./.yarn/cache/typescript-patch-7a081096b0-bd629ad0da.zip/node_modules/typescript/",
           "packageDependencies": [
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53", {
+          "packageLocation": "./.yarn/cache/typescript-patch-613ccf361e-53838d56ab.zip/node_modules/typescript/",
+          "packageDependencies": [
+            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"]
           ],
           "linkType": "HARD",
         }]
