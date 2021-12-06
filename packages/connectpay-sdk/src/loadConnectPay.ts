@@ -1,4 +1,4 @@
-import { ConnectPayConstructor, ConnectPayInstance } from '@tosspayments/connectpay__types';
+import type { ConnectPayConstructor, ConnectPayInstance } from '@tosspayments/connectpay__types';
 import { loadScript } from '@tosspayments/sdk-loader';
 import { SCRIPT_URL } from './constants';
 

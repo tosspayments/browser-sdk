@@ -1,4 +1,3 @@
-import '@tosspayments/connectpay__types';
 import { SCRIPT_ID } from './constants';
 
 export function clearConnectPay() {
