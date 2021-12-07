@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@0.1.3...@tosspayments/payment-sdk@1.0.0) (2021-12-07)
+
+
+### Features
+
+* **payment-sdk:** types version up ([3a18a89](https://github.com/tosspayments/browser-sdk/commit/3a18a8954e50c07d9eaf9f19fa16130194376acc))
+
+
+### BREAKING CHANGES
+
+* **payment-sdk:** v1 release
+
+
+
+
+
 ## [0.1.3](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@0.1.2...@tosspayments/payment-sdk@0.1.3) (2021-12-02)
 
 **Note:** Version bump only for package @tosspayments/payment-sdk
