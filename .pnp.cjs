@@ -19,7 +19,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],
     "dependencyTreeRoots": [
       {
-        "name": "browser-sdk",
+        "name": "@tosspayments/browser-sdk-monorepo",
         "reference": "workspace:."
       },
       {
@@ -38,10 +38,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$)",
     "fallbackExclusionList": [
+      ["@tosspayments/browser-sdk-monorepo", ["workspace:."]],
       ["@tosspayments/connectpay-sdk", ["workspace:packages/connectpay-sdk"]],
       ["@tosspayments/payment-sdk", ["workspace:packages/payment-sdk"]],
-      ["@tosspayments/sdk-loader", ["workspace:packages/sdk-loader"]],
-      ["browser-sdk", ["workspace:."]]
+      ["@tosspayments/sdk-loader", ["workspace:packages/sdk-loader"]]
     ],
     "fallbackPool": [
     ],
@@ -3589,7 +3589,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@lerna/filter-options", "npm:3.20.0"],
             ["@lerna/has-npm-version", "npm:3.16.5"],
             ["@lerna/npm-install", "npm:3.16.5"],
-            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/pulse-till-done", "npm:3.13.0"],
             ["@lerna/rimraf-dir", "npm:3.16.5"],
             ["@lerna/run-lifecycle", "npm:3.16.2"],
@@ -3712,7 +3712,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@lerna/command", "npm:3.18.5"],
             ["@lerna/child-process", "npm:3.16.5"],
-            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/project", "npm:3.18.0"],
             ["@lerna/validation-error", "npm:3.13.0"],
             ["@lerna/write-log-file", "npm:3.13.0"],
@@ -3729,7 +3729,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@lerna/command", "npm:3.21.0"],
             ["@lerna/child-process", "npm:3.16.5"],
-            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/project", "npm:3.21.0"],
             ["@lerna/validation-error", "npm:3.13.0"],
             ["@lerna/write-log-file", "npm:3.13.0"],
@@ -3984,7 +3984,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@lerna/link", "npm:3.21.0"],
             ["@lerna/command", "npm:3.21.0"],
-            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/symlink-dependencies", "npm:3.17.0"],
             ["p-map", "npm:2.1.0"],
             ["slash", "npm:2.0.0"]
@@ -4072,10 +4072,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@lerna/npm-publish", [
-        ["patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=browser-sdk%40workspace%3A.", {
-          "packageLocation": "./.yarn/cache/@lerna-npm-publish-patch-a79d614170-5ac75e105a.zip/node_modules/@lerna/npm-publish/",
+        ["patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.", {
+          "packageLocation": "./.yarn/cache/@lerna-npm-publish-patch-c06bb63a80-5ac75e105a.zip/node_modules/@lerna/npm-publish/",
           "packageDependencies": [
-            ["@lerna/npm-publish", "patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/npm-publish", "patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@evocateur/libnpmpublish", "npm:1.2.2"],
             ["@lerna/otplease", "npm:3.18.5"],
             ["@lerna/run-lifecycle", "npm:3.16.2"],
@@ -4123,12 +4123,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@lerna/pack-directory", [
-        ["patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=browser-sdk%40workspace%3A.", {
-          "packageLocation": "./.yarn/cache/@lerna-pack-directory-patch-84347c32cc-69c07423f9.zip/node_modules/@lerna/pack-directory/",
+        ["patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.", {
+          "packageLocation": "./.yarn/cache/@lerna-pack-directory-patch-9a5ed44ae4-69c07423f9.zip/node_modules/@lerna/pack-directory/",
           "packageDependencies": [
-            ["@lerna/pack-directory", "patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/pack-directory", "patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/get-packed", "npm:3.16.0"],
-            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/run-lifecycle", "npm:3.16.2"],
             ["figgy-pudding", "npm:3.5.2"],
             ["npm-packlist", "npm:1.4.8"],
@@ -4140,10 +4140,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@lerna/package", [
-        ["patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=browser-sdk%40workspace%3A.", {
-          "packageLocation": "./.yarn/cache/@lerna-package-patch-beae36fbbe-cf01031579.zip/node_modules/@lerna/package/",
+        ["patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.", {
+          "packageLocation": "./.yarn/cache/@lerna-package-patch-1472edf5b7-cf01031579.zip/node_modules/@lerna/package/",
           "packageDependencies": [
-            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["load-json-file", "npm:5.3.0"],
             ["npm-package-arg", "npm:6.1.1"],
             ["write-pkg", "npm:3.2.0"]
@@ -4152,10 +4152,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@lerna/package-graph", [
-        ["patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=browser-sdk%40workspace%3A.", {
-          "packageLocation": "./.yarn/cache/@lerna-package-graph-patch-3e259be81d-38d5bf34ca.zip/node_modules/@lerna/package-graph/",
+        ["patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.", {
+          "packageLocation": "./.yarn/cache/@lerna-package-graph-patch-c696ae8a26-38d5bf34ca.zip/node_modules/@lerna/package-graph/",
           "packageDependencies": [
-            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/prerelease-id-from-version", "npm:3.16.0"],
             ["@lerna/validation-error", "npm:3.13.0"],
             ["npm-package-arg", "npm:6.1.1"],
@@ -4193,7 +4193,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@lerna-project-npm-3.18.0-1e87e10b11-5b965b342c.zip/node_modules/@lerna/project/",
           "packageDependencies": [
             ["@lerna/project", "npm:3.18.0"],
-            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/validation-error", "npm:3.13.0"],
             ["cosmiconfig", "npm:5.2.1"],
             ["dedent", "npm:0.7.0"],
@@ -4212,7 +4212,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@lerna-project-npm-3.21.0-40593e6043-c2333cd3ab.zip/node_modules/@lerna/project/",
           "packageDependencies": [
             ["@lerna/project", "npm:3.21.0"],
-            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/validation-error", "npm:3.13.0"],
             ["cosmiconfig", "npm:5.2.1"],
             ["dedent", "npm:0.7.0"],
@@ -4255,17 +4255,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@lerna/log-packed", "npm:3.16.0"],
             ["@lerna/npm-conf", "npm:3.16.0"],
             ["@lerna/npm-dist-tag", "npm:3.18.5"],
-            ["@lerna/npm-publish", "patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/npm-publish", "patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/otplease", "npm:3.18.5"],
             ["@lerna/output", "npm:3.13.0"],
-            ["@lerna/pack-directory", "patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/pack-directory", "patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/prerelease-id-from-version", "npm:3.16.0"],
             ["@lerna/prompt", "npm:3.18.5"],
             ["@lerna/pulse-till-done", "npm:3.13.0"],
             ["@lerna/run-lifecycle", "npm:3.16.2"],
             ["@lerna/run-topologically", "npm:3.18.5"],
             ["@lerna/validation-error", "npm:3.13.0"],
-            ["@lerna/version", "patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/version", "patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["figgy-pudding", "npm:3.5.2"],
             ["fs-extra", "npm:8.1.0"],
             ["npm-package-arg", "npm:6.1.1"],
@@ -4293,7 +4293,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@lerna-query-graph-npm-3.18.5-0381bc9e9b-2ea2aa6eab.zip/node_modules/@lerna/query-graph/",
           "packageDependencies": [
             ["@lerna/query-graph", "npm:3.18.5"],
-            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package-graph", "patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["figgy-pudding", "npm:3.5.2"]
           ],
           "linkType": "HARD",
@@ -4373,7 +4373,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@lerna/symlink-binary", "npm:3.17.0"],
             ["@lerna/create-symlink", "npm:3.16.2"],
-            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/package", "patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["fs-extra", "npm:8.1.0"],
             ["p-map", "npm:2.1.0"]
           ],
@@ -4416,10 +4416,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@lerna/version", [
-        ["patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=browser-sdk%40workspace%3A.", {
-          "packageLocation": "./.yarn/cache/@lerna-version-patch-eb41c9898b-e5c4641e0a.zip/node_modules/@lerna/version/",
+        ["patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.", {
+          "packageLocation": "./.yarn/cache/@lerna-version-patch-043b99cbd8-e5c4641e0a.zip/node_modules/@lerna/version/",
           "packageDependencies": [
-            ["@lerna/version", "patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/version", "patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["@lerna/check-working-tree", "npm:3.16.5"],
             ["@lerna/child-process", "npm:3.16.5"],
             ["@lerna/collect-updates", "npm:3.20.0"],
@@ -4815,6 +4815,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tootallnate/once", "npm:1.1.2"]
           ],
           "linkType": "HARD",
+        }]
+      ]],
+      ["@tosspayments/browser-sdk-monorepo", [
+        ["workspace:.", {
+          "packageLocation": "./",
+          "packageDependencies": [
+            ["@tosspayments/browser-sdk-monorepo", "workspace:."],
+            ["jest", "npm:26.6.3"],
+            ["lerna", "npm:3.22.1"],
+            ["prettier", "npm:2.0.2"],
+            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"]
+          ],
+          "linkType": "SOFT",
         }]
       ]],
       ["@tosspayments/connectpay-sdk", [
@@ -6061,19 +6074,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["browser-process-hrtime", "npm:1.0.0"]
           ],
           "linkType": "HARD",
-        }]
-      ]],
-      ["browser-sdk", [
-        ["workspace:.", {
-          "packageLocation": "./",
-          "packageDependencies": [
-            ["browser-sdk", "workspace:."],
-            ["jest", "npm:26.6.3"],
-            ["lerna", "npm:3.22.1"],
-            ["prettier", "npm:2.0.2"],
-            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"]
-          ],
-          "linkType": "SOFT",
         }]
       ]],
       ["browserslist", [
@@ -10916,7 +10916,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@lerna/list", "npm:3.21.0"],
             ["@lerna/publish", "npm:3.22.1"],
             ["@lerna/run", "npm:3.21.0"],
-            ["@lerna/version", "patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=browser-sdk%40workspace%3A."],
+            ["@lerna/version", "patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."],
             ["import-local", "npm:2.0.0"],
             ["npmlog", "npm:4.1.2"]
           ],

@@ -2709,9 +2709,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna/npm-publish@patch:@lerna/npm-publish@npm:3.18.5#.yarn/patches/@lerna/npm-publish.patch::locator=browser-sdk%40workspace%3A.":
+"@lerna/npm-publish@patch:@lerna/npm-publish@npm:3.18.5#.yarn/patches/@lerna/npm-publish.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.18.5
-  resolution: "@lerna/npm-publish@patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=browser-sdk%40workspace%3A."
+  resolution: "@lerna/npm-publish@patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     "@evocateur/libnpmpublish": ^1.2.2
     "@lerna/otplease": 3.18.5
@@ -2772,9 +2772,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna/pack-directory@patch:@lerna/pack-directory@npm:3.16.4#.yarn/patches/@lerna/pack-directory.patch::locator=browser-sdk%40workspace%3A.":
+"@lerna/pack-directory@patch:@lerna/pack-directory@npm:3.16.4#.yarn/patches/@lerna/pack-directory.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.16.4
-  resolution: "@lerna/pack-directory@patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=browser-sdk%40workspace%3A."
+  resolution: "@lerna/pack-directory@patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     "@lerna/get-packed": 3.16.0
     "@lerna/package": 3.16.0
@@ -2801,9 +2801,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna/package-graph@patch:@lerna/package-graph@npm:3.18.5#.yarn/patches/@lerna/package-graph.patch::locator=browser-sdk%40workspace%3A.":
+"@lerna/package-graph@patch:@lerna/package-graph@npm:3.18.5#.yarn/patches/@lerna/package-graph.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.18.5
-  resolution: "@lerna/package-graph@patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=browser-sdk%40workspace%3A."
+  resolution: "@lerna/package-graph@patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     "@lerna/prerelease-id-from-version": 3.16.0
     "@lerna/validation-error": 3.13.0
@@ -2825,9 +2825,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna/package@patch:@lerna/package@npm:3.16.0#.yarn/patches/@lerna/package.patch::locator=browser-sdk%40workspace%3A.":
+"@lerna/package@patch:@lerna/package@npm:3.16.0#.yarn/patches/@lerna/package.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.16.0
-  resolution: "@lerna/package@patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=browser-sdk%40workspace%3A."
+  resolution: "@lerna/package@patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     load-json-file: ^5.3.0
     npm-package-arg: ^6.1.0
@@ -3104,9 +3104,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna/version@patch:@lerna/version@npm:3.20.2#.yarn/patches/@lerna/version.patch::locator=browser-sdk%40workspace%3A.":
+"@lerna/version@patch:@lerna/version@npm:3.20.2#.yarn/patches/@lerna/version.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.20.2
-  resolution: "@lerna/version@patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=browser-sdk%40workspace%3A."
+  resolution: "@lerna/version@patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     "@lerna/check-working-tree": 3.16.5
     "@lerna/child-process": 3.16.5
@@ -3419,6 +3419,17 @@ __metadata:
   checksum: e1fb1bbbc12089a0cb9433dc290f97bddd062deadb6178ce9bcb93bb7c1aecde5e60184bc7065aec42fe1663622a213493c48bbd4972d931aae48315f18e1be9
   languageName: node
   linkType: hard
+
+"@tosspayments/browser-sdk-monorepo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@tosspayments/browser-sdk-monorepo@workspace:."
+  dependencies:
+    jest: ^26.6.3
+    lerna: ^3.22.1
+    prettier: ^2.0.2
+    typescript: ^4.5.2
+  languageName: unknown
+  linkType: soft
 
 "@tosspayments/connectpay-sdk@workspace:packages/connectpay-sdk":
   version: 0.0.0-use.local
@@ -4431,17 +4442,6 @@ __metadata:
   checksum: e30f868cdb770b1201afb714ad1575dd86366b6e861900884665fb627109b3cc757c40067d3bfee1ff2a29c835257ea30725a8018a9afd02ac1c24b408b1e45f
   languageName: node
   linkType: hard
-
-"browser-sdk@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "browser-sdk@workspace:."
-  dependencies:
-    jest: ^26.6.3
-    lerna: ^3.22.1
-    prettier: ^2.0.2
-    typescript: ^4.5.2
-  languageName: unknown
-  linkType: soft
 
 "browserslist@npm:^4.17.5, browserslist@npm:^4.17.6":
   version: 4.17.6
