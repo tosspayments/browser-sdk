@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/connectpay-sdk@0.2.3...@tosspayments/connectpay-sdk@1.0.0) (2021-12-07)
+
+
+### Features
+
+* **connectpay-sdk:** types version up ([e109c2a](https://github.com/tosspayments/browser-sdk/commit/e109c2a065a212faec8f2da3983c1dce98ed3165))
+
+
+### BREAKING CHANGES
+
+* **connectpay-sdk:** v1 release
+
+
+
+
+
 ## [0.2.3](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/connectpay-sdk@0.2.2...@tosspayments/connectpay-sdk@0.2.3) (2021-12-06)
 
 
