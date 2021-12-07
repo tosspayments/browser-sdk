@@ -4828,7 +4828,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-babel", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:5.3.0"],
             ["@rollup/plugin-commonjs", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:21.0.1"],
             ["@rollup/plugin-typescript", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:8.3.0"],
-            ["@tosspayments/connectpay__types", "npm:1.4.6"],
+            ["@tosspayments/connectpay__types", "npm:1.4.7"],
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],
             ["@types/jest", "npm:27.0.3"],
             ["jest", "virtual:452e8899d3ee93a1befe48ede1f8158029e08685b22613ab5b7cffb016f25ef04b487635d017cf0d85395d0be0ad414be81b8d8bff65580505385c5114e2fb8f#npm:27.3.1"],
@@ -4843,20 +4843,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@tosspayments/connectpay-types", [
-        ["npm:0.1.3", {
-          "packageLocation": "./.yarn/cache/@tosspayments-connectpay-types-npm-0.1.3-96e611af9b-6de1f22bae.zip/node_modules/@tosspayments/connectpay-types/",
+        ["npm:0.2.0", {
+          "packageLocation": "./.yarn/cache/@tosspayments-connectpay-types-npm-0.2.0-ea47cec641-f2dcbf4f4f.zip/node_modules/@tosspayments/connectpay-types/",
           "packageDependencies": [
-            ["@tosspayments/connectpay-types", "npm:0.1.3"]
+            ["@tosspayments/connectpay-types", "npm:0.2.0"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["@tosspayments/connectpay__types", [
-        ["npm:1.4.6", {
-          "packageLocation": "./.yarn/cache/@tosspayments-connectpay__types-npm-1.4.6-acc01edfc3-8fa3f675b6.zip/node_modules/@tosspayments/connectpay__types/",
+        ["npm:1.4.7", {
+          "packageLocation": "./.yarn/cache/@tosspayments-connectpay__types-npm-1.4.7-8986bcab22-fa8b92c38f.zip/node_modules/@tosspayments/connectpay__types/",
           "packageDependencies": [
-            ["@tosspayments/connectpay__types", "npm:1.4.6"],
-            ["@tosspayments/connectpay-types", "npm:0.1.3"]
+            ["@tosspayments/connectpay__types", "npm:1.4.7"],
+            ["@tosspayments/connectpay-types", "npm:0.2.0"]
           ],
           "linkType": "HARD",
         }]

@@ -34,7 +34,7 @@
     "types"
   ],
   "dependencies": {
-    "@tosspayments/connectpay__types": "^1.4.6",
+    "@tosspayments/connectpay__types": "^1.4.7",
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
   },
   "publishConfig": {
