@@ -1,5 +1,5 @@
 {
-  "name": "browser-sdk",
+  "name": "@tosspayments/browser-sdk-monorepo",
   "private": true,
   "description": "Browser SDK Mono repository",
   "version": "1.3.3",
