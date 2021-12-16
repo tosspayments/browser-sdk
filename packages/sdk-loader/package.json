@@ -1,13 +1,19 @@
 {
   "name": "@tosspayments/sdk-loader",
-  "private": true,
   "description": "JavaScript SDK Loader by <script> tag injection",
   "version": "1.0.3",
   "main": "src/index.ts",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "module": "esm/index.js"
+  },
   "author": "Toss Payments",
   "scripts": {
-    "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly --declarationDir types",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
+    "prepack": "yarn build"
   },
   "license": "MIT",
   "devDependencies": {
