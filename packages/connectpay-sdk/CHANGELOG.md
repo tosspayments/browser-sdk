@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/connectpay-sdk@1.0.1...@tosspayments/connectpay-sdk@1.0.2) (2021-12-16)
+
+
+### Bug Fixes
+
+* **connectpay-sdk:** sdk-loader version update ([d4c71b6](https://github.com/tosspayments/browser-sdk/commit/d4c71b6cc5dc17399aa7c1de83acb8e5b3bd7f96))
+
+
+
+
+
 ## [1.0.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/connectpay-sdk@1.0.0...@tosspayments/connectpay-sdk@1.0.1) (2021-12-07)
 
 **Note:** Version bump only for package @tosspayments/connectpay-sdk
