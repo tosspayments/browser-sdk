@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.0.4...@tosspayments/brandpay-sdk@1.0.5) (2022-04-08)
+
+
+### Bug Fixes
+
+* **brandpay-sdk:** Make SDK installable on CodeSandbox ([#16](https://github.com/tosspayments/browser-sdk/issues/16)) ([390dd92](https://github.com/tosspayments/browser-sdk/commit/390dd923550cd760cd0156988f82de78ee339b9a))
+
+
+
+
+
 ## [1.0.4](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.0.3...@tosspayments/brandpay-sdk@1.0.4) (2022-04-06)
 
 
