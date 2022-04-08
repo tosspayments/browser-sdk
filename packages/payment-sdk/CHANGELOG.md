@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.0.2...@tosspayments/payment-sdk@1.0.3) (2022-04-08)
+
+
+### Bug Fixes
+
+* **payment-sdk:** make sdk installable on codesandbox ([#15](https://github.com/tosspayments/browser-sdk/issues/15)) ([4bf2a46](https://github.com/tosspayments/browser-sdk/commit/4bf2a46e0d530bcd1f22385bfebcecd78241fb79))
+
+
+
+
+
 ## [1.0.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.0.1...@tosspayments/payment-sdk@1.0.2) (2021-12-16)
 
 
