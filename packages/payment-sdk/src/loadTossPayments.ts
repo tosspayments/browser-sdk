@@ -19,6 +19,11 @@ export function loadTossPayments(
           `[TossPayments SDK] It looks like runtime is not from browser. This method is only execuatable on browser.`
         );
       },
+      cancelPayment() {
+        throw new Error(
+          `[TossPayments SDK] It looks like runtime is not from browser. This method is only execuatable on browser.`
+        );
+      },
     });
   }
 
