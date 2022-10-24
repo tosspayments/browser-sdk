@@ -1,7 +1,7 @@
 {
   "name": "@tosspayments/payment-sdk",
   "description": "TossPayments.js Payment SDK",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",
