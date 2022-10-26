@@ -1,7 +1,7 @@
 {
   "name": "@tosspayments/brandpay-sdk",
   "description": "TossPayments.js Brand Pay SDK",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "types/index.d.ts",
