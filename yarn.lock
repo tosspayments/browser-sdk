@@ -3430,7 +3430,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.3.0
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
-    "@tosspayments/brandpay__types": ^1.6.0
+    "@tosspayments/brandpay__types": ^1.7.0
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
     "@types/jest": ^27.0.0
     jest: ^27.0.7
@@ -3455,12 +3455,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tosspayments/brandpay__types@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "@tosspayments/brandpay__types@npm:1.6.0"
+"@tosspayments/brandpay__types@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@tosspayments/brandpay__types@npm:1.7.0"
   dependencies:
     "@tosspayments/brandpay-types": ^0.2.2
-  checksum: 4d7cbe86b1550dadea6352f7309a1962bd6b6326d7033f65995e08d157eb5019c2cad400806fc23362e43c0016b0ffeb6211cd643ee54d86465f080c71990742
+  checksum: b6f5846fb1cb609c54087a116db3ef4ed4f482f9c3b0437cbb87e2e21625f4a5fd45a4616f9d66f768fc3bd0e1ff73d43ca51fcd955e136645ddd561ee32611a
   languageName: node
   linkType: hard
 
