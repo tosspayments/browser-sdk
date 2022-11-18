@@ -4903,7 +4903,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-babel", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:5.3.0"],
             ["@rollup/plugin-commonjs", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:21.0.1"],
             ["@rollup/plugin-typescript", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:8.3.0"],
-            ["@tosspayments/payment__types", "npm:1.10.21"],
+            ["@tosspayments/payment__types", "npm:1.10.23"],
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],
             ["@types/jest", "npm:27.0.3"],
             ["jest", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:27.3.1"],
@@ -4952,21 +4952,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@tosspayments/payment__types", [
-        ["npm:1.10.21", {
-          "packageLocation": "./.yarn/cache/@tosspayments-payment__types-npm-1.10.21-b9d68802fc-096127846e.zip/node_modules/@tosspayments/payment__types/",
+        ["npm:1.10.23", {
+          "packageLocation": "./.yarn/cache/@tosspayments-payment__types-npm-1.10.23-751d95067b-36e1519336.zip/node_modules/@tosspayments/payment__types/",
           "packageDependencies": [
-            ["@tosspayments/payment__types", "npm:1.10.21"],
-            ["@tosspayments/sdk-constants", "npm:0.2.0"]
+            ["@tosspayments/payment__types", "npm:1.10.23"],
+            ["@tosspayments/sdk-constants", "npm:0.2.1"]
           ],
           "linkType": "HARD",
         }]
       ]],
       ["@tosspayments/sdk-constants", [
-        ["npm:0.2.0", {
-          "packageLocation": "./.yarn/cache/@tosspayments-sdk-constants-npm-0.2.0-7ef5397922-b5961c8efb.zip/node_modules/@tosspayments/sdk-constants/",
+        ["npm:0.2.1", {
+          "packageLocation": "./.yarn/cache/@tosspayments-sdk-constants-npm-0.2.1-45554a25d6-a035acc2c6.zip/node_modules/@tosspayments/sdk-constants/",
           "packageDependencies": [
-            ["@tosspayments/sdk-constants", "npm:0.2.0"],
-            ["type-fest", "npm:2.12.2"]
+            ["@tosspayments/sdk-constants", "npm:0.2.1"],
+            ["type-fest", "npm:2.19.0"]
           ],
           "linkType": "HARD",
         }]
@@ -15041,10 +15041,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:2.12.2", {
-          "packageLocation": "./.yarn/cache/type-fest-npm-2.12.2-5ce8e0a551-ee69676da1.zip/node_modules/type-fest/",
+        ["npm:2.19.0", {
+          "packageLocation": "./.yarn/cache/type-fest-npm-2.19.0-918b953248-a4ef07ece2.zip/node_modules/type-fest/",
           "packageDependencies": [
-            ["type-fest", "npm:2.12.2"]
+            ["type-fest", "npm:2.19.0"]
           ],
           "linkType": "HARD",
         }]
