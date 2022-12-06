@@ -11,17 +11,17 @@ export function loadTossPayments(
     return Promise.resolve({
       requestPayment() {
         throw new Error(
-          `[TossPayments SDK] It looks like runtime is not from browser. This method is only execuatable on browser.`
+          `[TossPayments SDK] It looks like runtime is not from browser. This method is only executable on browser.`
         );
       },
       requestBillingAuth() {
         throw new Error(
-          `[TossPayments SDK] It looks like runtime is not from browser. This method is only execuatable on browser.`
+          `[TossPayments SDK] It looks like runtime is not from browser. This method is only executable on browser.`
         );
       },
       cancelPayment() {
         throw new Error(
-          `[TossPayments SDK] It looks like runtime is not from browser. This method is only execuatable on browser.`
+          `[TossPayments SDK] It looks like runtime is not from browser. This method is only executable on browser.`
         );
       },
     });
