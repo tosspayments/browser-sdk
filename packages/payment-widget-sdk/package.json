@@ -1,7 +1,7 @@
 {
   "name": "@tosspayments/payment-widget-sdk",
   "description": "TossPayments.js Payment Widget SDK",
-  "version": "0.5.0",
+  "version": "0.4.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "types/index.d.ts",
@@ -35,7 +35,7 @@
     "types"
   ],
   "dependencies": {
-    "@tosspayments/payment-widget__types": "^0.0.3"
+    "@tosspayments/payment-widget__types": "^0.0.4"
   },
   "publishConfig": {
     "access": "public"
