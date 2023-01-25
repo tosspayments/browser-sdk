@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.2.5...@tosspayments/payment-sdk@1.3.0) (2023-01-25)
+
+
+### Features
+
+* **payment-sdk:** 타입 버전 업 ([#40](https://github.com/tosspayments/browser-sdk/issues/40)) ([f4d20fe](https://github.com/tosspayments/browser-sdk/commit/f4d20feedd53ff6591dde20ac5f7f06a2dd70c57))
+
+
+
+
+
 ## [1.2.5](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.2.4...@tosspayments/payment-sdk@1.2.5) (2022-12-19)
 
 **Note:** Version bump only for package @tosspayments/payment-sdk
