@@ -35,7 +35,7 @@
     "types"
   ],
   "dependencies": {
-    "@tosspayments/brandpay__types": "^1.11.2"
+    "@tosspayments/brandpay__types": "^1.11.4"
   },
   "publishConfig": {
     "access": "public"
