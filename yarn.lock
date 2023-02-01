@@ -3508,7 +3508,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.3.0
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
-    "@tosspayments/payment-widget__types": ^0.0.5
+    "@tosspayments/payment-widget__types": ^0.0.7
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
     "@types/jest": ^27.0.0
     jest: ^27.0.7
@@ -3521,10 +3521,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tosspayments/payment-widget__types@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@tosspayments/payment-widget__types@npm:0.0.5"
-  checksum: fccabb5d39942818633b22e6d87a57d81a2190fc804322a13269f962078641c4104d99e87d9a0d3288ca87fe632722cd831bf30f013bb16d42aca4ad866ab8a6
+"@tosspayments/payment-widget__types@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@tosspayments/payment-widget__types@npm:0.0.7"
+  checksum: a3ef4457a62c094108e0653dffdc1700bfe34cd262a91390cf56ae77ff0748b471b97fc173f4c3428935c78a7cb80f58f7fc5383756c2dd92e59f6340a037af8
   languageName: node
   linkType: hard
 
