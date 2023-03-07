@@ -1,4 +1,4 @@
-import { SCRIPT_URL } from './constants';
+import { SCRIPT_ID, SCRIPT_URL } from './constants';
 import { loadTossPayments } from './loadTossPayments';
 
 function dispatchLoadEvent() {
@@ -25,6 +25,7 @@ describe('loadTossPayments', () => {
     const script = document.querySelector(`script[src="${SCRIPT_URL}"]`);
 
     expect(script).not.toBeNull();
+    expect(script?.id).toBe(SCRIPT_ID);
   });
 
   test('2회 이상의 중복 호출 시에도 1회만 inject한다', async () => {
@@ -51,6 +52,7 @@ describe('loadTossPayments', () => {
     await loadPromise;
 
     const script = document.querySelector(`script[src="${testSource}"]`);
+    expect(script?.id).toBe(SCRIPT_ID);
 
     expect(script).not.toBeNull();
   });
