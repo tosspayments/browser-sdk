@@ -1,6 +1,6 @@
 import type { PaymentWidgetConstructor, PaymentWidgetInstance } from '@tosspayments/payment-widget__types';
 import { loadScript } from '@tosspayments/sdk-loader';
-import { SCRIPT_URL } from './constants';
+import { SCRIPT_ID, SCRIPT_URL } from './constants';
 
 type PaymentWidgetParams = Parameters<PaymentWidgetConstructor>;
 
@@ -17,7 +17,7 @@ export function loadPaymentWidget(
   }
 
   // regenerator-runtime 의존성을 없애기 위해 `async` 키워드를 사용하지 않는다
-  return loadScript<PaymentWidgetConstructor>(src, 'PaymentWidget').then((PaymentWidget) => {
+  return loadScript<PaymentWidgetConstructor>(src, 'PaymentWidget', SCRIPT_ID).then((PaymentWidget) => {
     return PaymentWidget(clientKey, customerKey);
   });
 }

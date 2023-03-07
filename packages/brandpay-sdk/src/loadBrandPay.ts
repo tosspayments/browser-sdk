@@ -1,6 +1,6 @@
 import type { BrandPayConstructor, BrandPayInstance } from '@tosspayments/brandpay__types';
 import { loadScript } from '@tosspayments/sdk-loader';
-import { SCRIPT_URL } from './constants';
+import { SCRIPT_ID, SCRIPT_URL } from './constants';
 
 type BrandPayParams = Parameters<BrandPayConstructor>;
 
@@ -18,7 +18,7 @@ export function loadBrandPay(
   }
 
   // regenerator-runtime 의존성을 없애기 위해 `async` 키워드를 사용하지 않는다
-  return loadScript<BrandPayConstructor>(src, 'BrandPay').then((BrandPay) => {
+  return loadScript<BrandPayConstructor>(src, 'BrandPay', SCRIPT_ID).then((BrandPay) => {
     return BrandPay(clientKey, customerKey, options);
   });
 }

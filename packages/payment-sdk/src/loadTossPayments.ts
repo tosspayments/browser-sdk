@@ -1,6 +1,6 @@
 import { TossPaymentsInstance, TossPaymentsConstructor } from '@tosspayments/payment__types';
 import { loadScript } from '@tosspayments/sdk-loader';
-import { SCRIPT_URL } from './constants';
+import { SCRIPT_ID, SCRIPT_URL } from './constants';
 
 export function loadTossPayments(
   clientKey: string,
@@ -28,7 +28,7 @@ export function loadTossPayments(
   }
 
   // regenerator-runtime 의존성을 없애기 위해 `async` 키워드를 사용하지 않는다
-  return loadScript<TossPaymentsConstructor>(src, 'TossPayments').then((TossPayments) => {
+  return loadScript<TossPaymentsConstructor>(src, 'TossPayments', SCRIPT_ID).then((TossPayments) => {
     return TossPayments(clientKey);
   });
 }

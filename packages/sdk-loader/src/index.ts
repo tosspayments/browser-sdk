@@ -1,6 +1,6 @@
 let cachedPromise: Promise<any> | undefined;
 
-export function loadScript<Namespace>(src: string, namespace: string): Promise<Namespace> {
+export function loadScript<Namespace>(src: string, namespace: string, id?: string): Promise<Namespace> {
   const existingElement = document.querySelector(`[src="${src}"]`);
 
   if (existingElement != null && cachedPromise !== undefined) {
@@ -13,6 +13,9 @@ export function loadScript<Namespace>(src: string, namespace: string): Promise<N
 
   const script = document.createElement('script');
   script.src = src;
+  if (id) {
+    script.id = id;
+  }
 
   cachedPromise = new Promise<Namespace>((resolve, reject) => {
     document.head.appendChild(script);
