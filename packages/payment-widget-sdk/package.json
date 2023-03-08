@@ -35,7 +35,7 @@
     "types"
   ],
   "dependencies": {
-    "@tosspayments/payment-widget__types": "^0.0.8"
+    "@tosspayments/payment-widget__types": "^0.0.9"
   },
   "publishConfig": {
     "access": "public"
