@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.0...@tosspayments/payment-sdk@1.5.1) (2023-03-15)
+
+
+### Bug Fixes
+
+* src로 스크립트 찾아서 clear ([#49](https://github.com/tosspayments/browser-sdk/issues/49)) ([966fd30](https://github.com/tosspayments/browser-sdk/commit/966fd301cd5344cbf4a110d2874d1cdf9306c4d2))
+
+
+
+
+
 # [1.5.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.4.0...@tosspayments/payment-sdk@1.5.0) (2023-02-28)
 
 

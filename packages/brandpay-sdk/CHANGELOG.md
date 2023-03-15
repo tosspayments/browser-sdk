@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.2.0...@tosspayments/brandpay-sdk@1.1.8) (2023-03-15)
+
+
+### Bug Fixes
+
+* src로 스크립트 찾아서 clear ([#49](https://github.com/tosspayments/browser-sdk/issues/49)) ([966fd30](https://github.com/tosspayments/browser-sdk/commit/966fd301cd5344cbf4a110d2874d1cdf9306c4d2))
+
+
+
+
+
 ## [1.1.7](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.1.6...@tosspayments/brandpay-sdk@1.1.7) (2023-01-30)
 
 
