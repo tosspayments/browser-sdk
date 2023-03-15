@@ -1,7 +1,7 @@
-import { SCRIPT_ID } from './constants';
+import { SCRIPT_URL } from './constants';
 
 export function clearPaymentWidget() {
-  const script = document.getElementById(SCRIPT_ID);
+  const script = document.querySelector(`script[src="${SCRIPT_URL}"]`);
 
   script?.parentElement?.removeChild(script);
   window.PaymentWidget = undefined;
