@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.0...@tosspayments/payment-sdk@1.6.1) (2023-03-24)
+
+
+### Bug Fixes
+
+* **payment-sdk:** ibk, amex 코드 추가 ([#54](https://github.com/tosspayments/browser-sdk/issues/54)) ([793bf94](https://github.com/tosspayments/browser-sdk/commit/793bf9400d6601158e8465bb540cb285e71113f3))
+
+
+
+
+
 # [1.6.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.5.1...@tosspayments/payment-sdk@1.6.0) (2023-03-24)
 
 
