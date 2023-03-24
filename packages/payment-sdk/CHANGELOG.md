@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.5.1...@tosspayments/payment-sdk@1.6.0) (2023-03-24)
+
+
+### Features
+
+* **payment-sdk:** 애플페이 추가 ([#53](https://github.com/tosspayments/browser-sdk/issues/53)) ([410e91e](https://github.com/tosspayments/browser-sdk/commit/410e91ef02fc9375e45380932d78230d054b8662))
+
+
+
+
+
 ## [1.5.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.0...@tosspayments/payment-sdk@1.5.1) (2023-03-15)
 
 
