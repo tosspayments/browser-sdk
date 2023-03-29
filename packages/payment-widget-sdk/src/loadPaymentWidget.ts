@@ -10,7 +10,7 @@ type PaymentWidgetParams = Parameters<PaymentWidgetConstructor>;
 export function loadPaymentWidget(
   clientKey: PaymentWidgetParams[0],
   customerKey: PaymentWidgetParams[1],
-  options: PaymentWidgetParams[2],
+  options?: PaymentWidgetParams[2],
   loadOptions: { src?: string } = {}
 ): Promise<PaymentWidgetInstance> {
   const { src = SCRIPT_URL } = loadOptions;
