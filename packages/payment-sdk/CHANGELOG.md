@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.1...@tosspayments/payment-sdk@1.6.2) (2023-05-31)
+
+
+### Bug Fixes
+
+* **payment-sdk:** 해외간편결제 타입 추가 ([#58](https://github.com/tosspayments/browser-sdk/issues/58)) ([c50dc9a](https://github.com/tosspayments/browser-sdk/commit/c50dc9a8033c74c088b9198194228a3850d22ec2))
+
+
+
+
+
 ## [1.6.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.0...@tosspayments/payment-sdk@1.6.1) (2023-03-24)
 
 
