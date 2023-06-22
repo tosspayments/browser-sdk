@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-widget-sdk@0.8.1...@tosspayments/payment-widget-sdk@0.8.2) (2023-06-22)
+
+
+### Bug Fixes
+
+* **payment-widget-sdk:** 결제위젯 payment, brandpay type 의존성 추가 ([#61](https://github.com/tosspayments/browser-sdk/issues/61)) ([93ef161](https://github.com/tosspayments/browser-sdk/commit/93ef161ad7f4224b3bd005e5f8ae77dedc7bc861))
+
+
+
+
+
 ## [0.8.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-widget-sdk@0.8.0...@tosspayments/payment-widget-sdk@0.8.1) (2023-06-22)
 
 
