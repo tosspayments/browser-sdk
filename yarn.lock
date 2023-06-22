@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 5
+  version: 6
   cacheKey: 8
 
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.8.3":
@@ -2711,7 +2711,7 @@ __metadata:
 
 "@lerna/npm-publish@patch:@lerna/npm-publish@npm:3.18.5#.yarn/patches/@lerna/npm-publish.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.18.5
-  resolution: "@lerna/npm-publish@patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=a9ceaf&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
+  resolution: "@lerna/npm-publish@patch:@lerna/npm-publish@npm%3A3.18.5#.yarn/patches/@lerna/npm-publish.patch::version=3.18.5&hash=ed49da&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     "@evocateur/libnpmpublish": ^1.2.2
     "@lerna/otplease": 3.18.5
@@ -2774,7 +2774,7 @@ __metadata:
 
 "@lerna/pack-directory@patch:@lerna/pack-directory@npm:3.16.4#.yarn/patches/@lerna/pack-directory.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.16.4
-  resolution: "@lerna/pack-directory@patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=752ea0&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
+  resolution: "@lerna/pack-directory@patch:@lerna/pack-directory@npm%3A3.16.4#.yarn/patches/@lerna/pack-directory.patch::version=3.16.4&hash=470ee4&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     "@lerna/get-packed": 3.16.0
     "@lerna/package": 3.16.0
@@ -2803,7 +2803,7 @@ __metadata:
 
 "@lerna/package-graph@patch:@lerna/package-graph@npm:3.18.5#.yarn/patches/@lerna/package-graph.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.18.5
-  resolution: "@lerna/package-graph@patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=8fe86d&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
+  resolution: "@lerna/package-graph@patch:@lerna/package-graph@npm%3A3.18.5#.yarn/patches/@lerna/package-graph.patch::version=3.18.5&hash=e346e9&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     "@lerna/prerelease-id-from-version": 3.16.0
     "@lerna/validation-error": 3.13.0
@@ -2827,7 +2827,7 @@ __metadata:
 
 "@lerna/package@patch:@lerna/package@npm:3.16.0#.yarn/patches/@lerna/package.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.16.0
-  resolution: "@lerna/package@patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=90e01a&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
+  resolution: "@lerna/package@patch:@lerna/package@npm%3A3.16.0#.yarn/patches/@lerna/package.patch::version=3.16.0&hash=12529f&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     load-json-file: ^5.3.0
     npm-package-arg: ^6.1.0
@@ -3106,7 +3106,7 @@ __metadata:
 
 "@lerna/version@patch:@lerna/version@npm:3.20.2#.yarn/patches/@lerna/version.patch::locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A.":
   version: 3.20.2
-  resolution: "@lerna/version@patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=6b6112&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
+  resolution: "@lerna/version@patch:@lerna/version@npm%3A3.20.2#.yarn/patches/@lerna/version.patch::version=3.20.2&hash=dba19c&locator=%40tosspayments%2Fbrowser-sdk-monorepo%40workspace%3A."
   dependencies:
     "@lerna/check-working-tree": 3.16.5
     "@lerna/child-process": 3.16.5
@@ -3508,7 +3508,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.3.0
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
-    "@tosspayments/payment-widget__types": ^0.1.1
+    "@tosspayments/payment-widget__types": ^0.1.3
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
     "@types/jest": ^27.0.0
     jest: ^27.0.7
@@ -3533,12 +3533,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tosspayments/payment-widget__types@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "@tosspayments/payment-widget__types@npm:0.1.1"
+"@tosspayments/payment-widget__types@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "@tosspayments/payment-widget__types@npm:0.1.3"
   dependencies:
     "@tosspayments/payment-widget-types": ^0.0.4
-  checksum: 6b317f24639b1c5127c42e2b60592a05d43f03fb215f12edbf60fffd0704214767bb54d79be9f59c1937ab63f9aa7e914a80e790e68135451f45ef914312088a
+  checksum: bd44acb046ca000773195aca4846af659dc712c71e0fe15970d1efff3e004882411be6827d12a9ac7b189839d48a2762b4994441f8cf65fb6949b76c1e123ceb
   languageName: node
   linkType: hard
 
@@ -6390,7 +6390,7 @@ __metadata:
 
 "fsevents@patch:fsevents@^2.1.2#~builtin<compat/fsevents>":
   version: 2.1.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.1.2#~builtin<compat/fsevents>::version=2.1.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.1.2#~builtin<compat/fsevents>::version=2.1.2&hash=31d12a"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -6399,7 +6399,7 @@ __metadata:
 
 "fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -11266,7 +11266,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>":
   version: 1.17.0
-  resolution: "resolve@patch:resolve@npm%3A1.17.0#~builtin<compat/resolve>::version=1.17.0&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.17.0#~builtin<compat/resolve>::version=1.17.0&hash=c3c19d"
   dependencies:
     path-parse: ^1.0.6
   checksum: 6fd799f282ddf078c4bc20ce863e3af01fa8cb218f0658d9162c57161a2dbafe092b13015b9a4c58d0e1e801cf7aa7a4f13115fea9db98c3f9a0c43e429bad6f
@@ -11275,7 +11275,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>":
   version: 1.20.0
-  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=c3c19d"
   dependencies:
     is-core-module: ^2.2.0
     path-parse: ^1.0.6
@@ -11285,7 +11285,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.18.1#~builtin<compat/resolve>":
   version: 1.19.0
-  resolution: "resolve@patch:resolve@npm%3A1.19.0#~builtin<compat/resolve>::version=1.19.0&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.19.0#~builtin<compat/resolve>::version=1.19.0&hash=c3c19d"
   dependencies:
     is-core-module: ^2.1.0
     path-parse: ^1.0.6
@@ -11295,7 +11295,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>":
   version: 1.15.1
-  resolution: "resolve@patch:resolve@npm%3A1.15.1#~builtin<compat/resolve>::version=1.15.1&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.15.1#~builtin<compat/resolve>::version=1.15.1&hash=c3c19d"
   dependencies:
     path-parse: ^1.0.6
   checksum: db40f1203ef19e18edc66801c7a5903b903f20c318c1d7d234dd5b792361bf336b556d27e7f1831871d15471d3d7ed7baad979a781fb57463a36ea1abd293608
@@ -12705,21 +12705,21 @@ __metadata:
 
 "typescript@patch:typescript@^4.4.4#~builtin<compat/typescript>":
   version: 4.4.4
-  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"
+  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=bbeadb"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: bd629ad0da4a15d79aaad56baf3ee7d96f6a181760d430ae77f8c5325df7bffd9edee57544a3970e3651e8b796fe03a5838a7eb39c6d46cc3866c0b23d36a0dd
+  checksum: 3d1b04449662193544b81d055479d03b4c5dca95f1a82f8922596f089d894c9fefbe16639d1d9dfe26a7054419645530cef44001bc17aed1fe1eb3c237e9b3c7
   languageName: node
   linkType: hard
 
 "typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
   version: 4.5.2
-  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"
+  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=bcec9a"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 53838d56aba6fcc947d63aa0771e5d966b1b648fddafed6e221d7f38c71219c4e036ece8cfe9e35ed80cf5a35ff4eb958934c993f99c3233773ec4f9ccd53f69
+  checksum: e25e689eba64f7da7cfc43f8ea76cac7176b56caba42655f0a4cb29c0b7c36e67ca54f33df95902859f56108464245d8b45bcdfe21e3d66d9560feb8db780246
   languageName: node
   linkType: hard
 
