@@ -3430,7 +3430,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.3.0
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
-    "@tosspayments/brandpay__types": ^1.11.4
+    "@tosspayments/brandpay__types": 1.11.7
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
     "@types/jest": ^27.0.0
     jest: ^27.0.7
@@ -3442,18 +3442,6 @@ __metadata:
     typescript: ^4.5.2
   languageName: unknown
   linkType: soft
-
-"@tosspayments/brandpay-types@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "@tosspayments/brandpay-types@npm:0.2.2"
-  peerDependencies:
-    typescript: ^4.1.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: d383779ae67c258c73f2765b3e6330c9802ec21aa9cc195d1a72b5989e052bced09677efcdc14757163e9bf105567c67933d1d9abee03a520128a66fd686b840
-  languageName: node
-  linkType: hard
 
 "@tosspayments/brandpay-types@npm:^0.2.4":
   version: 0.2.4
@@ -3467,12 +3455,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tosspayments/brandpay__types@npm:^1.11.4":
-  version: 1.12.0
-  resolution: "@tosspayments/brandpay__types@npm:1.12.0"
+"@tosspayments/brandpay-types@npm:^0.2.5":
+  version: 0.2.5
+  resolution: "@tosspayments/brandpay-types@npm:0.2.5"
+  peerDependencies:
+    typescript: ^4.1.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 44964837539cfc5ae34ac7f5f5d373ad63e158c2081bfedf8b309a3093d5b677f0c6d17e8471423ee8c26ecdc1c706ab4f9bf338c85bda2db1d0f019a514666a
+  languageName: node
+  linkType: hard
+
+"@tosspayments/brandpay__types@npm:1.11.7":
+  version: 1.11.7
+  resolution: "@tosspayments/brandpay__types@npm:1.11.7"
   dependencies:
-    "@tosspayments/brandpay-types": ^0.2.2
-  checksum: 8b1b252648143c497c57b6ff81d13279bd2cdb8763c737b2d30ed9650eaeab2f049bcea53f2f850317b6bcf52f27d30dbdae30a1f963ec699650e20f936abceb
+    "@tosspayments/brandpay-types": ^0.2.5
+  checksum: 61ef3faac555e416c225a26bd11418d4fece13a14313633b4f2684baba449c0446762d7ab043f046e6336842058058e2c9872da2f84ff2b0631c940c7007e352
   languageName: node
   linkType: hard
 
