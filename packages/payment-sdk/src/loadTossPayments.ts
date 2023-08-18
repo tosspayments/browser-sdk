@@ -2,9 +2,15 @@ import { TossPaymentsInstance, TossPaymentsConstructor } from '@tosspayments/pay
 import { loadScript } from '@tosspayments/sdk-loader';
 import { SCRIPT_URL } from './constants';
 
+type TossPaymentsParams = Parameters<TossPaymentsConstructor>;
+interface Options extends NonNullable<TossPaymentsParams[1]> {
+  src?: string;
+}
+
 export function loadTossPayments(
-  clientKey: string,
-  { src = SCRIPT_URL }: { src?: string } = {}
+  clientKey: TossPaymentsParams[0],
+  options: Options = {},
+  loadOptions: { src?: string } = {}
 ): Promise<TossPaymentsInstance> {
   // SSR 지원
   if (typeof window === 'undefined') {
@@ -27,8 +33,11 @@ export function loadTossPayments(
     });
   }
 
+  const { src: optionsSrc, ...tossPaymentsOptions } = options;
+  const src = loadOptions.src ?? optionsSrc ?? SCRIPT_URL;
+
   // regenerator-runtime 의존성을 없애기 위해 `async` 키워드를 사용하지 않는다
   return loadScript<TossPaymentsConstructor>(src, 'TossPayments').then((TossPayments) => {
-    return TossPayments(clientKey);
+    return TossPayments(clientKey, { ...tossPaymentsOptions });
   });
 }
