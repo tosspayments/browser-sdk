@@ -4923,7 +4923,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-babel", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:5.3.0"],
             ["@rollup/plugin-commonjs", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:21.0.1"],
             ["@rollup/plugin-typescript", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:8.3.0"],
-            ["@tosspayments/payment__types", "npm:1.64.2"],
+            ["@tosspayments/payment__types", "npm:1.66.1"],
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],
             ["@types/jest", "npm:27.0.3"],
             ["jest", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:27.3.1"],
@@ -5001,6 +5001,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@tosspayments-payment__types-npm-1.64.2-4e36dec287-a0011aa345.zip/node_modules/@tosspayments/payment__types/",
           "packageDependencies": [
             ["@tosspayments/payment__types", "npm:1.64.2"],
+            ["@tosspayments/sdk-constants", "npm:0.2.2"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:1.66.1", {
+          "packageLocation": "./.yarn/cache/@tosspayments-payment__types-npm-1.66.1-3534629ba0-7614660592.zip/node_modules/@tosspayments/payment__types/",
+          "packageDependencies": [
+            ["@tosspayments/payment__types", "npm:1.66.1"],
             ["@tosspayments/sdk-constants", "npm:0.2.2"]
           ],
           "linkType": "HARD",
