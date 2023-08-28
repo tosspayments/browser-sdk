@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.5](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.4...@tosspayments/payment-sdk@1.6.5) (2023-08-28)
+
+
+### Bug Fixes
+
+* **payment-sdk:** 현금영수증 미발행 타입 추가 ([#70](https://github.com/tosspayments/browser-sdk/issues/70)) ([8f17671](https://github.com/tosspayments/browser-sdk/commit/8f176718d1fff66bcb25f4928a3e1cad81e49bfc))
+
+
+
+
+
 ## [1.6.4](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.3...@tosspayments/payment-sdk@1.6.4) (2023-07-14)
 
 
