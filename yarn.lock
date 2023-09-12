@@ -3456,11 +3456,11 @@ __metadata:
   linkType: hard
 
 "@tosspayments/brandpay__types@npm:^1.13.0":
-  version: 1.13.1
-  resolution: "@tosspayments/brandpay__types@npm:1.13.1"
+  version: 1.13.2
+  resolution: "@tosspayments/brandpay__types@npm:1.13.2"
   dependencies:
     "@tosspayments/brandpay-types": ^0.2.5
-  checksum: f2be9eb0a3113b7cb27bf011efc151f3bcc60eb0e66cb8311512f90ee4774c2515ff138385063fe6ac1cce26b2e9b537a4d15b6920e3f056df245a09a81a37c8
+  checksum: c2d9870025e0603217983acdd7a1412f047fff4c38efe691eef2288750af000d4f757449ecebf88c83a55cc3465ffe7b32cca805b09405388f177790cae89c2f
   languageName: node
   linkType: hard
 
