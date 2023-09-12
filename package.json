@@ -10,6 +10,9 @@
     "prettier": "^2.0.2",
     "typescript": "^4.5.2"
   },
+  "scripts": {
+    "upgrade": "yarn upgrade-interactive"
+  },
   "resolutions": {
     "@lerna/version": "patch:@lerna/version@npm:3.20.2#.yarn/patches/@lerna/version.patch",
     "@lerna/npm-publish": "patch:@lerna/npm-publish@npm:3.18.5#.yarn/patches/@lerna/npm-publish.patch",
