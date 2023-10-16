@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
       - 'beta'
       - 'alpha'
   pull_request:
@@ -28,21 +28,21 @@ jobs:
           node-version: 14
       - name: 'SINCE_FROM_REF 환경변수 설정'
         run: |
-          if [[ ${{ github.ref }} == 'refs/heads/master' ]]; then
+          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
             echo "SINCE_FROM_REF=$(git rev-parse HEAD~1)" >> $GITHUB_ENV
           elif [[ ${{ github.ref }} == 'refs/heads/staging'* ]]; then
             echo "SINCE_FROM_REF=$(git rev-parse HEAD~1)" >> $GITHUB_ENV
           elif [[ ${{ github.event_name }} == 'pull_request' ]]; then
             echo "SINCE_FROM_REF=$(git rev-parse origin/${{ github.base_ref }})" >> $GITHUB_ENV
           else
-            echo "SINCE_FROM_REF=$(git rev-parse origin/master)" >> $GITHUB_ENV
+            echo "SINCE_FROM_REF=$(git rev-parse origin/main)" >> $GITHUB_ENV
           fi
       - name: yarn install
         run: yarn install --immutable
       - name: Run Test
         run: yarn workspaces since run test $SINCE_FROM_REF --jobs=5
       - name: 릴리즈
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
