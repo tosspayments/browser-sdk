@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.3.0...@tosspayments/brandpay-sdk@1.4.0) (2023-10-16)
+
+
+### Features
+
+* **brandpay-sdk:** 타입 패키지 semver 변경 ([2eadeaa](https://github.com/tosspayments/browser-sdk/commit/2eadeaaaa06a5bc2ee5203675a7912caa67d7322))
+
+
+### Reverts
+
+* Revert "chore(release): publish [skip ci]" ([c265212](https://github.com/tosspayments/browser-sdk/commit/c265212f292a14319d24645d45a6c41b91c6b7e2))
+
+
+
+
+
 # [1.3.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.1.8...@tosspayments/brandpay-sdk@1.3.0) (2023-08-21)
 
 
