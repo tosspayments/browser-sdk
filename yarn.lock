@@ -3455,6 +3455,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tosspayments/brandpay-types@npm:^0.2.6":
+  version: 0.2.6
+  resolution: "@tosspayments/brandpay-types@npm:0.2.6"
+  peerDependencies:
+    typescript: ^4.1.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: c38394ef3114524a9eb81f80ef513c815b683cf766d35d101829a059629ab52338e12d105d118af579b79166373efc27035a2f375a51ab28294e8cf1dcb9e493
+  languageName: node
+  linkType: hard
+
 "@tosspayments/brandpay__types@npm:^1.13.2":
   version: 1.13.2
   resolution: "@tosspayments/brandpay__types@npm:1.13.2"
@@ -3508,7 +3520,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.3.0
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
-    "@tosspayments/payment-widget__types": ^0.2.4
+    "@tosspayments/payment-widget__types": ^0.3.0
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
     "@types/jest": ^27.0.0
     jest: ^27.0.7
@@ -3533,14 +3545,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tosspayments/payment-widget__types@npm:^0.2.4":
-  version: 0.2.4
-  resolution: "@tosspayments/payment-widget__types@npm:0.2.4"
+"@tosspayments/payment-widget__types@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@tosspayments/payment-widget__types@npm:0.3.0"
   dependencies:
-    "@tosspayments/brandpay-types": ^0.2.5
+    "@tosspayments/brandpay-types": ^0.2.6
     "@tosspayments/payment-widget-types": ^0.0.5
     "@tosspayments/payment__types": ^1.66.2
-  checksum: 83f88e435a8a07c9388ca45d880fc15422a2288c07771e1b61bc878e2b2c492f0e79e62575fd213625efa7ce54f488aa4f7b517eda677d1ca7665aeda754f4a3
+  checksum: 461bf23a8441c7beae93bc8ddd68502fb4b95c7cbc4d2026a573b204b24b3a98ef54a7ed8f62f7779b709b1880fbce8144516af16920d726df3d6dec9b2d4880
   languageName: node
   linkType: hard
 
