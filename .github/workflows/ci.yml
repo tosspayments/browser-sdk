@@ -15,7 +15,7 @@ jobs:
     name: CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Toss Payments 공통 설정
@@ -23,7 +23,7 @@ jobs:
         with:
           npm_token: ${{ secrets.NPM_TOKEN }}
       - name: Node.js 환경 설정
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 14
       - name: 'SINCE_FROM_REF 환경변수 설정'
