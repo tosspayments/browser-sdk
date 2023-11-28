@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.6](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.5...@tosspayments/payment-sdk@1.6.6) (2023-11-28)
+
+
+### Bug Fixes
+
+* **payment-sdk:** 다국어결제창 파라미터 타입 추가 ([#85](https://github.com/tosspayments/browser-sdk/issues/85)) ([ac3ffb0](https://github.com/tosspayments/browser-sdk/commit/ac3ffb062dd4159a541d7104d39234c1469a383d))
+
+
+
+
+
 ## [1.6.5](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.4...@tosspayments/payment-sdk@1.6.5) (2023-08-28)
 
 
