@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.6...@tosspayments/payment-sdk@1.7.0) (2023-11-29)
+
+
+### Features
+
+* **payment-sdk:** 내부 타입 추론 오류 수정 ([#86](https://github.com/tosspayments/browser-sdk/issues/86)) ([96519f5](https://github.com/tosspayments/browser-sdk/commit/96519f579e97fd46e6c3dd071e21202f60c169ee))
+
+
+
+
+
 ## [1.6.6](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-sdk@1.6.5...@tosspayments/payment-sdk@1.6.6) (2023-11-28)
 
 
