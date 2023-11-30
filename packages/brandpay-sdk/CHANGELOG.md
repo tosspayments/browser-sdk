@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.5.0...@tosspayments/brandpay-sdk@1.5.1) (2023-11-30)
+
+
+### Bug Fixes
+
+* **brandpay-sdk:** load option 파라미터 선언 ([#88](https://github.com/tosspayments/browser-sdk/issues/88)) ([46f9ca7](https://github.com/tosspayments/browser-sdk/commit/46f9ca7d8fccdfdae6422ed3dbede2f0f3230210))
+
+
+
+
+
 # [1.5.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.4.1...@tosspayments/brandpay-sdk@1.5.0) (2023-11-30)
 
 
