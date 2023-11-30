@@ -1,7 +1,7 @@
 {
   "name": "@tosspayments/sdk-loader",
   "description": "JavaScript SDK Loader by <script> tag injection",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "src/index.ts",
   "publishConfig": {
     "access": "public",
