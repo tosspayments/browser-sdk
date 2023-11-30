@@ -1,6 +1,10 @@
 let cachedPromise: Promise<any> | undefined;
 
-export function loadScript<Namespace>(src: string, namespace: string): Promise<Namespace> {
+interface LoadOptions {
+  priority?: 'high' | 'low' | 'auto';
+}
+
+export function loadScript<Namespace>(src: string, namespace: string, options: LoadOptions = {}): Promise<Namespace> {
   const existingElement = document.querySelector(`[src="${src}"]`);
 
   if (existingElement != null && cachedPromise !== undefined) {
@@ -13,6 +17,10 @@ export function loadScript<Namespace>(src: string, namespace: string): Promise<N
 
   const script = document.createElement('script');
   script.src = src;
+
+  if (options.priority !== undefined) {
+    (script as any).fetchPriority = options.priority;
+  }
 
   cachedPromise = new Promise<Namespace>((resolve, reject) => {
     document.head.appendChild(script);
