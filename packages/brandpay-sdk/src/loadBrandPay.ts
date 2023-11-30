@@ -23,7 +23,7 @@ export function loadBrandPay(
   }
 
   // regenerator-runtime 의존성을 없애기 위해 `async` 키워드를 사용하지 않는다
-  return loadScript<BrandpayConstructor>(src, 'BrandPay', network).then((BrandPay) => {
+  return loadScript<BrandpayConstructor>(src, 'BrandPay', { priority: network }).then((BrandPay) => {
     return BrandPay(clientKey, customerKey, options);
   });
 }
