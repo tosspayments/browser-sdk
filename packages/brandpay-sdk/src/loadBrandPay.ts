@@ -6,7 +6,7 @@ type BrandpayParams = Parameters<BrandpayConstructor>;
 
 interface LoadOptions {
   src?: string;
-  network?: Parameters<typeof loadScript>[2];
+  network?: 'high' | 'low' | 'auto';
 }
 
 export function loadBrandPay(
