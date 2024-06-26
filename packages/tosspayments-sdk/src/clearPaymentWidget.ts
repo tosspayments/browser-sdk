@@ -1,5 +1,5 @@
 import { SCRIPT_URL } from './constants';
-import { TossPayments } from '@tosspayments/standard-public-interfaces';
+import type { TossPayments } from '@tosspayments/standard-public-interfaces';
 
 declare global {
   interface Window {
