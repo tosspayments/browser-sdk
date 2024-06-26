@@ -4,7 +4,7 @@ import { TossPayments, TossPaymentsInstance } from '@tosspayments/standard-publi
 
 type TosspaymentsParams = Parameters<TossPayments>;
 
-export function loadPaymentWidget(
+export function loadTossPayments(
   clientKey: TosspaymentsParams[0],
   loadOptions: { src?: string } = {}
 ): Promise<TossPaymentsInstance> {
@@ -16,7 +16,7 @@ export function loadPaymentWidget(
   }
 
   // regenerator-runtime 의존성을 없애기 위해 `async` 키워드를 사용하지 않는다
-  return loadScript<TossPayments>(src, 'PaymentWidget').then((TossPayments) => {
+  return loadScript<TossPayments>(src, 'TossPayments').then((TossPayments) => {
     return TossPayments(clientKey);
   });
 }
