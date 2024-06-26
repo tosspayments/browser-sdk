@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-export function clearPaymentWidget() {
+export function clearTossPayments() {
   const script = document.querySelector(`script[src="${SCRIPT_URL}"]`);
 
   script?.parentElement?.removeChild(script);
