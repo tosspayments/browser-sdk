@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
-import { loadScript, clearCache } from './loadScript';
+import { beforeEach, describe, expect, test, vi } from 'vitest';
+import { clearCache, getCachedPromise, loadScript } from './loadScript';
 
 declare global {
   interface Window {
@@ -52,14 +52,19 @@ describe('loadScript', () => {
       // then
       expect(promise).resolves.toBe(window.TossPayments);
     });
-    test('script 로드를 실패하면, 에러를 throw 해야한다', async () => {
+    test('script 로드를 실패하면, cachedPromise가 null로 설정되고 에러를 throw 해야한다', async () => {
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments');
       eventListeners1.error(new Event('error')); // script 로드가 실패함
 
       // then
-      expect(promise).rejects.toThrowError('[TossPayments SDK] Failed to load script: [http://example.com/example.js]');
+      await expect(promise).rejects.toThrowError('[TossPayments SDK] Failed to load script: [http://example.com/example.js]');
+      expect(getCachedPromise()).toBeNull();
+
+      const promise2 = loadScript('http://example.com/example.js', 'TossPayments');
+      expect(promise2).not.toBe(promise);
     });
+
     test('script 로드를 성공했지만 namespace에 인스턴스가 존재하지 않으면, 에러를 throw 해야한다', async () => {
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments');

@@ -9,7 +9,7 @@ export function loadScript<Namespace>(src: string, namespace: string, options: L
     return cachedPromise;
   }
 
-  cachedPromise = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     try {
       if (typeof window === 'undefined' || typeof document === 'undefined') {
         return resolve(null);
@@ -47,6 +47,11 @@ export function loadScript<Namespace>(src: string, namespace: string, options: L
     }
   });
 
+  cachedPromise = promise.catch(error => {
+    cachedPromise = null;
+    return Promise.reject(error);
+  });
+
   return cachedPromise;
 }
 
@@ -54,6 +59,12 @@ function getNamespace<Namespace>(name: string) {
   return (window[name as any] as any) as Namespace | undefined;
 }
 
+// Test용
 export function clearCache() {
   cachedPromise = null;
+}
+
+// Test용
+export function getCachedPromise() {
+  return cachedPromise;
 }
