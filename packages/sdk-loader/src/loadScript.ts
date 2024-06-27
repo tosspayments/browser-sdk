@@ -1,5 +1,5 @@
 export function loadScript<Namespace>(src: string, namespace: string): Promise<Namespace> {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const script = document.createElement('script');
     script.src = src;
     script.addEventListener('load', () => {
@@ -7,6 +7,9 @@ export function loadScript<Namespace>(src: string, namespace: string): Promise<N
         resolve(window[namespace]);
       }
     });
+    script.addEventListener('error', () => {
+      reject(new Error(`[TossPayments SDK] Failed to load script: [${src}]`))
+    })
   });
 
 }
