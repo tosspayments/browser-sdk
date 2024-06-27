@@ -1,15 +1,10 @@
 import { SCRIPT_URL } from './constants';
-import type { TossPayments } from '@tosspayments/standard-public-interfaces';
-
-declare global {
-  interface Window {
-    TossPayments?: TossPayments & { version: string; isV2: boolean; ANONYMOUS: string };
-  }
-}
 
 export function clearTossPayments() {
   const script = document.querySelector(`script[src="${SCRIPT_URL}"]`);
 
   script?.parentElement?.removeChild(script);
+  // TODO: public interface에서 TossPayments의 global declaration 추가한 뒤 제거 예정입니다
+  // @ts-ignore
   window.TossPayments = undefined;
 }
