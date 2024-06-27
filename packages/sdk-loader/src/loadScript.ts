@@ -19,6 +19,13 @@ export function loadScript<Namespace>(src: string, namespace: string, options: L
         return resolve(getNamespace<Namespace>(namespace));
       }
 
+      const existingScript = document.querySelector(`script[src="${src}"]`);
+      if (existingScript != null) {
+        existingScript.removeEventListener('load', onLoad);
+        existingScript.removeEventListener('error', onError);
+        existingScript.parentElement?.removeChild(existingScript);
+      }
+
       const script = document.createElement('script');
       script.src = src;
       script.addEventListener('load', onLoad);

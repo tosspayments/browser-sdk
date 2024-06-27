@@ -124,6 +124,6 @@ describe('loadScript', () => {
       // then
       expect(promise).resolves.toBe(window.TossPayments);
     });
-    test.todo('주어진 src의 script 태그가 존재하면, 기존 script를 제거하고 새로운 script를 inject 해야한다');
+    test.todo('기존 src를 가진 script가 존재하면, 기존 script의 이벤트를 모두 제거하고 스크립트도 제거한 후 새로 만들어야 한다',);
   });
 });
