@@ -6,12 +6,13 @@ export function loadScript<Namespace>(src: string, namespace: string): Promise<N
       if (window[namespace]) {
         resolve(window[namespace]);
       } else {
-        reject(new Error(`${namespace} is not available`));
+        reject(new Error(`[TossPayments SDK] ${namespace} is not available`));
       }
     });
+
     script.addEventListener('error', () => {
       reject(new Error(`[TossPayments SDK] Failed to load script: [${src}]`))
-    })
+    });
   });
 
 }

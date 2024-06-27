@@ -11,7 +11,7 @@ describe('loadScript', () => {
   beforeEach(() => {
     vi.restoreAllMocks();
     document.head.innerHTML = '';
-    window.myNamespace = undefined;
+    window.TossPayments = undefined;
   });
 
   describe('기본 동작', () => {
@@ -19,6 +19,7 @@ describe('loadScript', () => {
       // given
       const eventListeners: { [key: string]: EventListener } = {};
       const script = document.createElement('script');
+
       vi.spyOn(document, 'createElement').mockReturnValue(script);
 
       script.addEventListener = (event: string, listener: EventListener) => {
@@ -26,12 +27,12 @@ describe('loadScript', () => {
       };
 
       // when
-      const promise = loadScript('http://example.com/example.js', 'myNamespace');
-      window.myNamespace = {}; // SDK는 주어진 namespace에 인스턴스를 생성함
+      const promise = loadScript('http://example.com/example.js', 'TossPayments');
+      window.TossPayments = {}; // SDK는 주어진 namespace에 인스턴스를 생성함
       eventListeners.load(new Event('load')); // script 로드가 완료됨
 
       // then
-      expect(promise).resolves.toBe(window.myNamespace);
+      expect(promise).resolves.toBe(window.TossPayments);
     });
     test('script 로드를 실패하면, 에러를 throw 해야한다', async () => {
       // given
@@ -44,7 +45,7 @@ describe('loadScript', () => {
       };
 
       // when
-      const promise = loadScript('http://example.com/example.js', 'myNamespace');
+      const promise = loadScript('http://example.com/example.js', 'TossPayments');
       eventListeners.error(new Event('error')); // script 로드가 실패함
 
       // then
@@ -61,11 +62,11 @@ describe('loadScript', () => {
       };
 
       // when
-      const promise = loadScript('http://example.com/example.js', 'myNamespace');
+      const promise = loadScript('http://example.com/example.js', 'TossPayments');
       eventListeners.load(new Event('load')); // script 로드가 완료됨
 
       // then
-      expect(promise).rejects.toThrowError('myNamespace is not available');
+      expect(promise).rejects.toThrowError('[TossPayments SDK] TossPayments is not available');
     });
   });
 
