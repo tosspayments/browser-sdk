@@ -16,9 +16,8 @@ describe('loadScript', () => {
 
   describe('기본 동작', () => {
     test('script 로드가 완료되면, 주어진 namespace에 생성된 인스턴스와 동일한 인스턴스를 resolve 해야한다', async () => {
-      const eventListeners: { [key: string]: EventListener } = {};
-
       // given
+      const eventListeners: { [key: string]: EventListener } = {};
       const script = document.createElement('script');
       vi.spyOn(document, 'createElement').mockReturnValue(script);
 
@@ -34,7 +33,23 @@ describe('loadScript', () => {
       // then
       expect(promise).resolves.toBe(window.myNamespace);
     });
-    test.todo('script 로드를 실패하면, Promise를 초기화하고 에러를 throw 해야한다');
+    test('script 로드를 실패하면, Promise를 초기화하고 에러를 throw 해야한다', async () => {
+      // given
+      const eventListeners: { [key: string]: EventListener } = {};
+      const script = document.createElement('script');
+      vi.spyOn(document, 'createElement').mockReturnValue(script);
+
+      script.addEventListener = (event: string, listener: EventListener) => {
+        eventListeners[event] = listener;
+      };
+
+      // when
+      const promise = loadScript('http://example.com/example.js', 'myNamespace');
+      eventListeners.error(new Event('error')); // script 로드가 실패함
+
+      // then
+      expect(promise).rejects.toThrowError('[TossPayments SDK] Failed to load script: [http://example.com/example.js]');
+    });
   });
 
   describe('캐시된 script 로더 Promise가 존재하면', () => {
