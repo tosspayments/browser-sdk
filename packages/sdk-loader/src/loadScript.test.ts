@@ -82,7 +82,21 @@ describe('loadScript', () => {
   });
 
   describe('캐시된 script 로더 Promise가 존재하지 않으면', () => {
-    test.todo('SSR 환경이면 null을 resolve 해야한다');
+    test('SSR 환경이면 null을 resolve 해야한다', async () => {
+      // when
+      const originalWindow = window;
+      const originalDocument = document;
+      window = undefined as any;
+      document = undefined as any;
+
+      // then
+      const promise = loadScript('http://example.com/script.js', 'TossPayments');
+      expect(promise).resolves.toBeNull();
+
+      window = originalWindow;
+      document = originalDocument;
+
+    });
     test.todo('주어진 namespace에 인스턴스가 존재하면, 해당 인스턴스를 resolve 해야한다');
     test.todo('주어진 src의 script 태그가 존재하면, 기존 script를 제거하고 새로운 script를 inject 해야한다');
   });
