@@ -95,9 +95,15 @@ describe('loadScript', () => {
 
       window = originalWindow;
       document = originalDocument;
-
     });
-    test.todo('주어진 namespace에 인스턴스가 존재하면, 해당 인스턴스를 resolve 해야한다');
+    test('주어진 namespace에 인스턴스가 존재하면, 해당 인스턴스를 resolve 해야한다', async () => {
+      // when
+      window.TossPayments = {};
+      const promise = loadScript('http://example.com/script.js', 'TossPayments');
+
+      // then
+      expect(promise).resolves.toBe(window.TossPayments);
+    });
     test.todo('주어진 src의 script 태그가 존재하면, 기존 script를 제거하고 새로운 script를 inject 해야한다');
   });
 });
