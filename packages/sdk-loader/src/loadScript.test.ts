@@ -72,7 +72,37 @@ describe('loadScript', () => {
   });
 
   describe('캐시된 script 로더 Promise가 존재하면', () => {
-    test.todo('해당 Promise를 반환해야 한다');
+    test('해당 Promise를 반환해야 한다', async () => {
+      // given
+      const eventListeners1: { [key: string]: EventListener } = {};
+      const eventListeners2: { [key: string]: EventListener } = {};
+
+      const script1 = document.createElement('script');
+      const script2 = document.createElement('script');
+
+      script1.addEventListener = (event: string, listener: EventListener) => {
+        eventListeners1[event] = listener;
+      };
+
+      script2.addEventListener = (event: string, listener: EventListener) => {
+        eventListeners2[event] = listener;
+      };
+
+      vi.spyOn(document, 'createElement')
+        .mockReturnValueOnce(script1)
+        .mockReturnValueOnce(script2);
+
+      // when
+      const promise1 = loadScript('http://example.com/script.js', 'TossPayments');
+      window.TossPayments = {}; // SDK는 주어진 namespace에 인스턴스를 생성함
+      eventListeners1.load(new Event('load')); // script 로드가 완료됨
+
+      const promise2 = loadScript('http://example.com/script.js', 'TossPayments');
+      eventListeners2.load(new Event('load')); // script 로드가 완료됨
+
+      // then
+      expect(promise1).toBe(promise2);
+    });
   });
 
   describe('캐시된 script 로더 Promise가 존재하지 않으면', () => {
