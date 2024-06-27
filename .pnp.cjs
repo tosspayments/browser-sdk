@@ -4174,7 +4174,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],\
             ["happy-dom", "npm:14.12.3"],\
             ["prettier", "npm:2.0.2"],\
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=bbeadb"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vitest", "virtual:336deabb10399b30cea915d2739955a98d7d7096bbd9918304bff46b4389b3371588832183c8c4de476d9b7d2480338dd8d7da333ce9a903801fffeca19a7466#npm:1.6.0"]\
           ],\
           "linkType": "SOFT"\
@@ -11688,13 +11688,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["typescript", [\
-        ["patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=bbeadb", {\
-          "packageLocation": "./.yarn/cache/typescript-patch-57ff6824b9-3d1b044496.zip/node_modules/typescript/",\
-          "packageDependencies": [\
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=bbeadb"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441", {\
           "packageLocation": "./.yarn/cache/typescript-patch-2e8dbfb8ab-0f4da2f15e.zip/node_modules/typescript/",\
           "packageDependencies": [\
