@@ -1,6 +1,11 @@
 let cachedPromise: Promise<any> | null = null;
 
-export function loadScript<Namespace>(src: string, namespace: string): Promise<Namespace> {
+interface LoadOptions {
+  priority?: 'high' | 'low' | 'auto';
+}
+
+
+export function loadScript<Namespace>(src: string, namespace: string, options: LoadOptions = {}): Promise<Namespace> {
   if (cachedPromise != null) {
     return cachedPromise;
   }
@@ -15,6 +20,10 @@ export function loadScript<Namespace>(src: string, namespace: string): Promise<N
     }
 
     const script = document.createElement('script');
+    if (options.priority != null) {
+      (script as any).fetchPriority = options.priority;
+    }
+
     script.src = src;
     script.addEventListener('load', () => {
       if (window[namespace]) {
