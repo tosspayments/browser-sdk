@@ -1,9 +1,33 @@
-import { describe, test } from 'vitest';
+import { beforeEach, describe, expect, test, vi } from 'vitest';
+import { loadScript } from './loadScript';
+
+declare global {
+  interface Window {
+    [key: string]: any;
+  }
+}
 
 describe('loadScript', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+    document.head.innerHTML = '';
+    window.myNamespace = undefined;
+  });
 
   describe('기본 동작', () => {
-    test.todo('script 로드가 완료되면, 주어진 namespace에 인스턴스가 존재해야 한다');
+    test('script 로드가 완료되면, 주어진 namespace에 생성된 인스턴스와 동일한 인스턴스를 resolve 해야한다', async () => {
+      // given
+      const script = document.createElement('script');
+      vi.spyOn(document, 'createElement').mockReturnValue(script);
+
+      // when
+      const promise = loadScript('https://test.tosspayments.com/sdk', 'myNamespace');
+      script.onload!(new Event('load'));
+      window.myNamespace = {}; // SDK는 주어진 namespace에 인스턴스를 생성합니다
+
+      // then
+      expect(promise).resolves.toBe(window.myNamespace);
+    });
     test.todo('script 로드를 실패하면, Promise를 초기화하고 에러를 throw 해야한다');
   });
 
