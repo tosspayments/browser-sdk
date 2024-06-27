@@ -5,6 +5,8 @@ export function loadScript<Namespace>(src: string, namespace: string): Promise<N
     script.addEventListener('load', () => {
       if (window[namespace]) {
         resolve(window[namespace]);
+      } else {
+        reject(new Error(`${namespace} is not available`));
       }
     });
     script.addEventListener('error', () => {
