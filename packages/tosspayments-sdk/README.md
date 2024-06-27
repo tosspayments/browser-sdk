@@ -1,6 +1,6 @@
-# Toss Payments PaymentWidget SDK
+# Toss Payments TossPayment SDK
 
-토스페이먼츠 결제위젯을 위한 JavaScript SDK 입니다.
+토스페이먼츠 결제 연동을 위한 JavaScript SDK 입니다.
 
 ```bash
 npm install @tosspayments/tosspayments-sdk
