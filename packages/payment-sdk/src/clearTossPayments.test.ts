@@ -1,5 +1,6 @@
 import { describe, expect, test, vi } from 'vitest';
 import { clearTossPayments } from './clearTossPayments';
+import { SCRIPT_URL } from './constants';
 
 const SCRIPT_ID = `__tosspayments-sdk__`;
 
@@ -9,7 +10,7 @@ describe(`clearTossPayments`, () => {
     window.TossPayments = vi.fn();
 
     const script = document.createElement(`script`);
-    script.src = `https://js.tosspayments.com/v1`;
+    script.src = SCRIPT_URL;
     script.id = `__tosspayments-sdk__`;
     document.head.appendChild(script);
 
