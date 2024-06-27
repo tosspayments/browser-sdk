@@ -28,8 +28,8 @@ describe('loadScript', () => {
 
       // when
       const promise = loadScript('http://example.com/example.js', 'myNamespace');
-      if (eventListeners.load) eventListeners.load(new Event('load'));
-      window.myNamespace = {}; // NOTE: SDK는 주어진 namespace에 인스턴스를 생성합니다
+      window.myNamespace = {}; // SDK는 주어진 namespace에 인스턴스를 생성함
+      eventListeners.load(new Event('load')); // script 로드가 완료됨
 
       // then
       expect(promise).resolves.toBe(window.myNamespace);
