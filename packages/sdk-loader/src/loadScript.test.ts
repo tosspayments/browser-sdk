@@ -33,7 +33,7 @@ describe('loadScript', () => {
       // then
       expect(promise).resolves.toBe(window.myNamespace);
     });
-    test('script 로드를 실패하면, Promise를 초기화하고 에러를 throw 해야한다', async () => {
+    test('script 로드를 실패하면, 에러를 throw 해야한다', async () => {
       // given
       const eventListeners: { [key: string]: EventListener } = {};
       const script = document.createElement('script');
@@ -49,6 +49,23 @@ describe('loadScript', () => {
 
       // then
       expect(promise).rejects.toThrowError('[TossPayments SDK] Failed to load script: [http://example.com/example.js]');
+    });
+    test('script 로드를 성공했지만 namespace에 인스턴스가 존재하지 않으면, 에러를 throw 해야한다', async () => {
+      // given
+      const eventListeners: { [key: string]: EventListener } = {};
+      const script = document.createElement('script');
+      vi.spyOn(document, 'createElement').mockReturnValue(script);
+
+      script.addEventListener = (event: string, listener: EventListener) => {
+        eventListeners[event] = listener;
+      };
+
+      // when
+      const promise = loadScript('http://example.com/example.js', 'myNamespace');
+      eventListeners.load(new Event('load')); // script 로드가 완료됨
+
+      // then
+      expect(promise).rejects.toThrowError('myNamespace is not available');
     });
   });
 
