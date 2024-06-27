@@ -1,9 +1,10 @@
+import { afterEach, describe, expect, test, vi } from 'vitest';
 import { SCRIPT_URL } from './constants';
 import { loadTossPayments } from './loadTossPayments';
 
 function dispatchLoadEvent() {
   // @ts-ignore
-  window.TossPayments = jest.fn();
+  window.TossPayments = vi.fn();
   window?.dispatchEvent(new Event(`TossPayments:initialize:TossPayments`));
 }
 
