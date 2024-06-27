@@ -6,6 +6,10 @@ export function loadScript<Namespace>(src: string, namespace: string): Promise<N
   }
 
   cachedPromise = new Promise((resolve, reject) => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return resolve(null);
+    }
+
     const script = document.createElement('script');
     script.src = src;
     script.addEventListener('load', () => {
