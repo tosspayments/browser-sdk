@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
-import { loadScript } from './loadScript';
+import { loadScript, clearCache } from './loadScript';
 
 declare global {
   interface Window {
@@ -13,6 +13,7 @@ describe('loadScript', () => {
     document.head.innerHTML = '';
     document.head.appendChild = vi.fn(); // script가 inject 되는 것을 방지
     window.TossPayments = undefined;
+    clearCache();
   });
 
   describe('기본 동작', () => {
@@ -98,7 +99,7 @@ describe('loadScript', () => {
       eventListeners1.load(new Event('load')); // script 로드가 완료됨
 
       const promise2 = loadScript('http://example.com/script.js', 'TossPayments');
-      eventListeners2.load(new Event('load')); // script 로드가 완료됨
+
 
       // then
       expect(promise1).toBe(promise2);
