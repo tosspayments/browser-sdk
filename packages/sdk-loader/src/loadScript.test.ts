@@ -12,6 +12,9 @@ describe('loadScript', () => {
   let eventListeners1: { [key: string]: EventListener };
   let eventListeners2: { [key: string]: EventListener };
 
+  let script1: HTMLScriptElement;
+  let script2: HTMLScriptElement;
+
   beforeEach(() => {
     document.head.innerHTML = '';
     document.head.appendChild = vi.fn(); // NOTE: 테스트 환경에서 script inject 방지
@@ -23,8 +26,8 @@ describe('loadScript', () => {
     eventListeners1 = {};
     eventListeners2 = {};
 
-    const script1 = document.createElement('script');
-    const script2 = document.createElement('script');
+    script1 = document.createElement('script');
+    script2 = document.createElement('script');
 
     script1.addEventListener = (event: string, listener: EventListener) => {
       eventListeners1[event] = listener;
@@ -65,6 +68,16 @@ describe('loadScript', () => {
       // then
       expect(promise).rejects.toThrowError('[TossPayments SDK] TossPayments is not available');
     });
+    test('priority 옵션을 설정하면, script element의 fetchPriority 속성이 설정되어야 한다', async () => {
+      // when
+      const promise = loadScript('http://example.com/example.js', 'TossPayments', { priority: 'high' });
+      window.TossPayments = {}; // SDK는 주어진 namespace에 인스턴스를 생성함
+      eventListeners1.load(new Event('load')); // script 로드가 완료됨
+
+      // then
+      expect((script1 as any).fetchPriority).toBe('high');
+      await expect(promise).resolves.toBe(window.TossPayments);
+    });
   });
 
   describe('캐시된 script 로더 Promise가 존재하면', () => {
@@ -91,7 +104,7 @@ describe('loadScript', () => {
 
       // when
       const promise = loadScript('http://example.com/script.js', 'TossPayments');
-      
+
       // then
       expect(promise).resolves.toBeNull();
 
