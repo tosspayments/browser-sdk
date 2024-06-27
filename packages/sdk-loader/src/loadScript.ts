@@ -13,6 +13,8 @@ export function loadScript<Namespace>(src: string, namespace: string): Promise<N
     script.addEventListener('error', () => {
       reject(new Error(`[TossPayments SDK] Failed to load script: [${src}]`))
     });
+
+    document.head.appendChild(script);
   });
 
 }

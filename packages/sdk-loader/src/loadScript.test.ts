@@ -11,6 +11,7 @@ describe('loadScript', () => {
   beforeEach(() => {
     vi.restoreAllMocks();
     document.head.innerHTML = '';
+    document.head.appendChild = vi.fn(); // script가 inject 되는 것을 방지
     window.TossPayments = undefined;
   });
 
