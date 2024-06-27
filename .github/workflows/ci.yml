@@ -25,7 +25,7 @@ jobs:
       - name: Node.js 환경 설정
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
       - name: 'SINCE_FROM_REF 환경변수 설정'
         run: |
           if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
