@@ -83,14 +83,16 @@ describe('loadScript', () => {
 
   describe('캐시된 script 로더 Promise가 존재하지 않으면', () => {
     test('SSR 환경이면 null을 resolve 해야한다', async () => {
-      // when
+      // given
       const originalWindow = window;
       const originalDocument = document;
       window = undefined as any;
       document = undefined as any;
 
-      // then
+      // when
       const promise = loadScript('http://example.com/script.js', 'TossPayments');
+      
+      // then
       expect(promise).resolves.toBeNull();
 
       window = originalWindow;
