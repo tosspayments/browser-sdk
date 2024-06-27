@@ -10,6 +10,10 @@ export function loadScript<Namespace>(src: string, namespace: string): Promise<N
       return resolve(null);
     }
 
+    if (window[namespace] != null) {
+      return resolve(window[namespace]);
+    }
+
     const script = document.createElement('script');
     script.src = src;
     script.addEventListener('load', () => {
