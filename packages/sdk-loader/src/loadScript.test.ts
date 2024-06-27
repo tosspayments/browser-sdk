@@ -16,14 +16,20 @@ describe('loadScript', () => {
 
   describe('기본 동작', () => {
     test('script 로드가 완료되면, 주어진 namespace에 생성된 인스턴스와 동일한 인스턴스를 resolve 해야한다', async () => {
+      const eventListeners: { [key: string]: EventListener } = {};
+
       // given
       const script = document.createElement('script');
       vi.spyOn(document, 'createElement').mockReturnValue(script);
 
+      script.addEventListener = (event: string, listener: EventListener) => {
+        eventListeners[event] = listener;
+      };
+
       // when
-      const promise = loadScript('https://test.tosspayments.com/sdk', 'myNamespace');
-      script.onload!(new Event('load'));
-      window.myNamespace = {}; // SDK는 주어진 namespace에 인스턴스를 생성합니다
+      const promise = loadScript('http://example.com/example.js', 'myNamespace');
+      if (eventListeners.load) eventListeners.load(new Event('load'));
+      window.myNamespace = {}; // NOTE: SDK는 주어진 namespace에 인스턴스를 생성합니다
 
       // then
       expect(promise).resolves.toBe(window.myNamespace);
