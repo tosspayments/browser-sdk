@@ -15,6 +15,7 @@ describe(`clearTossPayments`, () => {
     clearTossPayments();
 
     expect(document.getElementById(SCRIPT_ID)).toBeNull();
+    // @ts-ignore
     expect(window.TossPayments).toBeUndefined();
   });
 });
