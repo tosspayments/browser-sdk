@@ -3439,7 +3439,7 @@ __metadata:
     rollup-plugin-babel: ^4.4.0
     ts-jest: ^27.0.7
     tslib: ^1.11.1
-    typescript: ^4.5.2
+    typescript: 5.5.2
   languageName: unknown
   linkType: soft
 
@@ -3492,7 +3492,7 @@ __metadata:
     rollup-plugin-babel: ^4.4.0
     ts-jest: ^27.0.7
     tslib: ^1.11.1
-    typescript: ^4.5.2
+    typescript: 5.5.2
   languageName: unknown
   linkType: soft
 
@@ -3515,7 +3515,7 @@ __metadata:
     rollup-plugin-babel: ^4.4.0
     ts-jest: ^27.0.7
     tslib: ^1.11.1
-    typescript: ^4.5.2
+    typescript: 5.5.2
   languageName: unknown
   linkType: soft
 
@@ -12732,6 +12732,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:5.5.2":
+  version: 5.5.2
+  resolution: "typescript@npm:5.5.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 9c5a7982dadcb2d38d129c575dd38645ae11588ae0d4a12852fb04482bbc5a1660b2371e48fd5b33b6b605cc57cefe777670054546856945a05e77bd22c8c2cd
+  languageName: node
+  linkType: hard
+
 "typescript@npm:^4.4.4":
   version: 4.4.4
   resolution: "typescript@npm:4.4.4"
@@ -12739,16 +12749,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 89ecb8436bb48ef5594d49289f5f89103071716b6e4844278f4fb3362856e31203e187a9c76d205c3f0b674d221a058fd28310dbcbcf5d95e9a57229bb5203f1
-  languageName: node
-  linkType: hard
-
-"typescript@npm:^4.5.2":
-  version: 4.5.2
-  resolution: "typescript@npm:4.5.2"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 74f9ce65d532bdf5d0214b3f60cf37992180023388c87a11ee6f838a803067ef0b63c600fa501b0deb07f989257dce1e244c9635ed79feca40bbccf6e0aa1ebc
   languageName: node
   linkType: hard
 
@@ -12762,6 +12762,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@patch:typescript@5.5.2#~builtin<compat/typescript>":
+  version: 5.5.2
+  resolution: "typescript@patch:typescript@npm%3A5.5.2#~builtin<compat/typescript>::version=5.5.2&hash=29ae49"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 9d89bac0de650e15d6846485f238d1e65f1013f2c260d9e53e86a1da6ecf8109d9fad9402575c5c36a6592dc5d4370db090e12971c8630ae84453654baabb6b4
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@^4.4.4#~builtin<compat/typescript>":
   version: 4.4.4
   resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=bbeadb"
@@ -12769,16 +12779,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 3d1b04449662193544b81d055479d03b4c5dca95f1a82f8922596f089d894c9fefbe16639d1d9dfe26a7054419645530cef44001bc17aed1fe1eb3c237e9b3c7
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
-  version: 4.5.2
-  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=bcec9a"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: e25e689eba64f7da7cfc43f8ea76cac7176b56caba42655f0a4cb29c0b7c36e67ca54f33df95902859f56108464245d8b45bcdfe21e3d66d9560feb8db780246
   languageName: node
   linkType: hard
 
