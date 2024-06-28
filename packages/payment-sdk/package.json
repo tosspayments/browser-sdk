@@ -1,7 +1,7 @@
 {
   "name": "@tosspayments/payment-sdk",
   "description": "TossPayments.js Payment SDK",
-  "version": "1.7.1",
+  "version": "1.7.2-alpha.1.0",
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",
@@ -26,7 +26,7 @@
     "rollup": "^2.60.0",
     "rollup-plugin-babel": "^4.4.0",
     "tslib": "^1.11.1",
-    "typescript": "5.5.2",
+    "typescript": "5.2.2",
     "vitest": "^1.6.0"
   },
   "files": [

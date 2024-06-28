@@ -3755,29 +3755,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:4f8554a976eaf9e6787cc8218460accbda7c22f97f4f6828248cd62454065f1bedeef6f949b1789b8e0bb9773244ceb205c5f8ba582e240b83f3c7e360afb636#npm:8.3.0", {\
-          "packageLocation": "./.yarn/__virtual__/@rollup-plugin-typescript-virtual-29fe85616d/0/cache/@rollup-plugin-typescript-npm-8.3.0-cbb84161d5-f8253a7753.zip/node_modules/@rollup/plugin-typescript/",\
-          "packageDependencies": [\
-            ["@rollup/plugin-typescript", "virtual:4f8554a976eaf9e6787cc8218460accbda7c22f97f4f6828248cd62454065f1bedeef6f949b1789b8e0bb9773244ceb205c5f8ba582e240b83f3c7e360afb636#npm:8.3.0"],\
-            ["@rollup/pluginutils", "virtual:f945a8b8232394b5fdb79dc4c1393b9f64407771272dc898234350294fa572ae12e507a7267e8988480d5bd08c0ecb5cbd40c77262d7da9852fd605fc5b3c889#npm:3.1.0"],\
-            ["@types/rollup", null],\
-            ["@types/tslib", null],\
-            ["@types/typescript", null],\
-            ["resolve", "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=c3c19d"],\
-            ["rollup", "npm:2.60.0"],\
-            ["tslib", "npm:1.14.1"],\
-            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
-          ],\
-          "packagePeers": [\
-            "@types/rollup",\
-            "@types/tslib",\
-            "@types/typescript",\
-            "rollup",\
-            "tslib",\
-            "typescript"\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:8.3.0", {\
           "packageLocation": "./.yarn/__virtual__/@rollup-plugin-typescript-virtual-7558212bad/0/cache/@rollup-plugin-typescript-npm-8.3.0-cbb84161d5-f8253a7753.zip/node_modules/@rollup/plugin-typescript/",\
           "packageDependencies": [\
@@ -3789,7 +3766,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["resolve", "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=c3c19d"],\
             ["rollup", "npm:2.60.0"],\
             ["tslib", "npm:1.14.1"],\
-            ["typescript", "patch:typescript@npm%3A5.5.2#~builtin<compat/typescript>::version=5.5.2&hash=29ae49"]\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
           ],\
           "packagePeers": [\
             "@types/rollup",\
@@ -4007,7 +3984,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup", "npm:2.60.0"],\
             ["rollup-plugin-babel", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:4.4.0"],\
             ["tslib", "npm:1.14.1"],\
-            ["typescript", "patch:typescript@npm%3A5.5.2#~builtin<compat/typescript>::version=5.5.2&hash=29ae49"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vitest", "virtual:336deabb10399b30cea915d2739955a98d7d7096bbd9918304bff46b4389b3371588832183c8c4de476d9b7d2480338dd8d7da333ce9a903801fffeca19a7466#npm:1.6.0"]\
           ],\
           "linkType": "SOFT"\
@@ -4075,7 +4052,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup", "npm:2.60.0"],\
             ["rollup-plugin-babel", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:4.4.0"],\
             ["tslib", "npm:1.14.1"],\
-            ["typescript", "patch:typescript@npm%3A5.5.2#~builtin<compat/typescript>::version=5.5.2&hash=29ae49"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vitest", "virtual:336deabb10399b30cea915d2739955a98d7d7096bbd9918304bff46b4389b3371588832183c8c4de476d9b7d2480338dd8d7da333ce9a903801fffeca19a7466#npm:1.6.0"]\
           ],\
           "linkType": "SOFT"\
@@ -4099,7 +4076,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup", "npm:2.60.0"],\
             ["rollup-plugin-babel", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:4.4.0"],\
             ["tslib", "npm:1.14.1"],\
-            ["typescript", "patch:typescript@npm%3A5.5.2#~builtin<compat/typescript>::version=5.5.2&hash=29ae49"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vitest", "virtual:336deabb10399b30cea915d2739955a98d7d7096bbd9918304bff46b4389b3371588832183c8c4de476d9b7d2480338dd8d7da333ce9a903801fffeca19a7466#npm:1.6.0"]\
           ],\
           "linkType": "SOFT"\
@@ -4174,7 +4151,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],\
             ["happy-dom", "npm:14.12.3"],\
             ["prettier", "npm:2.0.2"],\
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=bbeadb"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vitest", "virtual:336deabb10399b30cea915d2739955a98d7d7096bbd9918304bff46b4389b3371588832183c8c4de476d9b7d2480338dd8d7da333ce9a903801fffeca19a7466#npm:1.6.0"]\
           ],\
           "linkType": "SOFT"\
@@ -4199,7 +4176,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-typescript", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:7.16.0"],\
             ["@rollup/plugin-babel", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:5.3.0"],\
             ["@rollup/plugin-commonjs", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:21.0.1"],\
-            ["@rollup/plugin-typescript", "virtual:4f8554a976eaf9e6787cc8218460accbda7c22f97f4f6828248cd62454065f1bedeef6f949b1789b8e0bb9773244ceb205c5f8ba582e240b83f3c7e360afb636#npm:8.3.0"],\
+            ["@rollup/plugin-typescript", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:8.3.0"],\
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],\
             ["@tosspayments/standard-public-interfaces", "npm:2.0.0-next.24::__archiveUrl=https%3A%2F%2Fnexus.tosspayments.bz%2Frepository%2Fnpm-group%2F%40tosspayments%2Fstandard-public-interfaces%2F-%2Fstandard-public-interfaces-2.0.0-next.24.tgz"],\
             ["happy-dom", "npm:14.12.3"],\
@@ -11688,24 +11665,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["typescript", [\
-        ["patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=bbeadb", {\
-          "packageLocation": "./.yarn/cache/typescript-patch-57ff6824b9-3d1b044496.zip/node_modules/typescript/",\
-          "packageDependencies": [\
-            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=bbeadb"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441", {\
           "packageLocation": "./.yarn/cache/typescript-patch-2e8dbfb8ab-0f4da2f15e.zip/node_modules/typescript/",\
           "packageDependencies": [\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["patch:typescript@npm%3A5.5.2#~builtin<compat/typescript>::version=5.5.2&hash=29ae49", {\
-          "packageLocation": "./.yarn/cache/typescript-patch-fe42271b1e-9d89bac0de.zip/node_modules/typescript/",\
-          "packageDependencies": [\
-            ["typescript", "patch:typescript@npm%3A5.5.2#~builtin<compat/typescript>::version=5.5.2&hash=29ae49"]\
           ],\
           "linkType": "HARD"\
         }]\
