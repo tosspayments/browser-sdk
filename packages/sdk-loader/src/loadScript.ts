@@ -72,15 +72,16 @@ function getNamespace<Namespace>(name: string) {
   return (window[name as any] as any) as Namespace | undefined;
 }
 
+// TODO: test용 유틸을 export 하는 대신 다른 방식을 사용해야함
 // Test용
-export function clearCache() {
-  cachedPromise = null;
-}
+// export function clearCache() {
+//   cachedPromise = null;
+// }
 
-// Test용
-export function getCachedPromise() {
-  return cachedPromise;
-}
+// // Test용
+// export function getCachedPromise() {
+//   return cachedPromise;
+// }
 
 export class NamespaceNotAvailableError extends Error {
   constructor(namespace: string) {
