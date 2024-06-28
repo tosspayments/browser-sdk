@@ -5,20 +5,25 @@ interface LoadOptions {
 }
 
 export function loadScript<Namespace>(src: string, namespace: string, options: LoadOptions = {}): Promise<Namespace> {
+  // Return the cached Promise if it exists
   if (cachedPromise != null) {
     return cachedPromise;
   }
 
   const promise = new Promise((resolve, reject) => {
     try {
+      // Handle SSR
       if (typeof window === 'undefined' || typeof document === 'undefined') {
         return resolve(null);
       }
 
+      // If the SDK instance already exists in the global namespace, resolve with it
       if (getNamespace(namespace) != null) {
         return resolve(getNamespace<Namespace>(namespace));
       }
 
+      // if script exists, but we are reloading due to an error,
+      // reload script to trigger 'load' event
       const existingScript = document.querySelector(`script[src="${src}"]`);
       if (existingScript != null) {
         existingScript.removeEventListener('load', onLoad);
@@ -54,6 +59,7 @@ export function loadScript<Namespace>(src: string, namespace: string, options: L
     }
   });
 
+  // Reset the cache if the Promise is rejected
   cachedPromise = promise.catch(error => {
     cachedPromise = null;
     return Promise.reject(error);
