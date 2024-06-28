@@ -39,12 +39,12 @@ export function loadScript<Namespace>(src: string, namespace: string, options: L
         if (getNamespace(namespace) != null) {
           resolve(getNamespace<Namespace>(namespace));
         } else {
-          reject(new Error(`[TossPayments SDK] ${namespace} is not available`));
+          reject(new NamespaceNotAvailableError(namespace));
         }
       }
 
       function onError() {
-        reject(new Error(`[TossPayments SDK] Failed to load script: [${src}]`));
+        reject(new ScriptLoadFailedError(src));
       }
 
       document.head.appendChild(script);
@@ -74,4 +74,18 @@ export function clearCache() {
 // Test용
 export function getCachedPromise() {
   return cachedPromise;
+}
+
+export class NamespaceNotAvailableError extends Error {
+  constructor(namespace: string) {
+    super(`[TossPayments SDK] ${namespace} is not available`);
+    this.name = 'NamespaceNotAvailableError';
+  }
+}
+
+export class ScriptLoadFailedError extends Error {
+  constructor(src: string) {
+    super(`[TossPayments SDK] Failed to load script: [${src}]`);
+    this.name = 'ScriptLoadFailedError';
+  }
 }

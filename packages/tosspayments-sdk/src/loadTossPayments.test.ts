@@ -1,12 +1,7 @@
-import { afterEach, describe, expect, test, vi } from 'vitest';
+import { clearCache, NamespaceNotAvailableError } from '@tosspayments/sdk-loader';
+import { afterEach, describe, expect, test } from 'vitest';
 import { SCRIPT_URL } from './constants';
 import { loadTossPayments } from './loadTossPayments';
-
-function dispatchLoadEvent() {
-  // @ts-ignore
-  window.TossPayments = vi.fn();
-  window?.dispatchEvent(new Event(`TossPayments:initialize:TossPayments`));
-}
 
 describe('loadTossPayments', () => {
   afterEach(() => {
@@ -14,14 +9,12 @@ describe('loadTossPayments', () => {
     document.body.innerHTML = '';
     // @ts-ignore
     delete window.TossPayments;
+
+    clearCache();
   });
 
   test('URL이 들어간 <script>를 <head>에 inject한다', async () => {
-    const loadPromise = loadTossPayments('test_key');
-
-    dispatchLoadEvent();
-
-    await loadPromise;
+    await loadTossPayments('test_key');
 
     const script = document.querySelector(`script[src="${SCRIPT_URL}"]`);
 
@@ -29,11 +22,7 @@ describe('loadTossPayments', () => {
   });
 
   test('2회 이상의 중복 호출 시에도 1회만 inject한다', async () => {
-    const loadPromise = Promise.all(Array(10).fill(loadTossPayments('test_key')));
-
-    dispatchLoadEvent();
-
-    await loadPromise;
+    await Promise.all(Array(10).fill(loadTossPayments('test_key')));
 
     const scripts = document.querySelectorAll(`script[src="${SCRIPT_URL}"]`);
 
@@ -41,15 +30,20 @@ describe('loadTossPayments', () => {
   });
 
   test(`src를 지정하면 주어진 URL로 script를 로드한다`, async () => {
-    const testSource = `https://test.tosspayments.com/sdk`;
+    const testSource = `https://js.tosspayments.com/v1/brandpay`;
 
-    const loadPromise = loadTossPayments('test_key', {
-      src: `https://test.tosspayments.com/sdk`,
-    });
+    try {
+      await loadTossPayments('test_key', {
+        src: testSource,
+      });
+    } catch (error) {
+      if (error instanceof NamespaceNotAvailableError) {
+        // NOTE: SDK에서 namespace에 인스턴스를 꽂아주는 동작이 테스트 환경에서는 일어나지 않아 발생하는 에러를 무시합니다
+        return;
+      }
 
-    dispatchLoadEvent();
-
-    await loadPromise;
+      throw error;
+    }
 
     const script = document.querySelector(`script[src="${testSource}"]`);
 

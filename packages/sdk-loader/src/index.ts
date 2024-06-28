@@ -1,1 +1,1 @@
-export { loadScript, clearCache } from './loadScript'
+export { loadScript, clearCache, NamespaceNotAvailableError, ScriptLoadFailedError } from './loadScript'
