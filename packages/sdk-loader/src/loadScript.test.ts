@@ -18,7 +18,8 @@ describe('loadScript', () => {
   beforeEach(() => {
     document.head.innerHTML = '';
     document.head.appendChild = vi.fn(); // NOTE: 테스트 환경에서 script inject 방지
-    window.TossPayments = undefined;
+
+    delete window.TossPayments;
 
     // 캐시 초기화
     clearCache();
@@ -46,7 +47,7 @@ describe('loadScript', () => {
     test('script 로드가 완료되면, 주어진 namespace에 생성된 인스턴스와 동일한 인스턴스를 resolve 해야한다', async () => {
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments');
-      window.TossPayments = {}; // SDK는 주어진 namespace에 인스턴스를 생성함
+      window.TossPayments = vi.fn(); // SDK는 주어진 namespace에 인스턴스를 생성함
       eventListeners1.load(new Event('load')); // script 로드가 완료됨
 
       // then
@@ -76,7 +77,7 @@ describe('loadScript', () => {
     test('priority 옵션을 설정하면, script element의 fetchPriority 속성이 설정되어야 한다', async () => {
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments', { priority: 'high' });
-      window.TossPayments = {}; // SDK는 주어진 namespace에 인스턴스를 생성함
+      window.TossPayments = vi.fn(); // SDK는 주어진 namespace에 인스턴스를 생성함
       eventListeners1.load(new Event('load')); // script 로드가 완료됨
 
       // then
@@ -89,7 +90,7 @@ describe('loadScript', () => {
     test('해당 Promise를 반환해야 한다', async () => {
       // when
       const promise1 = loadScript('http://example.com/script.js', 'TossPayments');
-      window.TossPayments = {}; // SDK는 주어진 namespace에 인스턴스를 생성함
+      window.TossPayments = vi.fn(); // SDK는 주어진 namespace에 인스턴스를 생성함
       eventListeners1.load(new Event('load')); // script 로드가 완료됨
 
       const promise2 = loadScript('http://example.com/script.js', 'TossPayments');
@@ -118,7 +119,7 @@ describe('loadScript', () => {
     });
     test('주어진 namespace에 인스턴스가 존재하면, 해당 인스턴스를 resolve 해야한다', async () => {
       // when
-      window.TossPayments = {};
+      window.TossPayments = vi.fn();
       const promise = loadScript('http://example.com/script.js', 'TossPayments');
 
       // then
