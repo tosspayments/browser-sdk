@@ -46,6 +46,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # 지정한 버전으로 배포하기 위해 임시로 CI package version up을 생략합니다
         run: yarn lerna publish from-package --yes --concurrency=2
         # TODO: v2 배포 후 아래 스크립트로 다시 변경
         # run: |
