@@ -46,6 +46,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          yarn lerna version --conventional-commits --force-publish=* --yes --git-remote origin
-          yarn lerna publish from-git --yes --concurrency=2
+        run: yarn lerna publish from-package --yes --concurrency=2
+        # TODO: v2 배포 후 아래 스크립트로 다시 변경
+        # run: |
+        #   yarn lerna version --conventional-commits --exclude-dependents --yes --git-remote origin
+        #   yarn lerna publish from-git --yes --concurrency=2
