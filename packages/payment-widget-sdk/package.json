@@ -1,7 +1,7 @@
 {
   "name": "@tosspayments/payment-widget-sdk",
   "description": "TossPayments.js Payment Widget SDK.",
-  "version": "0.10.2",
+  "version": "0.11.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "types/index.d.ts",
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly --declaration --declarationDir types",
     "prepack": "yarn build",
-    "test": "jest --passWithNoTests",
+    "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "license": "MIT",
@@ -21,14 +21,13 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-typescript": "^8.3.0",
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader",
-    "@types/jest": "^27.0.0",
-    "jest": "^27.0.7",
+    "happy-dom": "^14.12.3",
     "prettier": "^2.0.2",
     "rollup": "^2.60.0",
     "rollup-plugin-babel": "^4.4.0",
-    "ts-jest": "^27.0.7",
     "tslib": "^1.11.1",
-    "typescript": "^4.5.2"
+    "typescript": "5.2.2",
+    "vitest": "^1.6.0"
   },
   "files": [
     "dist",
