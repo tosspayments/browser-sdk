@@ -64,10 +64,6 @@ describe('loadScript', () => {
       const { loadScript } = await import('./loadScript');
       const { script } = mockScriptElement();
 
-      vi.spyOn(document, 'createElement')
-        .mockReturnValueOnce(script)
-
-
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments', { priority: 'high' });
       window.TossPayments = vi.fn(); // SDK는 주어진 namespace에 인스턴스를 생성함
@@ -138,7 +134,7 @@ function mockScriptElement() {
   const script = document.createElement('script');
 
   vi.spyOn(document, 'createElement')
-    .mockReturnValueOnce(script)
+    .mockReturnValueOnce(script);
 
   return { script };
 }
