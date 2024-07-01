@@ -31,7 +31,6 @@ describe('loadTossPayments', () => {
 
   test('src를 지정하면 주어진 URL로 script를 로드한다', async () => {
     const { loadTossPayments } = await import('./loadTossPayments');
-    const { NamespaceNotAvailableError } = await import('@tosspayments/sdk-loader');
 
     const testSource = `https://js.tosspayments.com/v1/brandpay`;
 
@@ -40,12 +39,7 @@ describe('loadTossPayments', () => {
         src: testSource,
       });
     } catch (error) {
-      if (error instanceof NamespaceNotAvailableError) {
-        // NOTE: SDK에서 namespace에 인스턴스를 꽂아주는 동작이 테스트 환경에서는 일어나지 않아 발생하는 에러를 무시합니다
-        return;
-      }
-
-      throw error;
+      // NOTE: SDK에서 namespace에 인스턴스를 꽂아주는 동작이 테스트 환경에서는 일어나지 않아 발생하는 에러를 무시합니다.
     }
 
     const script = document.querySelector(`script[src="${testSource}"]`);
