@@ -1,1 +1,1 @@
-export { loadScript } from './loadScript'
+export * from './loadScript'
