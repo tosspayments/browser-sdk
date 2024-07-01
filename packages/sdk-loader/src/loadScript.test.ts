@@ -13,7 +13,6 @@ describe('loadScript', () => {
     delete window.TossPayments;
 
     document.head.innerHTML = '';
-    document.head.appendChild = vi.fn(); // NOTE: 테스트 환경에서 script inject 방지
   });
 
   describe('기본 동작', () => {
@@ -21,7 +20,7 @@ describe('loadScript', () => {
       // given
       const { loadScript } = await import('./loadScript');
 
-      const { script, eventListeners } = mockScriptElement();
+      const { script } = mockScriptElement();
 
       vi.spyOn(document, 'createElement')
         .mockReturnValueOnce(script)
@@ -29,7 +28,7 @@ describe('loadScript', () => {
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments');
       window.TossPayments = vi.fn(); // SDK는 주어진 namespace에 인스턴스를 생성함
-      eventListeners.load(new Event('load')); // script 로드가 완료됨
+      script.dispatchEvent(new Event('load')); // script 로드가 완료됨
 
       // then
       expect(promise).resolves.toBe(window.TossPayments);
@@ -37,14 +36,14 @@ describe('loadScript', () => {
     test('script 로드를 실패하면, cachedPromise가 null로 설정되고 에러를 throw 해야한다', async () => {
       // given
       const { loadScript } = await import('./loadScript');
-      const { script, eventListeners } = mockScriptElement();
+      const { script } = mockScriptElement();
 
       vi.spyOn(document, 'createElement')
         .mockReturnValueOnce(script)
 
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments');
-      eventListeners.error(new Event('error')); // script 로드가 실패함
+      script.dispatchEvent(new Event('error')); // script 로드가 실패함
 
       // then
       await expect(promise).rejects.toThrowError('[TossPayments SDK] Failed to load script: [http://example.com/example.js]');
@@ -57,14 +56,14 @@ describe('loadScript', () => {
     test('script 로드를 성공했지만 namespace에 인스턴스가 존재하지 않으면, 에러를 throw 해야한다', async () => {
       // given
       const { loadScript } = await import('./loadScript');
-      const { script, eventListeners } = mockScriptElement();
+      const { script } = mockScriptElement();
 
       vi.spyOn(document, 'createElement')
         .mockReturnValueOnce(script)
 
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments');
-      eventListeners.load(new Event('load')); // script 로드가 완료됨
+      script.dispatchEvent(new Event('load')); // script 로드가 완료됨
 
       // then
       expect(promise).rejects.toThrowError('[TossPayments SDK] TossPayments is not available');
@@ -72,7 +71,7 @@ describe('loadScript', () => {
     test('priority 옵션을 설정하면, script element의 fetchPriority 속성이 설정되어야 한다', async () => {
       // given
       const { loadScript } = await import('./loadScript');
-      const { script, eventListeners } = mockScriptElement();
+      const { script } = mockScriptElement();
 
       vi.spyOn(document, 'createElement')
         .mockReturnValueOnce(script)
@@ -81,7 +80,7 @@ describe('loadScript', () => {
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments', { priority: 'high' });
       window.TossPayments = vi.fn(); // SDK는 주어진 namespace에 인스턴스를 생성함
-      eventListeners.load(new Event('load')); // script 로드가 완료됨
+      script.dispatchEvent(new Event('load')); // script 로드가 완료됨
 
       // then
       expect((script as any).fetchPriority).toBe('high');
@@ -94,7 +93,7 @@ describe('loadScript', () => {
       // given
       const { loadScript } = await import('./loadScript');
 
-      const { script, eventListeners } = mockScriptElement();
+      const { script } = mockScriptElement();
 
       vi.spyOn(document, 'createElement')
         .mockReturnValueOnce(script)
@@ -102,7 +101,7 @@ describe('loadScript', () => {
       // when
       const promise1 = loadScript('http://example.com/script.js', 'TossPayments');
       window.TossPayments = vi.fn(); // SDK는 주어진 namespace에 인스턴스를 생성함
-      eventListeners.load(new Event('load')); // script 로드가 완료됨
+      script.dispatchEvent(new Event('load')); // script 로드가 완료됨
 
       const promise2 = loadScript('http://example.com/script.js', 'TossPayments');
 
@@ -146,13 +145,9 @@ describe('loadScript', () => {
 });
 
 function mockScriptElement() {
-  // NOTE: script의 load, error 이벤트를 임의로 발생시키기 위해 이벤트 리스너를 mocking 합니다
-  const eventListeners = {} as { [key: string]: EventListener };
+  document.head.appendChild = vi.fn(); // NOTE: 테스트 환경에서 script inject 방지
+
   const script = document.createElement('script');
 
-  script.addEventListener = (event: string, listener: EventListener) => {
-    eventListeners[event] = listener;
-  };
-
-  return { script, eventListeners };
+  return { script };
 }
