@@ -22,9 +22,6 @@ describe('loadScript', () => {
 
       const { script } = mockScriptElement();
 
-      vi.spyOn(document, 'createElement')
-        .mockReturnValueOnce(script)
-
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments');
       window.TossPayments = vi.fn(); // SDK는 주어진 namespace에 인스턴스를 생성함
@@ -37,9 +34,6 @@ describe('loadScript', () => {
       // given
       const { loadScript } = await import('./loadScript');
       const { script } = mockScriptElement();
-
-      vi.spyOn(document, 'createElement')
-        .mockReturnValueOnce(script)
 
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments');
@@ -57,9 +51,6 @@ describe('loadScript', () => {
       // given
       const { loadScript } = await import('./loadScript');
       const { script } = mockScriptElement();
-
-      vi.spyOn(document, 'createElement')
-        .mockReturnValueOnce(script)
 
       // when
       const promise = loadScript('http://example.com/example.js', 'TossPayments');
@@ -94,9 +85,6 @@ describe('loadScript', () => {
       const { loadScript } = await import('./loadScript');
 
       const { script } = mockScriptElement();
-
-      vi.spyOn(document, 'createElement')
-        .mockReturnValueOnce(script)
 
       // when
       const promise1 = loadScript('http://example.com/script.js', 'TossPayments');
@@ -148,6 +136,9 @@ function mockScriptElement() {
   document.head.appendChild = vi.fn(); // NOTE: 테스트 환경에서 script inject 방지
 
   const script = document.createElement('script');
+
+  vi.spyOn(document, 'createElement')
+    .mockReturnValueOnce(script)
 
   return { script };
 }
