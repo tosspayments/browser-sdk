@@ -1,10 +1,10 @@
-import {  NamespaceNotAvailableError } from '@tosspayments/sdk-loader';
-import { afterEach, describe, expect, test } from 'vitest';
+import { afterEach, describe, expect, test, vi } from 'vitest';
 import { SCRIPT_URL } from './constants';
-import { loadTossPayments } from './loadTossPayments';
 
-describe.skip('loadTossPayments', () => {
+describe('loadTossPayments', () => {
   afterEach(() => {
+    vi.resetModules();
+
     document.head.innerHTML = '';
     document.body.innerHTML = '';
     // @ts-ignore
@@ -12,6 +12,8 @@ describe.skip('loadTossPayments', () => {
   });
 
   test('URL이 들어간 <script>를 <head>에 inject한다', async () => {
+    const { loadTossPayments } = await import('./loadTossPayments');
+
     await loadTossPayments('test_key');
 
     const script = document.querySelector(`script[src="${SCRIPT_URL}"]`);
@@ -20,6 +22,8 @@ describe.skip('loadTossPayments', () => {
   });
 
   test('2회 이상의 중복 호출 시에도 1회만 inject한다', async () => {
+    const { loadTossPayments } = await import('./loadTossPayments');
+
     await Promise.all(Array(10).fill(loadTossPayments('test_key')));
 
     const scripts = document.querySelectorAll(`script[src="${SCRIPT_URL}"]`);
@@ -27,7 +31,10 @@ describe.skip('loadTossPayments', () => {
     expect(scripts).toHaveLength(1);
   });
 
-  test(`src를 지정하면 주어진 URL로 script를 로드한다`, async () => {
+  test('src를 지정하면 주어진 URL로 script를 로드한다', async () => {
+    const { loadTossPayments } = await import('./loadTossPayments');
+    const { NamespaceNotAvailableError } = await import('@tosspayments/sdk-loader');
+
     const testSource = `https://js.tosspayments.com/v1/brandpay`;
 
     try {
