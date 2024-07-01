@@ -9,8 +9,6 @@ describe('loadBrandPay', () => {
     document.body.innerHTML = '';
     // @ts-ignore
     delete window.BrandPay;
-
-    vi.resetModules();
   });
 
   test('URL이 들어간 <script>를 <head>에 inject한다', async () => {
