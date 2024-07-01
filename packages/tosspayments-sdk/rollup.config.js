@@ -26,12 +26,7 @@ export default [
     input: 'src/index.ts',
     output: { dir: 'types' },
     plugins: [
-      dts({
-        respectExternal: true,
-        compilerOptions: {
-          removeComments: true
-        }
-      }),
+      dts({ respectExternal: true, }),
     ]
   }
 ];
