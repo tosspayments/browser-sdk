@@ -3032,10 +3032,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tosspayments/standard-public-interfaces@npm:2.0.0-next.24":
-  version: 2.0.0-next.24
-  resolution: "@tosspayments/standard-public-interfaces@npm:2.0.0-next.24::__archiveUrl=https%3A%2F%2Fnexus.tosspayments.bz%2Frepository%2Fnpm-group%2F%40tosspayments%2Fstandard-public-interfaces%2F-%2Fstandard-public-interfaces-2.0.0-next.24.tgz"
-  checksum: e987c4359452c119762e8aefd9c05771d7ba64fd5930ba81b8363473da8b173c5766fca3ad8e3036ffc7ad17bd893bbf3a4314d4b7a84c4dc8ebe5bbf71de375
+"@tosspayments/standard-public-interfaces@npm:2.0.0-next.31":
+  version: 2.0.0-next.31
+  resolution: "@tosspayments/standard-public-interfaces@npm:2.0.0-next.31::__archiveUrl=https%3A%2F%2Fnexus.tosspayments.bz%2Frepository%2Fnpm-group%2F%40tosspayments%2Fstandard-public-interfaces%2F-%2Fstandard-public-interfaces-2.0.0-next.31.tgz"
+  checksum: a1a88b51df85349256ccfc02625ccfc686a6582539551a5375956c37dd8c5ec03e88243418ae5dbcf09662372f88c776e6584087c5d2031a129c97dd220d6ed2
   languageName: node
   linkType: hard
 
@@ -3050,7 +3050,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
-    "@tosspayments/standard-public-interfaces": 2.0.0-next.24
+    "@tosspayments/standard-public-interfaces": 2.0.0-next.31
     happy-dom: ^14.12.3
     prettier: ^2.0.2
     rollup: ^2.60.0

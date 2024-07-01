@@ -1,7 +1,7 @@
 {
   "name": "@tosspayments/tosspayments-sdk",
   "description": "TossPayments.js Tosspayments SDK.",
-  "version": "0.1.1-alpha.1.0",
+  "version": "2.0.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "types/index.d.ts",
@@ -21,7 +21,7 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-typescript": "^8.3.0",
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader",
-    "@tosspayments/standard-public-interfaces": "2.0.0-next.24",
+    "@tosspayments/standard-public-interfaces": "2.0.0-next.31",
     "happy-dom": "^14.12.3",
     "prettier": "^2.0.2",
     "rollup": "^2.60.0",
