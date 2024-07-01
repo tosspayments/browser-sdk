@@ -72,14 +72,14 @@ function getNamespace<Namespace>(name: string) {
   return (window[name as any] as any) as Namespace | undefined;
 }
 
-export class NamespaceNotAvailableError extends Error {
+class NamespaceNotAvailableError extends Error {
   constructor(namespace: string) {
     super(`[TossPayments SDK] ${namespace} is not available`);
     this.name = 'NamespaceNotAvailableError';
   }
 }
 
-export class ScriptLoadFailedError extends Error {
+class ScriptLoadFailedError extends Error {
   constructor(src: string) {
     super(`[TossPayments SDK] Failed to load script: [${src}]`);
     this.name = 'ScriptLoadFailedError';
