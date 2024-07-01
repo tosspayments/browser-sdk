@@ -7,7 +7,7 @@
   "types": "types/index.d.ts",
   "author": "Toss Payments",
   "scripts": {
-    "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly --declaration --declarationDir types",
+    "build": "rm -rf dist && rollup -c",
     "prepack": "yarn build",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
@@ -28,6 +28,7 @@
     "prettier": "^2.0.2",
     "rollup": "^2.60.0",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-dts": "^6.1.1",
     "tslib": "^1.11.1",
     "typescript": "5.2.2",
     "vitest": "^1.6.0"

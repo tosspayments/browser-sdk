@@ -70,6 +70,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
+        ["npm:7.24.7", {\
+          "packageLocation": "./.yarn/cache/@babel-code-frame-npm-7.24.7-315a600a58-830e62cd38.zip/node_modules/@babel/code-frame/",\
+          "packageDependencies": [\
+            ["@babel/code-frame", "npm:7.24.7"],\
+            ["@babel/highlight", "npm:7.24.7"],\
+            ["picocolors", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:7.8.3", {\
           "packageLocation": "./.yarn/cache/@babel-code-frame-npm-7.8.3-ea28dc5d9b-5f3172b0c8.zip/node_modules/@babel/code-frame/",\
           "packageDependencies": [\
@@ -435,6 +444,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
+        ["npm:7.24.7", {\
+          "packageLocation": "./.yarn/cache/@babel-helper-validator-identifier-npm-7.24.7-748889c8d2-6799ab117c.zip/node_modules/@babel/helper-validator-identifier/",\
+          "packageDependencies": [\
+            ["@babel/helper-validator-identifier", "npm:7.24.7"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:7.9.0", {\
           "packageLocation": "./.yarn/cache/@babel-helper-validator-identifier-npm-7.9.0-45316b05e3-a691b2ff3b.zip/node_modules/@babel/helper-validator-identifier/",\
           "packageDependencies": [\
@@ -485,6 +501,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/helper-validator-identifier", "npm:7.15.7"],\
             ["chalk", "npm:2.4.2"],\
             ["js-tokens", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.24.7", {\
+          "packageLocation": "./.yarn/cache/@babel-highlight-npm-7.24.7-d792bd8d9f-5cd3a89f14.zip/node_modules/@babel/highlight/",\
+          "packageDependencies": [\
+            ["@babel/highlight", "npm:7.24.7"],\
+            ["@babel/helper-validator-identifier", "npm:7.24.7"],\
+            ["chalk", "npm:2.4.2"],\
+            ["js-tokens", "npm:4.0.0"],\
+            ["picocolors", "npm:1.0.0"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -4183,6 +4210,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.0.2"],\
             ["rollup", "npm:2.60.0"],\
             ["rollup-plugin-babel", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:4.4.0"],\
+            ["rollup-plugin-dts", "virtual:4f8554a976eaf9e6787cc8218460accbda7c22f97f4f6828248cd62454065f1bedeef6f949b1789b8e0bb9773244ceb205c5f8ba582e240b83f3c7e360afb636#npm:6.1.1"],\
             ["tslib", "npm:1.14.1"],\
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vitest", "virtual:336deabb10399b30cea915d2739955a98d7d7096bbd9918304bff46b4389b3371588832183c8c4de476d9b7d2480338dd8d7da333ce9a903801fffeca19a7466#npm:1.6.0"]\
@@ -10559,6 +10587,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/babel__core",\
             "@types/rollup",\
             "rollup"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["rollup-plugin-dts", [\
+        ["npm:6.1.1", {\
+          "packageLocation": "./.yarn/cache/rollup-plugin-dts-npm-6.1.1-f13d240779-e69da1a286.zip/node_modules/rollup-plugin-dts/",\
+          "packageDependencies": [\
+            ["rollup-plugin-dts", "npm:6.1.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:4f8554a976eaf9e6787cc8218460accbda7c22f97f4f6828248cd62454065f1bedeef6f949b1789b8e0bb9773244ceb205c5f8ba582e240b83f3c7e360afb636#npm:6.1.1", {\
+          "packageLocation": "./.yarn/__virtual__/rollup-plugin-dts-virtual-8e176610bf/0/cache/rollup-plugin-dts-npm-6.1.1-f13d240779-e69da1a286.zip/node_modules/rollup-plugin-dts/",\
+          "packageDependencies": [\
+            ["rollup-plugin-dts", "virtual:4f8554a976eaf9e6787cc8218460accbda7c22f97f4f6828248cd62454065f1bedeef6f949b1789b8e0bb9773244ceb205c5f8ba582e240b83f3c7e360afb636#npm:6.1.1"],\
+            ["@babel/code-frame", "npm:7.24.7"],\
+            ["@types/rollup", null],\
+            ["@types/typescript", null],\
+            ["magic-string", "npm:0.30.10"],\
+            ["rollup", "npm:2.60.0"],\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+          ],\
+          "packagePeers": [\
+            "@types/rollup",\
+            "@types/typescript",\
+            "rollup",\
+            "typescript"\
           ],\
           "linkType": "HARD"\
         }]\
