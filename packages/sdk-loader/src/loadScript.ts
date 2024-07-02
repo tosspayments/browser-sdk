@@ -48,11 +48,9 @@ export function loadScript<Namespace>(src: string, namespace: string, options: L
         }
       }
 
-
       function onError() {
         reject(new ScriptLoadFailedError(src));
       }
-
 
       document.head.appendChild(script);
     } catch (error) {
