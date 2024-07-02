@@ -3,14 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.6.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.6.0...@tosspayments/brandpay-sdk@1.6.1) (2024-07-02)
-
-**Note:** Version bump only for package @tosspayments/brandpay-sdk
-
-
-
-
-
 ## [1.5.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.5.1...@tosspayments/brandpay-sdk@1.5.2) (2023-11-30)
 
 
