@@ -1,5 +1,21 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.11.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-widget-sdk@0.11.0...@tosspayments/payment-widget-sdk@0.11.1) (2024-07-02)
+
+
+### Reverts
+
+* Revert "chore(release): publish [skip ci]" (#108) ([e513618](https://github.com/tosspayments/browser-sdk/commit/e513618478149495a586518318565201461fc74e)), closes [#108](https://github.com/tosspayments/browser-sdk/issues/108)
+
+
+
+
+
+# Change Log
+
 ## [0.10.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-widget-sdk@0.10.1...@tosspayments/payment-widget-sdk@0.10.2) (2023-12-18)
 
 

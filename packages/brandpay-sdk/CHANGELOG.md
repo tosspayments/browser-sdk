@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.6.0...@tosspayments/brandpay-sdk@1.6.1) (2024-07-02)
+
+
+### Reverts
+
+* Revert "chore(release): publish [skip ci]" (#108) ([e513618](https://github.com/tosspayments/browser-sdk/commit/e513618478149495a586518318565201461fc74e)), closes [#108](https://github.com/tosspayments/browser-sdk/issues/108)
+
+
+
+
+
 ## [1.5.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.5.1...@tosspayments/brandpay-sdk@1.5.2) (2023-11-30)
 
 
