@@ -1,16 +1,5 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## [2.0.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/sdk-loader@2.0.0...@tosspayments/sdk-loader@2.0.1) (2024-07-01)
-
-**Note:** Version bump only for package @tosspayments/sdk-loader
-
-
-
-
-
 # [1.2.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/sdk-loader@1.1.0...@tosspayments/sdk-loader@1.2.0) (2023-11-30)
 
 
