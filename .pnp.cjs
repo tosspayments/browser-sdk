@@ -4185,10 +4185,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tosspayments/standard-public-interfaces", [\
-        ["npm:2.0.0::__archiveUrl=https%3A%2F%2Fnexus.tosspayments.bz%2Frepository%2Fnpm-group%2F%40tosspayments%2Fstandard-public-interfaces%2F-%2Fstandard-public-interfaces-2.0.0.tgz", {\
-          "packageLocation": "./.yarn/cache/@tosspayments-standard-public-interfaces-npm-2.0.0-d537f6cabe-2d6de9bc57.zip/node_modules/@tosspayments/standard-public-interfaces/",\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/@tosspayments-standard-public-interfaces-npm-2.0.0-77c5ebb9aa-2d6de9bc57.zip/node_modules/@tosspayments/standard-public-interfaces/",\
           "packageDependencies": [\
-            ["@tosspayments/standard-public-interfaces", "npm:2.0.0::__archiveUrl=https%3A%2F%2Fnexus.tosspayments.bz%2Frepository%2Fnpm-group%2F%40tosspayments%2Fstandard-public-interfaces%2F-%2Fstandard-public-interfaces-2.0.0.tgz"]\
+            ["@tosspayments/standard-public-interfaces", "npm:2.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4205,7 +4205,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-commonjs", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:21.0.1"],\
             ["@rollup/plugin-typescript", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:8.3.0"],\
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],\
-            ["@tosspayments/standard-public-interfaces", "npm:2.0.0::__archiveUrl=https%3A%2F%2Fnexus.tosspayments.bz%2Frepository%2Fnpm-group%2F%40tosspayments%2Fstandard-public-interfaces%2F-%2Fstandard-public-interfaces-2.0.0.tgz"],\
+            ["@tosspayments/standard-public-interfaces", "npm:2.0.0"],\
             ["happy-dom", "npm:14.12.3"],\
             ["prettier", "npm:2.0.2"],\
             ["rollup", "npm:2.60.0"],\
