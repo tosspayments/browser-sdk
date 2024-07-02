@@ -1,18 +1,5 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## [0.11.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-widget-sdk@0.11.0...@tosspayments/payment-widget-sdk@0.11.1) (2024-07-02)
-
-**Note:** Version bump only for package @tosspayments/payment-widget-sdk
-
-
-
-
-
-# Change Log
-
 ## [0.10.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/payment-widget-sdk@0.10.1...@tosspayments/payment-widget-sdk@0.10.2) (2023-12-18)
 
 
