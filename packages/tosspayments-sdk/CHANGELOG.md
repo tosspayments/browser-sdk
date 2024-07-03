@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.1.0...@tosspayments/tosspayments-sdk@2.2.0) (2024-07-03)
+
+
+### Features
+
+* ANONYMOUS 상수 함께 내보내기 ([#115](https://github.com/tosspayments/browser-sdk/issues/115)) ([3a6c7b3](https://github.com/tosspayments/browser-sdk/commit/3a6c7b37decc5b7c912430342206eb2c098c868c))
+
+
+
+
+
 # [2.1.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.0.0...@tosspayments/tosspayments-sdk@2.1.0) (2024-07-02)
 
 
