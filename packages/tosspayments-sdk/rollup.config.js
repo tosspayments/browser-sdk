@@ -21,6 +21,7 @@ export default [
         presets: ['@babel/preset-env', '@babel/preset-typescript'],
       }),
     ],
+    external: ['@tosspayments/standard-public-interfaces'],
   },
   {
     input: 'src/index.ts',
