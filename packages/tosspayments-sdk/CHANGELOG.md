@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.2.0...@tosspayments/tosspayments-sdk@2.2.1) (2024-07-08)
+
+
+### Bug Fixes
+
+* **tosspayments-sdk:** 위젯 연동시 필요한 type export ([#116](https://github.com/tosspayments/browser-sdk/issues/116)) ([724501c](https://github.com/tosspayments/browser-sdk/commit/724501c8ad79e395d29b0b11191d6e296d0f8134))
+
+
+
+
+
 # [2.2.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.1.0...@tosspayments/tosspayments-sdk@2.2.0) (2024-07-03)
 
 
