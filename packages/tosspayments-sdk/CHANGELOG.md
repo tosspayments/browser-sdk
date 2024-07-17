@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.3](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.2.2...@tosspayments/tosspayments-sdk@2.2.3) (2024-07-17)
+
+
+### Bug Fixes
+
+* **tosspayments-sdk:** loadTossPayments 반환 타입 변경 ([#118](https://github.com/tosspayments/browser-sdk/issues/118)) ([4b16012](https://github.com/tosspayments/browser-sdk/commit/4b1601206ba77856a1fe0c811f01a4a8700a9f53))
+
+
+
+
+
 ## [2.2.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.2.1...@tosspayments/tosspayments-sdk@2.2.2) (2024-07-17)
 
 
