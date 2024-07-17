@@ -4185,10 +4185,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tosspayments/standard-public-interfaces", [\
-        ["npm:2.0.2", {\
-          "packageLocation": "./.yarn/cache/@tosspayments-standard-public-interfaces-npm-2.0.2-35d4fa9016-ac8561ef2b.zip/node_modules/@tosspayments/standard-public-interfaces/",\
+        ["npm:2.0.6", {\
+          "packageLocation": "./.yarn/cache/@tosspayments-standard-public-interfaces-npm-2.0.6-10c1dbf559-8e780d5af0.zip/node_modules/@tosspayments/standard-public-interfaces/",\
           "packageDependencies": [\
-            ["@tosspayments/standard-public-interfaces", "npm:2.0.2"]\
+            ["@tosspayments/standard-public-interfaces", "npm:2.0.6"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4205,7 +4205,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-commonjs", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:21.0.1"],\
             ["@rollup/plugin-typescript", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:8.3.0"],\
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],\
-            ["@tosspayments/standard-public-interfaces", "npm:2.0.2"],\
+            ["@tosspayments/standard-public-interfaces", "npm:2.0.6"],\
             ["happy-dom", "npm:14.12.3"],\
             ["prettier", "npm:2.0.2"],\
             ["rollup", "npm:2.60.0"],\

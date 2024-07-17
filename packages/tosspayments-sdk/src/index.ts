@@ -3,10 +3,24 @@ export { loadTossPayments } from './loadTossPayments';
 
 export const ANONYMOUS = '@@ANONYMOUS';
 
-import { WidgetAgreementStatus, WidgetAgreementWidget, WidgetPaymentMethodWidget, WidgetSelectedPaymentMethod } from '@tosspayments/standard-public-interfaces';
-
-export type { WidgetAgreementStatus,
+import {
+  TossPaymentsSDK,
+  TossPaymentsWidgets,
+  TossPaymentsBrandpay,
+  TossPaymentsPayment,
+  WidgetAgreementStatus,
   WidgetAgreementWidget,
   WidgetPaymentMethodWidget,
-  WidgetSelectedPaymentMethod
+  WidgetSelectedPaymentMethod,
+} from '@tosspayments/standard-public-interfaces';
+
+export type {
+  TossPaymentsSDK,
+  TossPaymentsWidgets,
+  TossPaymentsBrandpay,
+  TossPaymentsPayment,
+  WidgetAgreementStatus,
+  WidgetAgreementWidget,
+  WidgetPaymentMethodWidget,
+  WidgetSelectedPaymentMethod,
 };
