@@ -4004,7 +4004,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-babel", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:5.3.0"],\
             ["@rollup/plugin-commonjs", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:21.0.1"],\
             ["@rollup/plugin-typescript", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:8.3.0"],\
-            ["@tosspayments/brandpay__types", "npm:1.14.0"],\
+            ["@tosspayments/brandpay__types", "npm:1.16.0"],\
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],\
             ["happy-dom", "npm:14.12.3"],\
             ["prettier", "npm:2.0.2"],\
@@ -4040,10 +4040,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tosspayments/brandpay__types", [\
-        ["npm:1.14.0", {\
-          "packageLocation": "./.yarn/cache/@tosspayments-brandpay__types-npm-1.14.0-2a9ced7753-2b321526c5.zip/node_modules/@tosspayments/brandpay__types/",\
+        ["npm:1.16.0", {\
+          "packageLocation": "./.yarn/cache/@tosspayments-brandpay__types-npm-1.16.0-c78e4b8c43-2e5bcee5ea.zip/node_modules/@tosspayments/brandpay__types/",\
           "packageDependencies": [\
-            ["@tosspayments/brandpay__types", "npm:1.14.0"]\
+            ["@tosspayments/brandpay__types", "npm:1.16.0"]\
           ],\
           "linkType": "HARD"\
         }]\
