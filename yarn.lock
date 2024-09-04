@@ -2914,7 +2914,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.3.0
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
-    "@tosspayments/brandpay__types": ^1.14.0
+    "@tosspayments/brandpay__types": 1.16.0
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
     happy-dom: ^14.12.3
     prettier: ^2.0.2
@@ -2938,10 +2938,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tosspayments/brandpay__types@npm:^1.14.0":
-  version: 1.14.0
-  resolution: "@tosspayments/brandpay__types@npm:1.14.0"
-  checksum: 2b321526c59e001329c5e702d996e640c7268d3aa66feaf9f25327945a4466199c1caab2e4af89ef1959f40328280361d8893b7fc012b5ae3d7eab176551d2be
+"@tosspayments/brandpay__types@npm:1.16.0":
+  version: 1.16.0
+  resolution: "@tosspayments/brandpay__types@npm:1.16.0"
+  checksum: 2e5bcee5ead8716181906466ca32e6707944a92a4cb2e7ee73a2e3a3a558c484667f8d978a23a1c22218b9f73c2c164ef7776fc2133afdd8d0f909a434354d3f
   languageName: node
   linkType: hard
 
