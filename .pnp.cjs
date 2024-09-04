@@ -4025,10 +4025,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:f24721bb78ad178e4b6ecc89f22c213fcd72de882c904196ddf5fa27c57e92f6101e0a13d6771cba421fa1e9b8aefa07af700f4ad3643642ca4229428d912b13#npm:0.2.6", {\
-          "packageLocation": "./.yarn/__virtual__/@tosspayments-brandpay-types-virtual-32dfa32aa4/0/cache/@tosspayments-brandpay-types-npm-0.2.6-b891e6e28a-c38394ef31.zip/node_modules/@tosspayments/brandpay-types/",\
+        ["virtual:30b6ca7c8bc25d575f3e746e5626c93523b5e155b7e260d6c28f5066af3a937fd9db3db672ac01c1102f98d546c67579edf389364da44107fb2029229d4ff156#npm:0.2.6", {\
+          "packageLocation": "./.yarn/__virtual__/@tosspayments-brandpay-types-virtual-5fda553111/0/cache/@tosspayments-brandpay-types-npm-0.2.6-b891e6e28a-c38394ef31.zip/node_modules/@tosspayments/brandpay-types/",\
           "packageDependencies": [\
-            ["@tosspayments/brandpay-types", "virtual:f24721bb78ad178e4b6ecc89f22c213fcd72de882c904196ddf5fa27c57e92f6101e0a13d6771cba421fa1e9b8aefa07af700f4ad3643642ca4229428d912b13#npm:0.2.6"],\
+            ["@tosspayments/brandpay-types", "virtual:30b6ca7c8bc25d575f3e746e5626c93523b5e155b7e260d6c28f5066af3a937fd9db3db672ac01c1102f98d546c67579edf389364da44107fb2029229d4ff156#npm:0.2.6"],\
             ["@types/typescript", null],\
             ["typescript", null]\
           ],\
@@ -4096,7 +4096,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-babel", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:5.3.0"],\
             ["@rollup/plugin-commonjs", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:21.0.1"],\
             ["@rollup/plugin-typescript", "virtual:94dcca1178955513be13f4b9d727bbeb07f95c95127beddcf6bc52d7edd2f452df7bf72547358631aba2726c5c8f9f6f7433337bb1c14895a54bc1c21a35f930#npm:8.3.0"],\
-            ["@tosspayments/payment-widget__types", "npm:1.0.1"],\
+            ["@tosspayments/payment-widget__types", "npm:1.1.0"],\
             ["@tosspayments/sdk-loader", "workspace:packages/sdk-loader"],\
             ["happy-dom", "npm:14.12.3"],\
             ["prettier", "npm:2.0.2"],\
@@ -4117,10 +4117,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:f24721bb78ad178e4b6ecc89f22c213fcd72de882c904196ddf5fa27c57e92f6101e0a13d6771cba421fa1e9b8aefa07af700f4ad3643642ca4229428d912b13#npm:0.0.5", {\
-          "packageLocation": "./.yarn/__virtual__/@tosspayments-payment-widget-types-virtual-cff78adab2/0/cache/@tosspayments-payment-widget-types-npm-0.0.5-9d68c14c83-0ede3a3cec.zip/node_modules/@tosspayments/payment-widget-types/",\
+        ["virtual:30b6ca7c8bc25d575f3e746e5626c93523b5e155b7e260d6c28f5066af3a937fd9db3db672ac01c1102f98d546c67579edf389364da44107fb2029229d4ff156#npm:0.0.5", {\
+          "packageLocation": "./.yarn/__virtual__/@tosspayments-payment-widget-types-virtual-0aad293b08/0/cache/@tosspayments-payment-widget-types-npm-0.0.5-9d68c14c83-0ede3a3cec.zip/node_modules/@tosspayments/payment-widget-types/",\
           "packageDependencies": [\
-            ["@tosspayments/payment-widget-types", "virtual:f24721bb78ad178e4b6ecc89f22c213fcd72de882c904196ddf5fa27c57e92f6101e0a13d6771cba421fa1e9b8aefa07af700f4ad3643642ca4229428d912b13#npm:0.0.5"],\
+            ["@tosspayments/payment-widget-types", "virtual:30b6ca7c8bc25d575f3e746e5626c93523b5e155b7e260d6c28f5066af3a937fd9db3db672ac01c1102f98d546c67579edf389364da44107fb2029229d4ff156#npm:0.0.5"],\
             ["@types/typescript", null],\
             ["typescript", null]\
           ],\
@@ -4132,26 +4132,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tosspayments/payment-widget__types", [\
-        ["npm:1.0.1", {\
-          "packageLocation": "./.yarn/cache/@tosspayments-payment-widget__types-npm-1.0.1-f24721bb78-be1684b42c.zip/node_modules/@tosspayments/payment-widget__types/",\
+        ["npm:1.1.0", {\
+          "packageLocation": "./.yarn/cache/@tosspayments-payment-widget__types-npm-1.1.0-30b6ca7c8b-72550d3c0e.zip/node_modules/@tosspayments/payment-widget__types/",\
           "packageDependencies": [\
-            ["@tosspayments/payment-widget__types", "npm:1.0.1"],\
-            ["@tosspayments/brandpay-types", "virtual:f24721bb78ad178e4b6ecc89f22c213fcd72de882c904196ddf5fa27c57e92f6101e0a13d6771cba421fa1e9b8aefa07af700f4ad3643642ca4229428d912b13#npm:0.2.6"],\
-            ["@tosspayments/payment-widget-types", "virtual:f24721bb78ad178e4b6ecc89f22c213fcd72de882c904196ddf5fa27c57e92f6101e0a13d6771cba421fa1e9b8aefa07af700f4ad3643642ca4229428d912b13#npm:0.0.5"],\
-            ["@tosspayments/payment__types", "npm:1.67.0"]\
+            ["@tosspayments/payment-widget__types", "npm:1.1.0"],\
+            ["@tosspayments/brandpay-types", "virtual:30b6ca7c8bc25d575f3e746e5626c93523b5e155b7e260d6c28f5066af3a937fd9db3db672ac01c1102f98d546c67579edf389364da44107fb2029229d4ff156#npm:0.2.6"],\
+            ["@tosspayments/payment-widget-types", "virtual:30b6ca7c8bc25d575f3e746e5626c93523b5e155b7e260d6c28f5066af3a937fd9db3db672ac01c1102f98d546c67579edf389364da44107fb2029229d4ff156#npm:0.0.5"],\
+            ["@tosspayments/payment__types", "npm:1.68.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@tosspayments/payment__types", [\
-        ["npm:1.67.0", {\
-          "packageLocation": "./.yarn/cache/@tosspayments-payment__types-npm-1.67.0-241b2b610c-3c0d40579c.zip/node_modules/@tosspayments/payment__types/",\
-          "packageDependencies": [\
-            ["@tosspayments/payment__types", "npm:1.67.0"],\
-            ["@tosspayments/sdk-constants", "npm:0.2.2"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:1.68.0", {\
           "packageLocation": "./.yarn/cache/@tosspayments-payment__types-npm-1.68.0-f9cba42a3f-afa0ed3b1c.zip/node_modules/@tosspayments/payment__types/",\
           "packageDependencies": [\
