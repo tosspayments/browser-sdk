@@ -2966,7 +2966,7 @@ __metadata:
     "@rollup/plugin-babel": ^5.3.0
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
-    "@tosspayments/payment__types": 1.68.0
+    "@tosspayments/payment__types": 1.69.0
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
     happy-dom: ^14.12.3
     prettier: ^2.0.2
@@ -3023,7 +3023,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tosspayments/payment__types@npm:1.68.0, @tosspayments/payment__types@npm:^1.68.0":
+"@tosspayments/payment__types@npm:1.69.0":
+  version: 1.69.0
+  resolution: "@tosspayments/payment__types@npm:1.69.0"
+  dependencies:
+    "@tosspayments/sdk-constants": ^0.2.2
+  checksum: 40282c285fbe483f6bcd5fc4e91b3c763bda1ed015dbdce7ce9a7723c94e378e3c44ca88c90bf498b6f38d791b51c0b01e04773672e58cd4cf191438e92063d5
+  languageName: node
+  linkType: hard
+
+"@tosspayments/payment__types@npm:^1.68.0":
   version: 1.68.0
   resolution: "@tosspayments/payment__types@npm:1.68.0"
   dependencies:
