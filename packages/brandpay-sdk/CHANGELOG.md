@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.3](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.6.2...@tosspayments/brandpay-sdk@1.6.3) (2024-11-27)
+
+
+### Bug Fixes
+
+* @tosspayments/brandpay__types 버전업 ([#128](https://github.com/tosspayments/browser-sdk/issues/128)) ([34d8c61](https://github.com/tosspayments/browser-sdk/commit/34d8c61c5f6782b6e7514bf1327e9bea5773e9d4))
+
+
+
+
+
 ## [1.6.2](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/brandpay-sdk@1.6.1...@tosspayments/brandpay-sdk@1.6.2) (2024-09-04)
 
 **Note:** Version bump only for package @tosspayments/brandpay-sdk
