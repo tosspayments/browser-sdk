@@ -3061,10 +3061,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tosspayments/standard-public-interfaces@npm:2.0.38":
-  version: 2.0.38
-  resolution: "@tosspayments/standard-public-interfaces@npm:2.0.38"
-  checksum: ac50f36555c131133b3649ea92ae7dffadc3798484ce1a60d38bda6bef6011149502d00894c71823a04290f8697d2dffe3c9fdaf22fd85f40a799537a97cc4d2
+"@tosspayments/standard-public-interfaces@npm:2.0.45":
+  version: 2.0.45
+  resolution: "@tosspayments/standard-public-interfaces@npm:2.0.45"
+  checksum: 428b72888f52fc0bb86e506109bdf2abd40ac9d896438c3e8c87f53ffc4025a1afee1892d0da123924a767d6b746e9d93f8accbfaef32ca2fe7020b69219bc26
   languageName: node
   linkType: hard
 
@@ -3079,7 +3079,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-typescript": ^8.3.0
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader"
-    "@tosspayments/standard-public-interfaces": 2.0.38
+    "@tosspayments/standard-public-interfaces": 2.0.45
     happy-dom: ^14.12.3
     prettier: ^2.0.2
     rollup: ^2.60.0
