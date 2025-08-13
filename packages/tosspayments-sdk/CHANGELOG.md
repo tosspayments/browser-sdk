@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.6](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.3.5...@tosspayments/tosspayments-sdk@2.3.6) (2025-08-13)
+
+
+### Bug Fixes
+
+* **tosspayments-sdk:** @tosspayments/standard-public-interfaces 버전업 ([#132](https://github.com/tosspayments/browser-sdk/issues/132)) ([282947a](https://github.com/tosspayments/browser-sdk/commit/282947a03ecdd1e969e2c7a42e432285c2126c5e))
+
+
+
+
+
 ## [2.3.5](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.3.4...@tosspayments/tosspayments-sdk@2.3.5) (2025-05-16)
 
 
