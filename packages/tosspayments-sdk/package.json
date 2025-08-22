@@ -21,7 +21,7 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-typescript": "^8.3.0",
     "@tosspayments/sdk-loader": "workspace:packages/sdk-loader",
-    "@tosspayments/standard-public-interfaces": "2.1.4",
+    "@tosspayments/standard-public-interfaces": "2.3.0",
     "happy-dom": "^14.12.3",
     "prettier": "^2.0.2",
     "rollup": "^2.60.0",
