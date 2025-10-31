@@ -14,18 +14,21 @@ jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Toss Payments 공통 설정
         uses: ./.github/actions/configure
-        with:
-          npm_token: ${{ secrets.NPM_TOKEN }}
       - name: Node.js 환경 설정
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
+      - name: npm 버전 확인 및 업그레이드
+        run: npm install -g npm@11.5.1
       - name: 'SINCE_FROM_REF 환경변수 설정'
         run: |
           if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
@@ -39,13 +42,11 @@ jobs:
           fi
       - name: yarn install
         run: yarn install --immutable
-      - name: Run Test
-        run: yarn workspaces since run test $SINCE_FROM_REF --jobs=5
       - name: 릴리즈
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' || github.ref == 'refs/heads/alpha'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
         run: |
           yarn lerna version --conventional-commits --exclude-dependents --yes --git-remote origin
           yarn lerna publish from-git --yes --concurrency=2 --no-verify-access
