@@ -1,11 +1,16 @@
 {
   "name": "@tosspayments/payment-sdk",
-  "description": "TossPayments.js Payment SDK",
+  "description": "TossPayments.js Payment SDK ",
   "version": "1.9.1",
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",
   "author": "Toss Payments",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tosspayments/browser-sdk.git",
+    "directory": "packages/payment-sdk"
+  },
   "scripts": {
     "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly --declaration --declarationDir types",
     "prepack": "yarn build",
