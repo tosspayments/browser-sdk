@@ -48,5 +48,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
         run: |
-          yarn lerna version --conventional-commits --exclude-dependents --yes --git-remote origin
+          yarn lerna version --conventional-commits --exclude-dependents --yes --git-remote origin || {
+            echo "Version failed, cleaning up tags and retrying..."
+            git fetch --tags
+            FAILED_TAGS=$(git tag --points-at HEAD | grep '@tosspayments/')
+            if [ -n "$FAILED_TAGS" ]; then
+              echo "$FAILED_TAGS" | xargs -r git push --delete origin
+              git tag -d $FAILED_TAGS
+            fi
+            yarn lerna version --conventional-commits --exclude-dependents --yes --git-remote origin
+          }
           yarn lerna publish from-git --yes --concurrency=2 --no-verify-access
