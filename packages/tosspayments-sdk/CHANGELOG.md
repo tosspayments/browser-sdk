@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.4.0...@tosspayments/tosspayments-sdk@2.4.1) (2025-10-31)
+
+**Note:** Version bump only for package @tosspayments/tosspayments-sdk
+
+
+
+
+
 # [2.4.0](https://github.com/tosspayments/browser-sdk/compare/@tosspayments/tosspayments-sdk@2.3.7...@tosspayments/tosspayments-sdk@2.4.0) (2025-09-10)
 
 
