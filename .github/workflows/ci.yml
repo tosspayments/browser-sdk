@@ -32,15 +32,15 @@ jobs:
       - name: yarn install
         run: yarn install --immutable
       - name: publish packages
+        if: github.ref == 'refs/heads/main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm config set provenance true
-          if yarn changeset version; then
+          yarn changeset version
+          if [ -n "$(git status --porcelain)" ]; then
             git add .
-            git commit -m "Version packages" || true
+            git commit -m "Version packages"
             git push
-            yarn changeset publish
-          else
-            echo "No changesets to publish, skipping..."
           fi
+          yarn changeset publish
