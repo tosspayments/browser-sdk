@@ -36,8 +36,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm config set provenance true
-          yarn changeset version
-          git add .
-          git commit -m "Version packages" || true
-          git push
-          yarn changeset publish
+          if yarn changeset version; then
+            git add .
+            git commit -m "Version packages" || true
+            git push
+            yarn changeset publish
+          else
+            echo "No changesets to publish, skipping..."
+          fi
