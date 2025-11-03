@@ -2070,7 +2070,6 @@ __metadata:
     "@changesets/cli": ^2.29.7
     prettier: ^2.0.2
     typescript: 5.2.2
-    vitest: ^1.6.0
   languageName: unknown
   linkType: soft
 
