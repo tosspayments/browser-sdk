@@ -6,6 +6,11 @@
   "module": "dist/index.esm.js",
   "types": "types/index.d.ts",
   "author": "Toss Payments",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tosspayments/browser-sdk.git",
+    "directory": "packages/tosspayments-sdk"
+  },
   "scripts": {
     "build": "rm -rf dist && rollup -c",
     "prepack": "yarn build",
