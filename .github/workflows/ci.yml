@@ -31,6 +31,20 @@ jobs:
         run: npm install -g npm@11.5.1
       - name: yarn install
         run: yarn install --immutable
+      - name: run typecheck
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            yarn workspaces foreach --since=origin/${{ github.base_ref }} run typecheck
+          else
+            yarn workspaces foreach --since=HEAD^ run typecheck
+          fi
+      - name: run test
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            yarn workspaces foreach --since=origin/${{ github.base_ref }} run test
+          else
+            yarn workspaces foreach --since=HEAD^ run test
+          fi
       - name: publish packages
         if: github.ref == 'refs/heads/main'
         env:
