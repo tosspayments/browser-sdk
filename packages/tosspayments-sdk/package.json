@@ -13,9 +13,9 @@
   },
   "scripts": {
     "build": "rm -rf dist && rollup -c",
-    "prepack": "yarn build",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepack": "pnpm build"
   },
   "license": "MIT",
   "devDependencies": {
@@ -25,7 +25,7 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-typescript": "^8.3.0",
-    "@tosspayments/sdk-loader": "workspace:packages/sdk-loader",
+    "@tosspayments/sdk-loader": "workspace:^",
     "@tosspayments/standard-public-interfaces": "2.4.2",
     "happy-dom": "^14.12.3",
     "prettier": "^2.0.2",
