@@ -3,10 +3,11 @@ name: CI
 on:
   push:
     branches:
-      - 'main'
+      - main
   pull_request:
-    branches:
-      - '**'
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
   ci:
@@ -16,31 +17,33 @@ jobs:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
-          fetch-depth: 0  
-      - name: setup gitHub profile 
+          fetch-depth: 0
+      - name: Setup gitHub profile 
         run: |
           git config user.name "tosspayments-bot"
           git config user.email "70372587+tosspayments-bot@users.noreply.github.com"
-      - name: setup node.js
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - name: Setup node.js
+        uses: actions/setup-node@v6
         with:
           node-version: 20
-      - name: npm upgrade
-        run: npm install -g npm@11.5.1
-      - name: yarn install
-        run: yarn install --immutable
-      - name: publish packages
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Publish packages
         if: github.ref == 'refs/heads/main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm config set provenance true
-          yarn changeset version
+          pnpm changeset version
           if [ -n "$(git status --porcelain)" ]; then
             git add .
             git commit -m "Version packages"
             git push
           fi
-          yarn changeset publish
+          pnpm changeset publish
