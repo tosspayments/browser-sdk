@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   ci:
     name: CI
