@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.5.0
+
+### Minor Changes
+
+- e732f98: standard-public-interfaces 버전업
+
 ## 2.4.1
 
 ### Patch Changes
