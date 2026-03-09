@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.6.0
+
+### Minor Changes
+
+- 60460b9: standard-public-interfaces 버전업
+
 ## 2.5.0
 
 ### Minor Changes
