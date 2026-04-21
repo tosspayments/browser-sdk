@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.7.0
+
+### Minor Changes
+
+- 0b72221: standard-public-interfaces 2.9.0 버전업
+
 ## 2.6.0
 
 ### Minor Changes
