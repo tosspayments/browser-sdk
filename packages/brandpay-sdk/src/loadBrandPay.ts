@@ -9,6 +9,13 @@ interface LoadOptions {
   network?: 'high' | 'low' | 'auto';
 }
 
+const NAMESPACE = 'BrandPay';
+
+// loadBrandPay 가 시도한 (src, namespace) 를 모듈 내부에 추적하여, clearBrandPay 가
+// 호출 시점에 정확히 동일한 스크립트와 sdk-loader 의 cache entry 를 정리할 수 있도록 합니다.
+// key 는 src 만 사용 (namespace 는 현재 고정), 같은 src 의 중복 load 는 자연스럽게 dedupe 됩니다.
+export const loadedRequests = new Map<string, { src: string; namespace: string }>();
+
 export function loadBrandPay(
   clientKey: BrandpayParams[0],
   customerKey: BrandpayParams[1],
@@ -22,8 +29,10 @@ export function loadBrandPay(
     return Promise.resolve({} as BrandpayInstance);
   }
 
+  loadedRequests.set(src, { src, namespace: NAMESPACE });
+
   // regenerator-runtime 의존성을 없애기 위해 `async` 키워드를 사용하지 않는다
-  return loadScript<BrandpayConstructor>(src, 'BrandPay', { priority: network }).then((Brandpay) => {
+  return loadScript<BrandpayConstructor>(src, NAMESPACE, { priority: network }).then((Brandpay) => {
     return Brandpay(clientKey, customerKey, options);
   });
 }

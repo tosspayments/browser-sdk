@@ -5,6 +5,14 @@
   "main": "dist/tosspayments.cjs.js",
   "module": "dist/tosspayments.esm.js",
   "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/tosspayments.esm.js",
+      "require": "./dist/tosspayments.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
   "author": "Toss Payments",
   "repository": {
     "type": "git",
