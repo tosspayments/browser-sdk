@@ -65,4 +65,17 @@ describe(`clearTossPayments`, () => {
 
     expect(loadedRequests.size).toBe(0);
   });
+
+  test(`loadedRequests 가 비어있어도 외부에서 inject 한 default SCRIPT_URL 스크립트는 fallback 으로 제거된다`, () => {
+    // loadTossPayments 를 거치지 않고 HTML inline / SSR / 외부 코드가 직접 inject 한 케이스
+    const script = document.createElement(`script`);
+    script.src = SCRIPT_URL;
+    document.head.appendChild(script);
+
+    expect(loadedRequests.size).toBe(0); // precondition: 추적 state 비어있음
+
+    clearTossPayments();
+
+    expect(document.querySelector(`script[src="${SCRIPT_URL}"]`)).toBeNull();
+  });
 });
