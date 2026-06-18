@@ -30,15 +30,13 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
       - name: npm upgrade
         run: npm install -g npm@11.5.1
       - name: install
-        run: |
-          printf '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}\n' > "${RUNNER_TEMP}/.npmrc"
-          pnpm install
+        run: pnpm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_USERCONFIG: ${{ runner.temp }}/.npmrc
       - name: publish packages
         if: github.ref == 'refs/heads/main'
         env:
