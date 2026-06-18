@@ -37,7 +37,7 @@ jobs:
           printf '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}\n' > "${RUNNER_TEMP}/.npmrc"
           pnpm install
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_READ_TOKEN }}
           NPM_CONFIG_USERCONFIG: ${{ runner.temp }}/.npmrc
       - name: publish packages
         if: github.ref == 'refs/heads/main'
