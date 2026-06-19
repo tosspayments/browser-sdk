@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly --declaration --declarationDir types",
-    "prepack": "yarn build",
+    "prepack": "pnpm build",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },

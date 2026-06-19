@@ -18,7 +18,7 @@
   "scripts": {
     "test": "vitest",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
-    "prepack": "yarn build"
+    "prepack": "pnpm build"
   },
   "license": "MIT",
   "devDependencies": {

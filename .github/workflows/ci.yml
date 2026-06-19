@@ -12,35 +12,21 @@ jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  
-      - name: setup gitHub profile 
-        run: |
-          git config user.name "tosspayments-bot"
-          git config user.email "70372587+tosspayments-bot@users.noreply.github.com"
+      - uses: actions/checkout@v7
+      - name: setup pnpm
+        uses: pnpm/action-setup@v6
       - name: setup node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: 20
-      - name: npm upgrade
-        run: npm install -g npm@11.5.1
-      - name: yarn install
-        run: yarn install --immutable
-      - name: publish packages
-        if: github.ref == 'refs/heads/main'
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+      - name: install
+        run: pnpm install
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm config set provenance true
-          yarn changeset version
-          if [ -n "$(git status --porcelain)" ]; then
-            git add .
-            git commit -m "Version packages"
-            git push
-          fi
-          yarn changeset publish
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: build
+        run: pnpm -r run build
+      - name: typecheck
+        run: pnpm -r --if-present run typecheck
