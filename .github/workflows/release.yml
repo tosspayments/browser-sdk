@@ -11,15 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
       id-token: write
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: setup gitHub profile
-        run: |
-          git config user.name "tosspayments-bot"
-          git config user.email "70372587+tosspayments-bot@users.noreply.github.com"
       - name: setup pnpm
         uses: pnpm/action-setup@v4
       - name: setup node.js
@@ -34,15 +31,11 @@ jobs:
         run: pnpm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: publish packages
+      - name: create release pull request or publish
+        uses: changesets/action@v1
+        with:
+          version: pnpm changeset version
+          publish: pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm config set provenance true
-          pnpm changeset version
-          if [ -n "$(git status --porcelain)" ]; then
-            git add .
-            git commit -m "Version packages"
-            git push
-          fi
-          pnpm changeset publish
+          NPM_CONFIG_PROVENANCE: true
