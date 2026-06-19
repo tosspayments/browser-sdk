@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_TOSSPAYMENTS_BOT_TOKEN }}
       - name: setup pnpm
         uses: pnpm/action-setup@v4
       - name: setup node.js
@@ -25,8 +26,6 @@ jobs:
           node-version: 20
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
-      - name: npm upgrade
-        run: npm install -g npm@11.5.1
       - name: install
         run: pnpm install
         env:
@@ -37,5 +36,5 @@ jobs:
           version: pnpm changeset version
           publish: pnpm changeset publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOSSPAYMENTS_BOT_TOKEN }}
           NPM_CONFIG_PROVENANCE: true

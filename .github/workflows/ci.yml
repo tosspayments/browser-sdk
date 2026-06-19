@@ -26,3 +26,7 @@ jobs:
         run: pnpm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: build
+        run: pnpm -r run build
+      - name: typecheck
+        run: pnpm -r --if-present run typecheck
