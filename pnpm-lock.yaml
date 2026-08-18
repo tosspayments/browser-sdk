@@ -207,9 +207,6 @@ importers:
       '@tosspayments/sdk-loader':
         specifier: workspace:^
         version: link:../sdk-loader
-      '@tosspayments/standard-public-interfaces':
-        specifier: 2.9.0
-        version: 2.9.0
       happy-dom:
         specifier: ^14.12.3
         version: 14.12.3
@@ -1169,9 +1166,6 @@ packages:
 
   '@tosspayments/sdk-constants@0.2.2':
     resolution: {integrity: sha512-qTIcD9JnVtN65/yiW5sPAlvK5fpQtDluv4IEyslubncbQLQKE+ePSnGZU1fLNPxcchv6QTnwmgj9Ndm6EN/Ymg==}
-
-  '@tosspayments/standard-public-interfaces@2.9.0':
-    resolution: {integrity: sha512-3fQEhcBhosZmVyPkUsZ3Lt9Btfg65zaEwPomMk25JsDPuGwKP3qzfXcVHMkocAU2nxHhrhd/vUnk6znY113ZDQ==}
 
   '@types/estree@0.0.39':
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
@@ -3114,8 +3108,6 @@ snapshots:
   '@tosspayments/sdk-constants@0.2.2':
     dependencies:
       type-fest: 2.19.0
-
-  '@tosspayments/standard-public-interfaces@2.9.0': {}
 
   '@types/estree@0.0.39': {}
 

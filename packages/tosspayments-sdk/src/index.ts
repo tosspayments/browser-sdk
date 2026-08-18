@@ -12,7 +12,7 @@ import {
   WidgetAgreementWidget,
   WidgetPaymentMethodWidget,
   WidgetSelectedPaymentMethod,
-} from '@tosspayments/standard-public-interfaces';
+} from './standard-public-interfaces';
 
 export type {
   TossPaymentsSDK,
