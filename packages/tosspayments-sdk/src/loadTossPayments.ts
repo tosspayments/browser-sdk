@@ -1,6 +1,6 @@
 import { loadScript } from '@tosspayments/sdk-loader';
 import { SCRIPT_URL } from './constants';
-import { TossPayments, TossPaymentsSDK } from '@tosspayments/standard-public-interfaces';
+import { TossPayments, TossPaymentsSDK } from './standard-public-interfaces';
 
 type TosspaymentsParams = Parameters<TossPayments>;
 
