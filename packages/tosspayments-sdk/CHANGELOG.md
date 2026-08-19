@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.8.0
+
+### Minor Changes
+
+- 0781adc: standard-public-interfaces 타입을 2.9.0 에서 2.17.1 로 갱신합니다.
+
 ## 2.7.1
 
 ### Patch Changes
