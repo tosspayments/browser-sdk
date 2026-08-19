@@ -22,11 +22,8 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org'
       - name: install
         run: pnpm install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: create release pull request or publish
         uses: changesets/action@v1
         with:
@@ -34,4 +31,3 @@ jobs:
           publish: pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOSSPAYMENTS_BOT_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
