@@ -21,11 +21,8 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org'
       - name: install
         run: pnpm install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: build
         run: pnpm -r run build
       - name: typecheck
