@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.8.1
+
+### Patch Changes
+
+- b5347a8: standard-public-interfaces 타입을 2.17.1 에서 2.17.4 로 갱신합니다.
+
 ## 2.8.0
 
 ### Minor Changes
