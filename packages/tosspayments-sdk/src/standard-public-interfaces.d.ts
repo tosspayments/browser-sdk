@@ -1,4 +1,4 @@
-// standard-public-interfaces 2.17.4 — 자동 생성 파일입니다. 직접 수정하지 마세요.
+// standard-public-interfaces 2.17.7 — 자동 생성 파일입니다. 직접 수정하지 마세요.
 
 type WidgetSelectedPaymentMethod = {
     /**
@@ -456,8 +456,8 @@ interface WidgetPaymentWindow {
     /**
      * 결제창 이벤트를 구독합니다. [자세히 >](#paymentwindowon)
      *
-     * @param {'paymentRequest' | 'cancel'} eventName 구독할 이벤트입니다.
-     * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다.
+     * @param {'paymentRequest' | 'cancel'} eventName 구독할 이벤트입니다. `paymentRequest`로 구매자의 결제 요청을 받아 [widgets.requestPayment()](#widgetsrequestpayment)를 호출하고, `cancel`로 구매자가 결제를 포기한 순간을 감지할 수 있어요.
+     * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다. `paymentRequest`는 콜백 파라미터로 `paymentMethod` 객체가 전달돼요. 일반 결제수단은 `{ code }`, 브랜드페이는 `{ code: 'BRANDPAY', methodId }` 형태예요. `cancel`은 콜백 파라미터가 없어요.
      *
      * @throws {@link PublicError.Widgets.InvalidEventParameterError} eventName이 유효하지 않은 경우
      * @throws {@link PublicError.Widgets.InvalidCallbackParameterError} callback이 유효하지 않은 경우
@@ -698,7 +698,7 @@ type SetAmount = (amount: Amount) => Promise<void>;
  * @docsDefaultSignature RequestPaymentWindowWithRedirection
  *
  * @param {WidgetPaymentRequestWindow} paymentRequest - 결제 요청 정보입니다.
- * @param {WidgetPaymentRequestWindowOptions} options - 위젯 결제창 옵션입니다.
+ * @param {WidgetPaymentRequestWindowOptions} [options] - 위젯 결제창 옵션입니다.
  *
  * @returns 결제 결과
  *
@@ -722,7 +722,7 @@ type RequestPaymentWindow = RequestPaymentWindowWithPromise & RequestPaymentWind
  * @docsAlias Promise 방식
  * @returns `WidgetPaymentResult` 객체가 응답됩니다. 객체 필드를 확인하고 [결제 승인 API](/reference#결제-승인)를 호출해야 결제가 최종적으로 완료돼요.
  * @param {WidgetPaymentRequestWindow} paymentRequest 결제 요청 정보입니다.
- * @param {WidgetPaymentRequestWindowOptions} options 위젯 결제창 옵션입니다.
+ * @param {WidgetPaymentRequestWindowOptions} [options] 위젯 결제창 옵션입니다.
  *
  * @example
  *  ```js
@@ -758,7 +758,7 @@ type RequestPaymentWindowWithPromise = (paymentRequest: WidgetPaymentRequestWind
  * Redirect 방식에서는 URL이 이동하기 때문에 `void`가 응답됩니다.
 
  * @param {WidgetPaymentRequestWindow} paymentRequest 결제 요청 정보입니다.
- * @param {WidgetPaymentRequestWindowOptions} options 위젯 결제창 옵션입니다.
+ * @param {WidgetPaymentRequestWindowOptions} [options] 위젯 결제창 옵션입니다.
  *
  * @example
  *  ```js
@@ -784,7 +784,7 @@ type RequestPaymentWindowWithRedirection = (paymentRequest: WithRedirection<Widg
 
 /**
  * 결제창을 렌더링합니다
- * @param {object} params 결제창 렌더링 정보입니다. 생략할 수 있어요.
+ * @param {object} [params] 결제창 렌더링 정보입니다. 생략할 수 있어요.
  *
  * @returns 아래 메서드를 호출할 수 있는 결제창 객체를 Promise로 반환해요.
  *
@@ -1901,31 +1901,48 @@ interface CardPaymentRequest extends PaymentRequest {
          */
         useEscrow?: boolean | null;
         /**
-         * 과세를 제외한 결제 금액(컵 보증금 등)입니다. 과세 제외 금액이 있는 카드 결제는 부분 취소가 안 됩니다.
+         * 과세를 제외한 결제 금액(컵 보증금 등)입니다.
+         *
+         * 과세 제외 금액이 있는 카드 결제는 부분 취소가 안 됩니다.
          */
         taxExemptionAmount?: number | null;
         /**
-         * 결제창을 여는 방법입니다. `DEFAULT`는 카드/간편결제 통합결제창을 열고, `DIRECT`는 카드 또는 간편결제의 자체창을 열어요. 기본 값은 `DEFAULT`입니다.
+         * 결제창을 여는 방법입니다. `DEFAULT`는 카드/간편결제 통합결제창을 열고, `DIRECT`는 카드 또는 간편결제의 자체창을 열어요.
+         *
+         * 기본 값은 `DEFAULT`입니다.
          */
         flowMode?: 'DIRECT' | 'DEFAULT' | null;
         /**
-         * [카드사 코드](/codes/org-codes#카드사-코드)입니다. `flowMode` 값에 따라 아래와 같이 다르게 동작해요. `flowMode`가 `DIRECT`일 때는 입력한 코드의 카드사 앱이 열려요. `flowMode`가 `DEFAULT`일 때는 통합결제창에 입력한 코드의 카드사만 보여요.
+         * [카드사 코드](/codes/org-codes#카드사-코드)입니다. `flowMode` 값에 따라 아래와 같이 다르게 동작해요.
+         *
+         * `flowMode`가 `DIRECT`일 때는 입력한 코드의 카드사 앱이 열려요.
+         * `flowMode`가 `DEFAULT`일 때는 통합결제창에 입력한 코드의 카드사만 표시돼요. 파이프(`|`)로 구분해서 여러 카드사를 지정할 수 있어요. 예를 들어, `BC|삼성`을 입력하면 BC카드와 삼성카드가 결제창에 표시돼요.
          */
         cardCompany?: string | null;
         /**
-         * [간편결제 코드](/codes/org-codes#간편결제사-코드)입니다. `flowMode` 값에 따라 아래와 같이 다르게 동작해요. `flowMode`가 `DIRECT`일 때는 입력한 코드의 간편결제 앱이 열려요. `flowMode`가 `DEFAULT`일 때는 해당 파라미터와 상관 없이 기본 통합결제창이 열려요.
+         * [간편결제 코드](/codes/org-codes#간편결제사-코드)입니다. `flowMode` 값에 따라 아래와 같이 다르게 동작해요.
+         *
+         * `flowMode`가 `DIRECT`일 때는 입력한 코드의 간편결제 앱이 열려요.
+         * `flowMode`가 `DEFAULT`일 때는 해당 파라미터와 상관 없이 기본 통합결제창이 열려요.
          */
         easyPay?: string | null;
         /**
-         * 신용카드 결제에 적용되는 할부 개월 수입니다. 예를 들어, `6`으로 설정하면 할부 개월 수가 6개월로 고정돼요. 자체창에서는 구매자가 할부 개월 수를 볼 수 없으니 사전에 충분히 안내를 해주세요. 0(일시불), 2~12 값으로 설정할 수 있고 `maxCardInstallmentPlan` 파라미터와 함께 사용할 수 없어요. 카드사 별로 할부결제가 가능한 [최소 금액](https://consumer.tosspayments.com/notice/free-installment)을 확인하세요.
+         * 신용카드 결제에 적용되는 할부 개월 수입니다.
+         *
+         * 예를 들어, `6`으로 설정하면 할부 개월 수가 6개월로 고정돼요. 자체창에서는 구매자가 할부 개월 수를 볼 수 없으니 사전에 충분히 안내를 해주세요.
+         * 0(일시불), 2~12 값으로 설정할 수 있고 `maxCardInstallmentPlan` 파라미터와 함께 사용할 수 없어요. 카드사 별로 할부결제가 가능한 [최소 금액](https://consumer.tosspayments.com/notice/free-installment)을 확인하세요.
          */
         cardInstallmentPlan?: number | null;
         /**
-         * 신용카드 결제에 적용할 수 있는 최대 할부 개월 수입니다. 예를 들어, `6`으로 설정하면 구매자는 일시불부터 6개월 할부를 선택할 수 있어요. 0(일시불), 2~12 값으로 설정할 수 있고 `cardInstallmentPlan` 파라미터와 함께 사용할 수 없어요. 카드사 별로 할부결제가 가능한 [최소 금액](https://consumer.tosspayments.com/notice/free-installment)을 확인하세요.
+         * 신용카드 결제에 적용할 수 있는 최대 할부 개월 수입니다.
+         *
+         * 예를 들어, `6`으로 설정하면 구매자는 일시불부터 6개월 할부를 선택할 수 있어요. 0(일시불), 2~12 값으로 설정할 수 있고 `cardInstallmentPlan` 파라미터와 함께 사용할 수 없어요. 카드사 별로 할부결제가 가능한 [최소 금액](https://consumer.tosspayments.com/notice/free-installment)을 확인하세요.
          */
         maxCardInstallmentPlan?: number | null;
         /**
-         * 신용카드 결제에 적용할 수 있는 **상점 부담 무이자** 할부 정보입니다. 구매자가 선택한 카드, 할부 개월 수가 배열에 등록한 정보와 같다면 무이자 할부가 자동으로 적용돼요. 카드사 별로 할부결제가 가능한 [최소 금액](https://consumer.tosspayments.com/notice/free-installment)을 확인하세요.
+         * 신용카드 결제에 적용할 수 있는 **상점 부담 무이자** 할부 정보입니다.
+         *
+         * 구매자가 선택한 카드, 할부 개월 수가 배열에 등록한 정보와 같다면 무이자 할부가 자동으로 적용돼요. 카드사 별로 할부결제가 가능한 [최소 금액](https://consumer.tosspayments.com/notice/free-installment)을 확인하세요.
          */
         freeInstallmentPlans?: Array<{
             /**
@@ -1952,11 +1969,15 @@ interface CardPaymentRequest extends PaymentRequest {
          */
         discountCode?: string | null;
         /**
-         * 시간으로 설정하는 결제 기한입니다. 설정할 수 있는 최대 값은 2160시간(90일)입니다. 기한이 지나고 시도하는 결제는 실패해요. 예를 들어 `24`로 설정하면, 결제 요청 시점으로부터 24시간 동안 결제할 수 있어요.
+         * 시간으로 설정하는 결제 기한입니다. 설정할 수 있는 최대 값은 2160시간(90일)입니다.
+         *
+         * 기한이 지나고 시도하는 결제는 실패해요. 예를 들어 `24`로 설정하면, 결제 요청 시점으로부터 24시간 동안 결제할 수 있어요.
          */
         validHours?: number | null;
         /**
-         * 특정 날짜로 설정하는 결제 기한입니다. `yyyy-MM-dd'T'HH:mm:ss` ISO 8601 형식입니다. 기한이 지나고 시도하는 결제는 실패해요. 예를 들어 `2025-01-01T00:00:00`으로 설정하면, 2024년 12월 31일 23:59까지 결제할 수 있어요.
+         * 특정 날짜로 설정하는 결제 기한입니다. `yyyy-MM-dd'T'HH:mm:ss` ISO 8601 형식입니다.
+         *
+         * 기한이 지나고 시도하는 결제는 실패해요. 예를 들어 `2025-01-01T00:00:00`으로 설정하면, 2024년 12월 31일 23:59까지 결제할 수 있어요.
          */
         dueDate?: string | null;
         escrowProducts?: Array<{
@@ -1982,7 +2003,7 @@ interface CardPaymentRequest extends PaymentRequest {
             quantity?: number | null;
         }> | null;
         /**
-         * 해외카드(Visa, MasterCard, JCB, UnionPay 등) 결제 여부입니다. `true`로 설정하면 해외카드 결제가 가능한 [다국어 결제창](/resources/glossary/payment-window#다국어-결제창)이 열립니다.
+         * 해외카드(Visa, MasterCard, JCB, UnionPay 등) 결제 여부입니다. `true`로 설정하면 해외카드 결제가 가능한 [다국어 결제창](/resources/glossary/payment-window#어떤-기능이-있나요)이 열립니다.
          */
         useInternationalCardOnly?: boolean | null;
         /**
@@ -2229,7 +2250,7 @@ interface MobilePhonePaymentRequest extends PaymentRequest {
      */
     mobilePhone?: {
         /**
-         * 휴대폰 결제창에서 선택할 수 있는 통신사를 제한합니다. `SKT`(SK텔레콤), `KT`(KT), `LGU`(LG유플러스), `HELLO`(LG헬로모바일), `KCT`(티플러스), `SK7`(SK세븐모바일) 값을 배열 형태로 전달할 수 있습니다. 예를 들어 `['KT', 'SKT']`로 설정하면 두 통신사만 선택할 수 있어요. 값을 설정하지 않으면 모든 통신사가 노출됩니다. 전체 목록은 [통신사 코드](https://docs.tosspayments.com/codes/org-codes#통신사-코드)에서 확인하세요.
+         * 휴대폰 결제창에서 선택할 수 있는 통신사를 제한합니다. `SKT`(SK텔레콤), `KT`(KT), `LGU`(LG유플러스), `HELLO`(LG헬로모바일), `KCT`(티플러스), `SK7`(SK세븐모바일) 값을 배열 형태로 전달할 수 있습니다. 예를 들어 `['KT', 'SKT']`로 설정하면 두 통신사만 선택할 수 있어요. 값을 설정하지 않으면 모든 통신사가 노출됩니다. 전체 목록은 [통신사 코드](/codes/org-codes#통신사-코드)에서 확인하세요.
          */
         mobileCarriers?: Array<'KT' | 'LGU' | 'SKT' | 'HELLO' | 'KCT' | 'SK7'> | null;
     } | null;
