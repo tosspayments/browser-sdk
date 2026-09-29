@@ -1,4 +1,4 @@
-// standard-public-interfaces 2.17.7 — 자동 생성 파일입니다. 직접 수정하지 마세요.
+// standard-public-interfaces 2.19.2 — 자동 생성 파일입니다. 직접 수정하지 마세요.
 
 type WidgetSelectedPaymentMethod = {
     /**
@@ -791,6 +791,7 @@ type RequestPaymentWindowWithRedirection = (paymentRequest: WithRedirection<Widg
  * @example
  *  ```javascript
  *  const paymentWindow = await widgets.renderPaymentWindow({
+ *    orderName: "토스 티셔츠 외 2건",
  *    variantKey: {
  *      paymentMethod: "CUSTOM-1",
  *      agreement: "AGREEMENT",
@@ -807,6 +808,11 @@ type RequestPaymentWindowWithRedirection = (paymentRequest: WithRedirection<Widg
  * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type RenderPaymentWindow = (params?: {
+    /**
+     * 구매상품입니다. 예를 들면 `생수 외 1건` 같은 형식입니다. 최대 길이는 100자입니다.
+     * 결제창에 표시돼요. [widgets.requestPayment()](#widgetsrequestpayment)에 전달하는 `orderName`과 같은 값이어야 해요. 다르면 `requestPayment()`에서 `InvalidParametersError`가 발생해요.
+     */
+    orderName?: string;
     /**
      * 결제 UI의 variantKey 정보입니다. [결제 어드민](https://dashboard.tosspayments.com/payment-widget-service/)에서 확인할 수 있어요.
      */
@@ -2223,6 +2229,10 @@ interface TransferPaymentRequest extends PaymentRequest {
         /**
          * @ignore
          */
+        encryptedCustomerKey?: string | null;
+        /**
+         * @ignore
+         */
         showSecuritiesAccount?: boolean | null;
         /**
          * @ignore
@@ -3216,9 +3226,11 @@ interface TossPaymentsSDK {
  * const tossPayments = await loadTossPayments("<WidgetClientKey />");
  * ```
  *
- * @param {string} clientKey 토스페이먼츠 발급하는 클라이언트 키입니다. 개발자센터의 [API 키 메뉴](https://developers.tosspayments.com/my/api-keys)에서 확인할 수 있어요.
+ * @param {string} clientKey 토스페이먼츠가 발급하는 클라이언트 키예요. 개발자센터 [API 키 메뉴](https://developers.tosspayments.com/my/api-keys)에서 확인할 수 있어요. 연동하는 제품에 따라 쓰는 키가 다르고, 맞지 않으면 [에러 코드](/sdk/v2/error-codes)를 받아요.
  *
- * 결제를 연동한다면 [주문서형, 결제창형 연동 키](/reference/using-api/api-keys#주문서형-결제창형-연동-키)를 사용하세요. 브랜드페이, 결제창(구버전), 자동결제(빌링)를 연동한다면 [API 개별 연동 키](/reference/using-api/api-keys#api-개별-연동-키)를 사용하세요.
+ * • **주문서형, 결제창형(구 결제위젯)** — [주문서형, 결제창형 연동 키](/reference/using-api/api-keys#주문서형-결제창형-연동-키), `test_gck`, `live_gck`로 시작해요.
+ *
+ * • **자체창형, 결제창(구버전), 브랜드페이, 자동결제(빌링)** — [API 개별 연동 키](/reference/using-api/api-keys#api-개별-연동-키), `test_ck`, `live_ck`로 시작해요.
  *
  * @returns
  * 아래 메서드를 호출할 수 있는 토스페이먼츠 객체를 반환합니다.
