@@ -1,4 +1,4 @@
-// standard-public-interfaces 2.17.7 — 자동 생성 파일입니다. 직접 수정하지 마세요.
+// standard-public-interfaces 2.19.0 — 자동 생성 파일입니다. 직접 수정하지 마세요.
 
 type WidgetSelectedPaymentMethod = {
     /**
@@ -791,6 +791,7 @@ type RequestPaymentWindowWithRedirection = (paymentRequest: WithRedirection<Widg
  * @example
  *  ```javascript
  *  const paymentWindow = await widgets.renderPaymentWindow({
+ *    orderName: "토스 티셔츠 외 2건",
  *    variantKey: {
  *      paymentMethod: "CUSTOM-1",
  *      agreement: "AGREEMENT",
@@ -807,6 +808,11 @@ type RequestPaymentWindowWithRedirection = (paymentRequest: WithRedirection<Widg
  * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type RenderPaymentWindow = (params?: {
+    /**
+     * 구매상품입니다. 예를 들면 `생수 외 1건` 같은 형식입니다. 최대 길이는 100자입니다.
+     * 결제창에 표시돼요. [widgets.requestPayment()](#widgetsrequestpayment)에 전달하는 `orderName`과 같은 값이어야 해요. 다르면 `requestPayment()`에서 `InvalidParametersError`가 발생해요.
+     */
+    orderName?: string;
     /**
      * 결제 UI의 variantKey 정보입니다. [결제 어드민](https://dashboard.tosspayments.com/payment-widget-service/)에서 확인할 수 있어요.
      */
@@ -2220,6 +2226,10 @@ interface TransferPaymentRequest extends PaymentRequest {
          * @ignore
          */
         encryptedCustomerCi?: string | null;
+        /**
+         * @ignore
+         */
+        encryptedCustomerKey?: string | null;
         /**
          * @ignore
          */
