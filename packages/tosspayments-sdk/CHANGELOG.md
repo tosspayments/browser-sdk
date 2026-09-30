@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.9.0
+
+### Minor Changes
+
+- 5a6eec7: standard-public-interfaces 타입을 2.17.7 에서 2.19.0 로 갱신합니다.
+
+### Patch Changes
+
+- bf64385: standard-public-interfaces 타입을 2.17.4 에서 2.17.7 로 갱신합니다.
+
 ## 2.8.1
 
 ### Patch Changes
