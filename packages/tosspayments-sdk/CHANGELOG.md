@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.10.0
+
+### Minor Changes
+
+- 503589e: standard-public-interfaces 타입을 2.19.0 에서 2.22.2 로 갱신합니다.
+
 ## 2.9.0
 
 ### Minor Changes
