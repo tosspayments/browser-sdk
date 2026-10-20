@@ -1,18 +1,319 @@
-// standard-public-interfaces 2.19.0 — 자동 생성 파일입니다. 직접 수정하지 마세요.
+// standard-public-interfaces 2.22.2 — 자동 생성 파일입니다. 직접 수정하지 마세요.
 
+/**
+ * 구매자가 결제 UI에서 선택한 결제수단입니다. `method`로 결제가 처리되는 경로를 알 수 있고, 카드사, 간편결제사, 계좌이체 제공자 같은 상세 정보는 수단별 객체(`card`, `transfer`, `brandpay`, `custom` 등)에 담겨요.
+ */
 type WidgetSelectedPaymentMethod = {
     /**
-     * 구매자가 결제 UI에서 선택한 결제수단입니다. 예를 들어, 신용・체크카드를 선택하면 `CARD` 코드가 응답됩니다. [ENUM 코드](/codes/enum-codes) 및 [기관 코드](/codes/org-codes)를 참고하세요.
+     * 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드입니다. 새 연동에서는 `method`와 수단별 객체를 쓰세요 — 카드사는 `card.cardCompany`, 앱카드는 `card.useAppCardOnly`와 `card.appCard`, 간편결제사는 `card.easyPay`, 계좌이체 제공자는 `transfer.provider`.
+     * `code`는 결제 어드민의 노출 방식에 따라 달라질 수 있어요. 예를 들어 카드 아래에서 신한카드를 고르면 `CARD`, 결제수단 목록에서 바로 신한카드를 고르면 `SHINHAN`이 응답돼요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
      */
     code: Exclude<WidgetsPaymentMethodCode, 'BRANDPAY'>;
-} | {
-    code: 'BRANDPAY';
     /**
-     * 현재 브랜드페이에서 선택되어 있는 결제수단의 ID입니다.
+     * 결제가 처리되는 경로입니다. 일반결제는 결제수단 이름(`CARD`, `TRANSFER` 등)이고, 브랜드페이는 `BRANDPAY`, 키인은 `KEYIN`, 커스텀 결제수단은 `CUSTOM`이에요. 간편결제와 앱카드는 카드로 결제되므로 `CARD`예요.
+     */
+    method: 'CARD';
+    /**
+     * 카드로 결제할 때의 정보입니다. `method`가 `CARD`일 때 응답돼요. 간편결제와 앱카드도 여기에 담겨요.
+     */
+    card: {
+        /**
+         * 카드사 코드입니다. 카드사를 아직 고르지 않았으면 응답되지 않아요. 주문서형에서는 카드사를 고르면 `paymentMethodSelect` 이벤트가 다시 발행됩니다. [기관 코드](/codes/org-codes)를 참고하세요.
+         */
+        cardCompany?: WidgetsCardCompanyCode;
+        /**
+         * 간편결제사 코드입니다(예: `TOSSPAY`). 간편결제가 아니면 응답되지 않아요.
+         */
+        easyPay?: WidgetsEasyPayCode;
+        /**
+         * `true`면 구매자가 앱카드 버튼을 골라 카드사 앱으로 결제돼요. 결제 요청 시 SDK가 알아서 진행하므로 이 값을 `requestPayment()`에 넘길 필요는 없어요. 앱카드 전용 할인을 선택한 것과는 다른 값이에요.
+         */
+        useAppCardOnly?: boolean;
+        /**
+         * 앱카드 코드입니다(예: `KBPAY`). 표시 이름이 아니라 식별 코드라 앱 이름이 바뀌어도 유지돼요. 앱카드가 아니면 응답되지 않아요.
+         */
+        appCard?: WidgetsAppCardCode;
+    };
+} | {
+    /**
+     * 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드입니다. 새 연동에서는 `method`와 수단별 객체를 쓰세요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: Exclude<WidgetsPaymentMethodCode, 'BRANDPAY'>;
+    method: 'FOREIGN_EASY_PAY';
+    /**
+     * 해외 간편결제 정보입니다. `method`가 `FOREIGN_EASY_PAY`일 때 응답돼요.
+     */
+    foreignEasyPay: {
+        /**
+         * 해외 간편결제사 코드입니다(예: `PAYPAL`).
+         */
+        provider: WidgetsForeignEasyPayCode;
+    };
+} | {
+    /**
+     * 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드입니다. 새 연동에서는 `method`와 수단별 객체를 쓰세요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: Exclude<WidgetsPaymentMethodCode, 'BRANDPAY'>;
+    method: 'TRANSFER';
+    /**
+     * 계좌이체 정보입니다. `method`가 `TRANSFER`일 때 응답돼요.
+     */
+    transfer: {
+        /**
+         * 오픈뱅킹 이체는 `TOSS_PAYMENTS`, 뱅크페이 이체는 `BANKPAY`로 응답돼요. 제공자가 구분되지 않는 일반 계좌이체는 응답되지 않아요.
+         */
+        provider?: 'TOSS_PAYMENTS' | 'BANKPAY';
+    };
+} | {
+    /**
+     * 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드입니다. 새 연동에서는 `method`와 수단별 객체를 쓰세요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: Exclude<WidgetsPaymentMethodCode, 'BRANDPAY'>;
+    method: 'VIRTUAL_ACCOUNT';
+} | {
+    /**
+     * 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드입니다. 새 연동에서는 `method`와 수단별 객체를 쓰세요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: Exclude<WidgetsPaymentMethodCode, 'BRANDPAY'>;
+    method: 'MOBILE_PHONE';
+} | {
+    /**
+     * 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드입니다. 새 연동에서는 `method`와 수단별 객체를 쓰세요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: Exclude<WidgetsPaymentMethodCode, 'BRANDPAY'>;
+    method: 'CULTURE_GIFT_CERTIFICATE';
+} | {
+    /**
+     * 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드입니다. 새 연동에서는 `method`와 수단별 객체를 쓰세요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: Exclude<WidgetsPaymentMethodCode, 'BRANDPAY'>;
+    method: 'GAME_GIFT_CERTIFICATE';
+} | {
+    /**
+     * 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드입니다. 새 연동에서는 `method`와 수단별 객체를 쓰세요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: Exclude<WidgetsPaymentMethodCode, 'BRANDPAY'>;
+    method: 'BOOK_GIFT_CERTIFICATE';
+} | {
+    /**
+     * 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드입니다. 새 연동에서는 `method`와 수단별 객체를 쓰세요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: Exclude<WidgetsPaymentMethodCode, 'BRANDPAY'>;
+    method: 'KEYIN';
+} | {
+    /**
+     * 브랜드페이는 `code`가 항상 `BRANDPAY`예요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 수단별 객체를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: 'BRANDPAY';
+    method: 'BRANDPAY';
+    /**
+     * 현재 브랜드페이에서 선택되어 있는 결제수단의 ID입니다. `brandpay.methodId`와 같은 값이에요.
+     * @deprecated 이전 버전 호환용입니다. `brandpay.methodId`를 사용해주세요. 값은 그대로 유지됩니다.
      */
     methodId?: string;
+    /**
+     * 브랜드페이로 결제할 때의 정보입니다. `method`가 `BRANDPAY`일 때 응답돼요.
+     */
+    brandpay: {
+        /**
+         * 현재 브랜드페이에서 선택되어 있는 결제수단의 ID입니다. 등록된 결제수단이 없거나 아직 목록을 불러오기 전이면 응답되지 않아요.
+         * 주문서형에서는 목록이 준비되면 `paymentMethodSelect` 이벤트가 한 번 발행되니 그때 다시 읽으세요.
+         */
+        methodId?: string;
+        /**
+         * 현재 브랜드페이에서 선택되어 있는 결제수단의 종류입니다. 카드면 `CARD`, 계좌면 `ACCOUNT`예요.
+         * `methodId`와 같은 조건으로 응답되지 않을 수 있어요.
+         */
+        method?: 'CARD' | 'ACCOUNT';
+    };
+} | {
+    /**
+     * 커스텀 결제수단의 `code`는 결제 어드민에 등록한 `key` 원문이라 일반 결제수단 코드와 같을 수 있어요(예: `key`가 `CARD`). 커스텀 여부는 `method === 'CUSTOM'`으로만 판정하세요.
+     * @deprecated 이전 버전 호환용입니다. `method`와 `custom.key`를 사용해주세요. 값은 그대로 유지됩니다.
+     */
+    code: string;
+    method: 'CUSTOM';
+    /**
+     * 커스텀 결제수단 정보입니다. `method`가 `CUSTOM`일 때 응답돼요.
+     */
+    custom: {
+        /**
+         * 결제 어드민에 등록한 커스텀 결제수단의 `key` 값입니다. `code`와 같은 값이에요.
+         */
+        key: string;
+    };
 };
-type WidgetsPaymentMethodCode = 'CARD' | 'VIRTUAL_ACCOUNT' | 'MOBILE_PHONE' | 'TRANSFER' | 'CULTURE_GIFT_CERTIFICATE' | 'GAME_GIFT_CERTIFICATE' | 'BOOK_GIFT_CERTIFICATE' | 'TOSSPAY' | 'NAVERPAY' | 'SAMSUNGPAY' | 'LPAY' | 'KAKAOPAY' | 'PAYCO' | 'SSG' | 'APPLEPAY' | 'PINPAY' | 'KBPAY' | 'PAYPAL' | 'GCASH' | 'TOUCHNGO' | 'BOOST' | 'BPI' | 'BILLEASE' | 'DANA' | 'ALIPAYHK' | 'TRUEMONEY' | 'RABBIT_LINE_PAY' | 'ALIPAY' | 'SHINHAN' | 'HYUNDAI' | 'SAMSUNG' | 'WOORI' | 'KOOKMIN' | 'LOTTE' | 'NONGHYEOP' | 'HANA' | 'BC' | 'KDBBANK' | 'TOSSBANK' | 'KAKAOBANK' | 'SUHYEOP' | 'JEONBUKBANK' | 'KBANK' | 'POST' | 'SAEMAUL' | 'CITI' | 'SAVINGBANK' | 'JEJUBANK' | 'GWANGJUBANK' | 'SHINHYEOP' | 'JCB' | 'UNIONPAY' | 'MASTER' | 'VISA' | 'DINERS' | 'DISCOVER' | 'IBK_BC' | 'AMEX' | 'TOSS_PAYMENTS' | 'BANKPAY' | 'BRANDPAY' | 'KEYIN' | (NonNullable<unknown> & string);
+/**
+ * 카드사 코드입니다. [기관 코드](/codes/org-codes)를 참고하세요. SDK 가 아는 카드사만 응답되므로 이 목록 밖의 값은 오지 않아요.
+ */
+type WidgetsCardCompanyCode = 'SHINHAN' | 'HYUNDAI' | 'SAMSUNG' | 'WOORI' | 'KOOKMIN' | 'LOTTE' | 'NONGHYEOP' | 'HANA' | 'BC' | 'KDBBANK' | 'TOSSBANK' | 'KAKAOBANK' | 'SUHYEOP' | 'JEONBUKBANK' | 'KBANK' | 'POST' | 'SAEMAUL' | 'CITI' | 'SAVINGBANK' | 'JEJUBANK' | 'GWANGJUBANK' | 'SHINHYEOP' | 'JCB' | 'UNIONPAY' | 'MASTER' | 'VISA' | 'DINERS' | 'DISCOVER' | 'IBK_BC' | 'AMEX';
+/**
+ * 간편결제사 코드입니다.
+ */
+type WidgetsEasyPayCode = 'TOSSPAY' | 'NAVERPAY' | 'SAMSUNGPAY' | 'LPAY' | 'KAKAOPAY' | 'PAYCO' | 'SSG' | 'APPLEPAY' | 'PINPAY';
+/**
+ * 앱카드 코드입니다.
+ */
+type WidgetsAppCardCode = 'KBPAY';
+/**
+ * 해외 간편결제사 코드입니다.
+ */
+type WidgetsForeignEasyPayCode = 'PAYPAL' | 'GCASH' | 'TOUCHNGO' | 'BOOST' | 'BPI' | 'BILLEASE' | 'DANA' | 'ALIPAYHK' | 'TRUEMONEY' | 'RABBIT_LINE_PAY' | 'ALIPAY' | 'PAYPAY';
+/**
+ * 결제 UI의 화면 항목 코드입니다. 결제수단, 카드사, 간편결제사, 계좌이체 제공자가 한 자리에 섞여 있어요.
+ */
+type WidgetsPaymentMethodCode = 'CARD' | 'VIRTUAL_ACCOUNT' | 'MOBILE_PHONE' | 'TRANSFER' | 'CULTURE_GIFT_CERTIFICATE' | 'GAME_GIFT_CERTIFICATE' | 'BOOK_GIFT_CERTIFICATE' | WidgetsEasyPayCode | WidgetsAppCardCode | WidgetsForeignEasyPayCode | WidgetsCardCompanyCode | 'TOSS_PAYMENTS' | 'BANKPAY' | 'BRANDPAY' | 'KEYIN' | (NonNullable<unknown> & string);
+
+interface Amount {
+    /**
+     * 결제 금액입니다.
+     */
+    value: number;
+    /**
+     * 결제 통화입니다. 일반결제는 `KRW`만 지원합니다. 해외 간편결제(PayPal)는 `USD`만 지원합니다.
+     */
+    currency: string;
+}
+
+type WithRedirection<T> = T & {
+    /**
+     * 결제 요청이 성공하면 리다이렉트되는 URL입니다. `https://www.example.com/success`와 같이 오리진을 포함한 형태로 설정해주세요.
+     * 리다이렉트되면 URL의 쿼리 파라미터로 `amount`, `orderId`, `paymentKey`가 추가돼요.
+     */
+    successUrl?: string | null;
+    /**
+     * 결제 요청이 실패하면 리다이렉트되는 URL입니다. `https://www.example.com/fail`와 같이 오리진을 포함한 형태로 설정해주세요.
+     * 리다이렉트되면 URL의 쿼리 파라미터로 에러 코드와 메시지를 확인할 수 있어요.
+     */
+    failUrl?: string | null;
+};
+
+type SelectedPaymentMethodOf<Method extends WidgetSelectedPaymentMethod['method']> = Extract<WidgetSelectedPaymentMethod, {
+    method: Method;
+}>;
+/**
+ * 구매자가 고른 결제수단으로 어떻게 결제되는지를 담은 값입니다.
+ *
+ * `getSelectedPaymentMethod()`가 무엇을 골랐는지라면, 이 값은 그 수단으로 얼마를 어떤 조건(할부, 카드포인트, 즉시할인, 입금기한)으로
+ * 결제하는지예요. 선택한 결제수단을 그대로 품고 있어서 `method`와 수단별 객체를 같은 방식으로 읽을 수 있어요.
+ *
+ * 주문서형은 `paymentMethodWidget.getSelectedPaymentInfo()`로 조회하고, 결제창형은 `paymentRequest` 이벤트의 `paymentInfo`로 받아요.
+ * 결제 요청에 넘기는 값이 아니라서 `requestPayment()`에 전달하지 않아요 — 결제 요청 때 SDK가 알아서 실어요.
+ */
+type WidgetSelectedPaymentInfo = (SelectedPaymentMethodOf<'CARD'> & {
+    /**
+     * 결제 UI에 설정된 결제 금액입니다.
+     */
+    amount: Amount;
+    card: {
+        /**
+         * 구매자가 선택한 할부 개월 수입니다. `0`은 일시불이에요.
+         */
+        cardInstallmentPlan?: number;
+        /**
+         * 구매자의 카드사 포인트 사용 선택 여부입니다.
+         */
+        useCardPoint?: boolean;
+        /**
+         * 결제수단에 적용된 즉시 할인(프로모션) 코드입니다. 조회하거나 결제하기를 누른 시점의 결제 금액으로 계산돼요.
+         */
+        discountCode?: string;
+    };
+}) | (SelectedPaymentMethodOf<'FOREIGN_EASY_PAY'> & {
+    /**
+     * 결제 UI에 설정된 결제 금액입니다.
+     */
+    amount: Amount;
+}) | (SelectedPaymentMethodOf<'TRANSFER'> & {
+    /**
+     * 결제 UI에 설정된 결제 금액입니다.
+     */
+    amount: Amount;
+}) | (SelectedPaymentMethodOf<'VIRTUAL_ACCOUNT'> & {
+    /**
+     * 결제 UI에 설정된 결제 금액입니다.
+     */
+    amount: Amount;
+    /**
+     * 가상계좌 정보입니다. `method`가 `VIRTUAL_ACCOUNT`일 때 응답돼요.
+     */
+    virtualAccount: {
+        /**
+         * 결제 어드민의 가상계좌 설정에 따라 계산된 입금기한입니다. 조회하거나 결제하기를 누른 시점 기준이라 결제 요청 시점에 다시 계산될 수 있어요.
+         * `Payment.virtualAccount.dueDate`와 같은 오프셋 포함 형식이에요(예: `2026-09-16T23:59:59+09:00`).
+         * `requestPayment()`의 `dueDate`는 오프셋 없이 한국 시각으로 적는 요청 형식이라 서로 달라요.
+         */
+        dueDate: string;
+    };
+}) | (SelectedPaymentMethodOf<'MOBILE_PHONE' | 'CULTURE_GIFT_CERTIFICATE' | 'GAME_GIFT_CERTIFICATE' | 'BOOK_GIFT_CERTIFICATE' | 'KEYIN'> & {
+    /**
+     * 결제 UI에 설정된 결제 금액입니다.
+     */
+    amount: Amount;
+}) | (SelectedPaymentMethodOf<'BRANDPAY'> & {
+    /**
+     * 결제 UI에 설정된 결제 금액입니다.
+     */
+    amount: Amount;
+    brandpay: {
+        /**
+         * 구매자가 선택한 할부 개월 수입니다. `0`은 일시불이에요.
+         */
+        cardInstallmentPlan?: number;
+        /**
+         * 구매자의 카드사 포인트 사용 선택 여부입니다.
+         */
+        useCardPoint?: boolean;
+        /**
+         * 결제수단에 적용된 즉시 할인(프로모션) 코드입니다. 조회하거나 결제하기를 누른 시점의 결제 금액으로 계산돼요.
+         */
+        discountCode?: string;
+        /**
+         * 구매자가 브랜드페이에서 선택한 현금영수증 발급 정보입니다.
+         */
+        cashReceipt?: WidgetCashReceipt;
+    };
+}) | (SelectedPaymentMethodOf<'CUSTOM'> & {
+    /**
+     * 결제 UI에 설정된 결제 금액입니다.
+     */
+    amount: Amount;
+});
+/**
+ * 현금영수증 발급 정보입니다.
+ */
+type WidgetCashReceipt = {
+    /**
+     * 현금영수증 발급 용도입니다. `소득공제`, `지출증빙`, `미발행` 중 하나예요.
+     */
+    type: '소득공제';
+    /**
+     * 현금영수증 발급 번호의 종류입니다. 휴대폰 번호는 `MOBILE`, 현금영수증 카드는 `CASH_RECEIPT_CARD`, 사업자등록번호는 `BUSINESS_REGISTRATION`이에요. `미발행`이면 응답되지 않아요.
+     */
+    registrationNumberType: 'MOBILE' | 'CASH_RECEIPT_CARD';
+    /**
+     * 현금영수증 발급 번호입니다. `미발행`이면 응답되지 않아요.
+     */
+    registrationNumber: string;
+} | {
+    type: '지출증빙';
+    registrationNumberType: 'BUSINESS_REGISTRATION' | 'CASH_RECEIPT_CARD';
+    registrationNumber: string;
+} | {
+    type: '미발행';
+    registrationNumberType?: never;
+    registrationNumber?: never;
+};
 
 interface WidgetPaymentMethodWidget {
     /**
@@ -21,24 +322,26 @@ interface WidgetPaymentMethodWidget {
      * @example
      *  ```javascript
      *  paymentMethodWidget.on('paymentMethodSelect', selectedPaymentMethod => {
-          if (selectedPaymentMethod.code === '카드') {
-            // 카드 안내사항 노출
+          if (selectedPaymentMethod.method === 'CARD') {
+            // 카드 안내사항 노출. 카드사를 골랐다면 selectedPaymentMethod.card.cardCompany 로 알 수 있어요.
           }
-          if (selectedPaymentMethod.code === '문화바우처') {
+          if (selectedPaymentMethod.method === 'CUSTOM' && selectedPaymentMethod.custom.key === '문화바우처') {
             // 커스텀 결제수단 (결제 Pro 플랜 기능)
             // 문화바우처 안내사항 노출
           }
         });
      * ```
      *
-     * @param {'paymentMethodSelect'} eventName 구독할 이벤트입니다. `paymentMethodSelect` 이벤트로 구매자가 선택한 결제수단 코드를 확인하세요. 일반결제는 [결제수단 ENUM 코드](/codes/enum-codes#결제수단-타입)가 응답돼요. 결제 Pro 플랜으로 [커스텀 결제수단](/guides/v2/payment-widget/pro/integration-custom)을 연동했다면 결제 어드민에서 설정한 `key` 값이 응답돼요.
-     * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다.
+     * 최초 렌더 후에는 이벤트가 발행되지 않아요. 렌더 직후 `getSelectedPaymentMethod()`를 한 번 호출해 초기 선택을 읽으세요. 브랜드페이만 예외로 마운트 시 발행됩니다.
+     *
+     * @param {'paymentMethodSelect'} eventName 구독할 이벤트입니다. `paymentMethodSelect` 이벤트로 구매자가 선택한 결제수단을 확인하세요.
+     * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다. 콜백 파라미터로 구매자가 선택한 결제수단(`selectedPaymentMethod`)이 전달돼요. [getSelectedPaymentMethod()](#paymentmethodwidgetgetselectedpaymentmethod)의 응답과 같은 값이에요. `method`로 결제가 처리되는 경로를, 수단별 객체(`card`, `transfer`, `brandpay`, `custom` 등)로 카드사, 간편결제사, 계좌이체 제공자를 알 수 있어요. 결제 Pro 플랜으로 [커스텀 결제수단](/guides/v2/payment-widget/pro/integration-custom)을 연동했다면 `method`가 `CUSTOM`이고 `custom.key`에 결제 어드민에서 설정한 `key` 값이 응답돼요. `code`는 이전 버전과의 호환을 위해 남아 있는 화면 항목 코드예요.
      *
      * @throws {@link PublicError.Widgets.InvalidEventParameterError} eventName이 유효하지 않은 경우
      * @throws {@link PublicError.Widgets.InvalidCallbackParameterError} callback이 유효하지 않은 경우
      * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
      */
-    on: (eventName: 'paymentMethodSelect', callback: (paymentMethod: WidgetSelectedPaymentMethod) => void) => void;
+    on: (eventName: 'paymentMethodSelect', callback: (selectedPaymentMethod: WidgetSelectedPaymentMethod) => void) => void;
     /**
      * 구매자가 선택한 결제수단을 불러옵니다. [자세히 >](#paymentmethodwidgetgetselectedpaymentmethod)
      *
@@ -47,9 +350,33 @@ interface WidgetPaymentMethodWidget {
      *  const paymentMethod = await paymentMethodWidget.getSelectedPaymentMethod();
      * ```
      *
+     * 최초 렌더 직후의 기본 선택과 이전 결제수단 복원은 `paymentMethodSelect` 이벤트가 발행되지 않으므로, 렌더 직후 이 메서드로 초기 선택을 읽으세요.
+     * SDK 가 아직 모르는 결제수단이 선택되어 있으면 `UnknownError`가 발생해요.
+     *
      * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
      */
     getSelectedPaymentMethod: () => Promise<WidgetSelectedPaymentMethod>;
+    /**
+     * 구매자가 고른 결제수단으로 어떻게 결제되는지를 불러옵니다. [자세히 >](#paymentmethodwidgetgetselectedpaymentinfo)
+     *
+     * @example
+     *  ```javascript
+     *  const selectedPaymentInfo = await paymentMethodWidget.getSelectedPaymentInfo();
+     *
+     *  if (selectedPaymentInfo.method === 'CARD') {
+     *    console.log(selectedPaymentInfo.card.cardInstallmentPlan); // 구매자가 선택한 할부 개월 수
+     *  }
+     * ```
+     *
+     * `getSelectedPaymentMethod()`가 무엇을 골랐는지라면, 이 메서드는 그 수단으로 얼마를 어떤 조건(할부, 카드포인트, 즉시할인, 입금기한)으로 결제하는지예요.
+     * 조회 전용 값이라 `requestPayment()`에 전달하지 않아요 — 결제 요청 때 SDK가 알아서 실어요.
+     * 결제 금액을 바꾼 뒤 조회하면 바뀐 금액 기준으로 결제 UI가 가진 현재 상태를 그대로 돌려줘요. 예를 들어 새 금액에서 고를 수 없게 된 할부 개월은 기본값으로 돌아가요.
+     * 값은 부르는 시점에 계산돼요. 저장해 두고 재사용하지 말고, 결제 금액이나 할부 같은 결제 조건을 화면에 보여줄 때, `setAmount()`를 호출한 뒤, `requestPayment()`를 호출하기 직전에 다시 부르세요. `paymentMethodSelect` 이벤트(브랜드페이는 결제수단을 바꿀 때도 발행돼요)가 오면 다시 읽으세요.
+     *
+     * @throws {@link PublicError.Widgets.NotSelectedPaymentMethodError} 결제수단이 선택되지 않은 경우
+     * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
+     */
+    getSelectedPaymentInfo: () => Promise<WidgetSelectedPaymentInfo>;
     /**
      * 결제 UI 객체를 제거합니다. [자세히 >](#paymentmethodwidgetdestroy)
      *
@@ -63,13 +390,34 @@ interface WidgetPaymentMethodWidget {
     destroy: () => Promise<void>;
 }
 
+/**
+ * 구매자의 약관 동의 상태입니다.
+ */
 interface WidgetAgreementStatus {
+    /**
+     * 구매자가 모든 필수 약관에 동의했는지 알려줍니다.
+     */
     agreedRequiredTerms: boolean;
+    /**
+     * 개별 약관에 동의했는지 알려줍니다.
+     */
     agreements: Array<{
+        /**
+         * 약관 정보입니다.
+         */
         term: {
+            /**
+             * 약관의 식별자입니다.
+             */
             id: string;
+            /**
+             * 약관의 필수 여부입니다.
+             */
             required: boolean;
         };
+        /**
+         * 구매자의 약관 동의 여부입니다.
+         */
         agreed: boolean;
     }>;
 }
@@ -79,7 +427,7 @@ interface WidgetAgreementWidget {
      * 약관 UI의 이벤트를 구독합니다. [자세히 >](#agreementwidgeton)
      *
      * @param {'agreementStatusChange'} eventName 구독할 이벤트입니다. `agreementStatusChange` 이벤트로 구매자가 약관에 동의했는지 확인하세요.
-     * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다.
+     * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다. 콜백 파라미터로 구매자의 약관 동의 상태(`agreementStatus`)가 전달돼요.
      *
      * @example
      *  ```javascript
@@ -154,6 +502,14 @@ interface WidgetPaymentRequest {
     /**
      * @ignore
      */
+    orderProductCode?: string | null;
+    /**
+     * @ignore
+     */
+    shippingAddress?: string | null;
+    /**
+     * @ignore
+     */
     sandbox?: {
         /**
          * @ignore
@@ -182,6 +538,22 @@ interface WidgetPaymentRequest {
              */
             challengeMode?: 'CHALLENGE_REQUIRED' | null;
         } | null;
+        /**
+         * @ignore
+         */
+        affiliateCards?: Array<{
+            issuerCode: string;
+            cardProductCode: string;
+        }> | null;
+        /**
+         * @ignore
+         */
+        dividedSettlements?: Array<{
+            subMid: string;
+            amount: number;
+            taxFreeAmount: number;
+            productInfo: string;
+        }> | null;
     } | null;
     /**
      * 구매자가 계좌이체를 선택하면 결제에 적용되는 옵션입니다.
@@ -222,6 +594,19 @@ interface WidgetPaymentRequest {
          * 문화비(도서, 공연 티켓, 박물관·미술관 입장권 등) 지출 여부입니다.
          */
         isCulturalExpenses?: boolean | null;
+        /**
+         * @ignore
+         */
+        showSecuritiesAccount?: boolean | null;
+        /**
+         * @ignore
+         */
+        dividedSettlements?: Array<{
+            subMid: string;
+            amount: number;
+            taxFreeAmount: number;
+            productInfo: string;
+        }> | null;
     } | null;
     /**
      * 구매자가 가상계좌를 선택하면 결제에 적용되는 옵션입니다.
@@ -387,30 +772,6 @@ interface WidgetPaymentRequest {
     }> | null;
 }
 
-interface Amount {
-    /**
-     * 결제 금액입니다.
-     */
-    value: number;
-    /**
-     * 결제 통화입니다. 일반결제는 `KRW`만 지원합니다. 해외 간편결제(PayPal)는 `USD`만 지원합니다.
-     */
-    currency: string;
-}
-
-type WithRedirection<T> = T & {
-    /**
-     * 결제 요청이 성공하면 리다이렉트되는 URL입니다. `https://www.example.com/success`와 같이 오리진을 포함한 형태로 설정해주세요.
-     * 리다이렉트되면 URL의 쿼리 파라미터로 `amount`, `orderId`, `paymentKey`가 추가돼요.
-     */
-    successUrl?: string | null;
-    /**
-     * 결제 요청이 실패하면 리다이렉트되는 URL입니다. `https://www.example.com/fail`와 같이 오리진을 포함한 형태로 설정해주세요.
-     * 리다이렉트되면 URL의 쿼리 파라미터로 에러 코드와 메시지를 확인할 수 있어요.
-     */
-    failUrl?: string | null;
-};
-
 type WidgetPaymentResult = {
     /**
      * 결제 타입입니다. `NORMAL`(일반결제), `BRANDPAY`(브랜드페이) 중 하나입니다.
@@ -457,7 +818,7 @@ interface WidgetPaymentWindow {
      * 결제창 이벤트를 구독합니다. [자세히 >](#paymentwindowon)
      *
      * @param {'paymentRequest' | 'cancel'} eventName 구독할 이벤트입니다. `paymentRequest`로 구매자의 결제 요청을 받아 [widgets.requestPayment()](#widgetsrequestpayment)를 호출하고, `cancel`로 구매자가 결제를 포기한 순간을 감지할 수 있어요.
-     * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다. `paymentRequest`는 콜백 파라미터로 `paymentMethod` 객체가 전달돼요. 일반 결제수단은 `{ code }`, 브랜드페이는 `{ code: 'BRANDPAY', methodId }` 형태예요. `cancel`은 콜백 파라미터가 없어요.
+     * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다. `paymentRequest`는 콜백 파라미터로 `paymentMethod`와 `paymentInfo`가 전달돼요. `paymentMethod`는 [getSelectedPaymentMethod()](/sdk/v2/js/payment-widget#paymentmethodwidgetgetselectedpaymentmethod)와 같은 선택 결제수단이고, `paymentInfo`는 [getSelectedPaymentInfo()](/sdk/v2/js/payment-widget#paymentmethodwidgetgetselectedpaymentinfo)와 같은 결제 정보로 `paymentMethod`를 모두 포함해요. `paymentInfo`는 구매자가 고른 결제 조건을 확인하는 값이라 `requestPayment()`에 전달하지 않아요. 두 값은 구매자가 결제하기를 누른 시점의 값이에요. 콜백 안에서 `setAmount()`로 금액을 바꿨다면 결제를 요청하지 말고 구매자가 결제하기를 다시 누르게 하세요.
      *
      * @throws {@link PublicError.Widgets.InvalidEventParameterError} eventName이 유효하지 않은 경우
      * @throws {@link PublicError.Widgets.InvalidCallbackParameterError} callback이 유효하지 않은 경우
@@ -480,23 +841,37 @@ interface WidgetPaymentWindow {
  * @docsAlias paymentRequest 이벤트
  *
  * @param {'paymentRequest'} eventName 구독할 이벤트입니다. `paymentRequest` 이벤트로 구매자의 결제 요청을 수신하세요.
- * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다. `paymentRequest`는 콜백 파라미터로 `paymentMethod` 객체가 전달돼요. 일반 결제수단은 `{ code }`, 브랜드페이는 `{ code: 'BRANDPAY', methodId }` 형태예요. `cancel`은 콜백 파라미터가 없어요.
+ * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다. 콜백 파라미터로 `paymentMethod`와 `paymentInfo`가 전달돼요. `paymentMethod`는 [getSelectedPaymentMethod()](/sdk/v2/js/payment-widget#paymentmethodwidgetgetselectedpaymentmethod)와 같은 선택 결제수단이고, `paymentInfo`는 [getSelectedPaymentInfo()](/sdk/v2/js/payment-widget#paymentmethodwidgetgetselectedpaymentinfo)와 같은 결제 정보로 `paymentMethod`를 모두 포함해요. `paymentInfo`는 구매자가 고른 결제 조건을 확인하는 값이라 `requestPayment()`에 전달하지 않아요. 두 값은 구매자가 결제하기를 누른 시점의 값이에요. 콜백 안에서 `setAmount()`로 금액을 바꿨다면 결제를 요청하지 말고 구매자가 결제하기를 다시 누르게 하세요.
  *
  * @example
  *  ```javascript
- *  paymentWindow.on('paymentRequest', ({ paymentMethod }) => {
+ *  paymentWindow.on('paymentRequest', async ({ paymentMethod, paymentInfo }) => {
+ *    if (paymentInfo.method === 'CARD') {
+ *      console.log(paymentInfo.card.cardInstallmentPlan); // 구매자가 선택한 할부 개월 수
+ *    }
  *    // 결제 요청 처리
  *  });
  * ```
  */
-type WidgetPaymentWindowOnPaymentRequest = (eventName: 'paymentRequest', callback: (params: {
+type WidgetPaymentWindowOnPaymentRequest = (eventName: 'paymentRequest', callback: (
+/**
+ * 결제 요청 정보입니다.
+ */
+params: {
+    /**
+     * 구매자가 선택한 결제수단입니다. 주문서형 [getSelectedPaymentMethod()](/sdk/v2/js/payment-widget#paymentmethodwidgetgetselectedpaymentmethod)의 응답과 같은 값이에요.
+     */
     paymentMethod: WidgetSelectedPaymentMethod;
+    /**
+     * 구매자가 고른 결제 금액과 결제 조건입니다. 주문서형 [getSelectedPaymentInfo()](/sdk/v2/js/payment-widget#paymentmethodwidgetgetselectedpaymentinfo)의 응답과 같은 값이에요. `requestPayment()`에 전달하지 않아요.
+     */
+    paymentInfo: WidgetSelectedPaymentInfo;
 }) => Promise<void>) => void;
 /**
  * @docsAlias cancel 이벤트
  *
  * @param {'cancel'} eventName 구독할 이벤트입니다. `cancel` 이벤트로 구매자가 결제를 포기했는지 확인하세요. 구매자가 결제창을 닫으면 결제창이 사라진 뒤에 콜백이 호출돼요. `paymentWindow.destroy()`로 결제창을 닫은 경우에는 호출되지 않아요.
- * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다. `paymentRequest`는 콜백 파라미터로 `paymentMethod` 객체가 전달돼요. 일반 결제수단은 `{ code }`, 브랜드페이는 `{ code: 'BRANDPAY', methodId }` 형태예요. `cancel`은 콜백 파라미터가 없어요.
+ * @param {function} callback 이벤트가 일어나면 호출되는 콜백 함수입니다. 콜백 파라미터는 없어요.
  *
  * @example
  *  ```javascript
@@ -509,24 +884,38 @@ type WidgetPaymentWindowOnCancel = (eventName: 'cancel', callback: () => Promise
 
 type index$8_WidgetAgreementStatus = WidgetAgreementStatus;
 type index$8_WidgetAgreementWidget = WidgetAgreementWidget;
+type index$8_WidgetCashReceipt = WidgetCashReceipt;
 type index$8_WidgetPaymentMethodWidget = WidgetPaymentMethodWidget;
 type index$8_WidgetPaymentRequest = WidgetPaymentRequest;
 type index$8_WidgetPaymentRequestWindow = WidgetPaymentRequestWindow;
 type index$8_WidgetPaymentRequestWindowOptions = WidgetPaymentRequestWindowOptions;
 type index$8_WidgetPaymentResult = WidgetPaymentResult;
 type index$8_WidgetPaymentWindow = WidgetPaymentWindow;
+type index$8_WidgetSelectedPaymentInfo = WidgetSelectedPaymentInfo;
 type index$8_WidgetSelectedPaymentMethod = WidgetSelectedPaymentMethod;
+type index$8_WidgetsAppCardCode = WidgetsAppCardCode;
+type index$8_WidgetsCardCompanyCode = WidgetsCardCompanyCode;
+type index$8_WidgetsEasyPayCode = WidgetsEasyPayCode;
+type index$8_WidgetsForeignEasyPayCode = WidgetsForeignEasyPayCode;
+type index$8_WidgetsPaymentMethodCode = WidgetsPaymentMethodCode;
 declare namespace index$8 {
   export {
     index$8_WidgetAgreementStatus as WidgetAgreementStatus,
     index$8_WidgetAgreementWidget as WidgetAgreementWidget,
+    index$8_WidgetCashReceipt as WidgetCashReceipt,
     index$8_WidgetPaymentMethodWidget as WidgetPaymentMethodWidget,
     index$8_WidgetPaymentRequest as WidgetPaymentRequest,
     index$8_WidgetPaymentRequestWindow as WidgetPaymentRequestWindow,
     index$8_WidgetPaymentRequestWindowOptions as WidgetPaymentRequestWindowOptions,
     index$8_WidgetPaymentResult as WidgetPaymentResult,
     index$8_WidgetPaymentWindow as WidgetPaymentWindow,
+    index$8_WidgetSelectedPaymentInfo as WidgetSelectedPaymentInfo,
     index$8_WidgetSelectedPaymentMethod as WidgetSelectedPaymentMethod,
+    index$8_WidgetsAppCardCode as WidgetsAppCardCode,
+    index$8_WidgetsCardCompanyCode as WidgetsCardCompanyCode,
+    index$8_WidgetsEasyPayCode as WidgetsEasyPayCode,
+    index$8_WidgetsForeignEasyPayCode as WidgetsForeignEasyPayCode,
+    index$8_WidgetsPaymentMethodCode as WidgetsPaymentMethodCode,
   };
 }
 
@@ -551,6 +940,7 @@ declare namespace index$8 {
  * @throws {@link PublicError.Widgets.InvalidSelectorError} selector 가 유효하지 않은 경우
  * @throws {@link PublicError.Widgets.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Widgets.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Widgets.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type RenderPaymentMethods = (params: {
@@ -584,6 +974,7 @@ type RenderPaymentMethods = (params: {
  * @throws {@link PublicError.Widgets.InvalidVariantKeyError} variantKey 가 유효하지 않은 경우
  * @throws {@link PublicError.Widgets.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Widgets.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Widgets.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type RenderAgreement = (params: {
@@ -623,6 +1014,7 @@ type RenderAgreement = (params: {
  * @throws {@link PublicError.Widgets.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Widgets.InvalidMetadataError} metadata가 올바르지 않은 경우
  * @throws {@link PublicError.Widgets.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Widgets.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Widgets.BelowZeroAmountError} 결제 금액이 0원 미만인 경우
  * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
  */
@@ -689,6 +1081,7 @@ type RequestPaymentWithRedirection$1 = (paymentRequest: WithRedirection<WidgetPa
  * @throws {@link PublicError.Widgets.InvalidAmountValueError} 결제 금액이 유효하지 않은 경우
  * @throws {@link PublicError.Widgets.InvalidAmountCurrencyError} 결제 금액의 통화가 유효하지 않은 경우
  * @throws {@link PublicError.Widgets.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Widgets.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type SetAmount = (amount: Amount) => Promise<void>;
@@ -714,6 +1107,7 @@ type SetAmount = (amount: Amount) => Promise<void>;
  * @throws {@link PublicError.Widgets.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Widgets.InvalidMetadataError} metadata가 올바르지 않은 경우
  * @throws {@link PublicError.Widgets.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Widgets.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Widgets.BelowZeroAmountError} 결제 금액이 0원 미만인 경우
  * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
  */
@@ -805,6 +1199,7 @@ type RequestPaymentWindowWithRedirection = (paymentRequest: WithRedirection<Widg
  * @throws {@link PublicError.Widgets.InvalidVariantKeyError} variantKey가 유효하지 않은 경우
  * @throws {@link PublicError.Widgets.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Widgets.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Widgets.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type RenderPaymentWindow = (params?: {
@@ -902,9 +1297,9 @@ declare class IncorrectSuccessUrlFormatError$2 extends PublicInterfaceError {
 }
 
 /**
- * customer key에 secret key를 사용한 경우 발생합니다.
+ * customerKey나 이 제품의 메서드 파라미터에 시크릿 키를 넣으면 발생합니다.
  */
-declare class InsecureKeyUsageError$2 extends PublicInterfaceError {
+declare class InsecureKeyUsageError$3 extends PublicInterfaceError {
     constructor();
 }
 
@@ -1156,7 +1551,7 @@ declare namespace index$7 {
     IncorrectFailUrlFormatError$2 as IncorrectFailUrlFormatError,
     IncorrectPendingUrlFormatError$1 as IncorrectPendingUrlFormatError,
     IncorrectSuccessUrlFormatError$2 as IncorrectSuccessUrlFormatError,
-    InsecureKeyUsageError$2 as InsecureKeyUsageError,
+    InsecureKeyUsageError$3 as InsecureKeyUsageError,
     InvalidAmountCurrencyError$1 as InvalidAmountCurrencyError,
     InvalidAmountValueError$2 as InvalidAmountValueError,
     index$7_InvalidCallbackParameterError as InvalidCallbackParameterError,
@@ -1223,6 +1618,7 @@ type index$6_WidgetAgreementStatus = WidgetAgreementStatus;
 type index$6_WidgetAgreementWidget = WidgetAgreementWidget;
 type index$6_WidgetPaymentMethodWidget = WidgetPaymentMethodWidget;
 type index$6_WidgetPaymentWindow = WidgetPaymentWindow;
+type index$6_WidgetSelectedPaymentInfo = WidgetSelectedPaymentInfo;
 type index$6_WidgetSelectedPaymentMethod = WidgetSelectedPaymentMethod;
 declare namespace index$6 {
   export {
@@ -1233,6 +1629,7 @@ declare namespace index$6 {
     index$6_WidgetAgreementWidget as WidgetAgreementWidget,
     index$6_WidgetPaymentMethodWidget as WidgetPaymentMethodWidget,
     index$6_WidgetPaymentWindow as WidgetPaymentWindow,
+    index$6_WidgetSelectedPaymentInfo as WidgetSelectedPaymentInfo,
     index$6_WidgetSelectedPaymentMethod as WidgetSelectedPaymentMethod,
   };
 }
@@ -1362,8 +1759,17 @@ interface BasicCashReceipt {
     registrationNumberType?: 'CASH_RECEIPT_CARD' | 'BUSINESS_REGISTRATION' | 'MOBILE';
 }
 interface 소득공제_현금영수증 extends BasicCashReceipt {
+    /**
+     * 현금영수증 발급 용도입니다. `소득공제`, `지출증빙`, `미발행` 중 하나예요.
+     */
     type: '소득공제';
+    /**
+     * 현금영수증 발급 번호의 종류입니다. 휴대폰 번호는 `MOBILE`, 현금영수증 카드는 `CASH_RECEIPT_CARD`, 사업자등록번호는 `BUSINESS_REGISTRATION`이에요. `미발행`이면 넣지 않아요.
+     */
     registrationNumberType: 'MOBILE' | 'CASH_RECEIPT_CARD';
+    /**
+     * 현금영수증 발급 번호입니다. `미발행`이면 넣지 않아요.
+     */
     registrationNumber: string;
 }
 interface 지출증빙_현금영수증 extends BasicCashReceipt {
@@ -1421,6 +1827,7 @@ declare namespace index$5 {
  * @throws {@link PublicError.Brandpay.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Brandpay.InvalidMetadataError} metadata가 올바르지 않은 경우
  * @throws {@link PublicError.Brandpay.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Brandpay.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Brandpay.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type RequestPayment$1 = RequestPaymentWithPromise & RequestPaymentWithRedirection;
@@ -1489,6 +1896,7 @@ type RequestPaymentWithPromise = (paymentRequest: BrandpayPaymentRequest) => Pro
  * @throws {@link PublicError.Brandpay.NotRegisteredRedirectUrlError} redirectUrl이 등록되지 않은 경우
  * @throws {@link PublicError.Brandpay.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Brandpay.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Brandpay.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Brandpay.UnknownError} 알 수 없는 오류가 발생한 경우
  *
  * @returns
@@ -1509,6 +1917,7 @@ type ChangePassword = () => Promise<void>;
  * @throws {@link PublicError.Brandpay.NotRegisteredRedirectUrlError} redirectUrl이 등록되지 않은 경우
  * @throws {@link PublicError.Brandpay.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Brandpay.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Brandpay.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Brandpay.UnknownError} 알 수 없는 오류가 발생한 경우
  *
  * @returns
@@ -1529,6 +1938,7 @@ type AddPaymentMethod = () => Promise<void>;
  * @throws {@link PublicError.Brandpay.NotRegisteredRedirectUrlError} redirectUrl이 등록되지 않은 경우
  * @throws {@link PublicError.Brandpay.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Brandpay.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Brandpay.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Brandpay.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type OpenSettings = () => Promise<void>;
@@ -1547,6 +1957,7 @@ type OpenSettings = () => Promise<void>;
  * @throws {@link PublicError.Brandpay.NotRegisteredRedirectUrlError} redirectUrl이 등록되지 않은 경우
  * @throws {@link PublicError.Brandpay.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Brandpay.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Brandpay.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Brandpay.UnknownError} 알 수 없는 오류가 발생한 경우
  *
  * @returns
@@ -1568,6 +1979,7 @@ type ChangeOneTouchPay = () => Promise<void>;
  * @throws {@link PublicError.Brandpay.NotRegisteredRedirectUrlError} redirectUrl이 등록되지 않은 경우
  * @throws {@link PublicError.Brandpay.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Brandpay.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Brandpay.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Brandpay.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type IsOneTouchPayEnabled = () => Promise<{
@@ -1588,9 +2000,31 @@ type IsOneTouchPayEnabled = () => Promise<{
  * @throws {@link PublicError.Brandpay.UserCancelError} 사용자가 자동결제 인증창을 닫은 경우
  * @throws {@link PublicError.Brandpay.NotRegisteredRedirectUrlError} redirectUrl이 등록되지 않은 경우
  * @throws {@link PublicError.Brandpay.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
+ * @throws {@link PublicError.Brandpay.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Brandpay.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type RequestBillingAuth$1 = () => Promise<void>;
+
+/**
+ * 결제 내역을 안내받을 이메일 주소를 변경합니다
+ *
+ *
+ * @example
+ * ```javascript
+ * brandpay.changeEmail();
+ * ```
+ *
+ * @throws {@link PublicError.Brandpay.UserCancelError} 사용자가 이메일 변경을 취소한 경우
+ * @throws {@link PublicError.Brandpay.NotRegisteredRedirectUrlError} redirectUrl이 등록되지 않은 경우
+ * @throws {@link PublicError.Brandpay.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
+ * @throws {@link PublicError.Brandpay.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Brandpay.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
+ * @throws {@link PublicError.Brandpay.UnknownError} 알 수 없는 오류가 발생한 경우
+ *
+ * @returns
+ *
+ */
+type ChangeEmail = () => Promise<void>;
 
 /**
  * amount가 0보다 작거나 같을 때 발생합니다.
@@ -1714,9 +2148,9 @@ declare class V1MethodNotSupportedError$1 extends PublicInterfaceError {
 }
 
 /**
- * customer key에 secret key를 사용한 경우 발생합니다.
+ * customerKey나 이 제품의 메서드 파라미터에 시크릿 키를 넣으면 발생합니다.
  */
-declare class InsecureKeyUsageError$1 extends PublicInterfaceError {
+declare class InsecureKeyUsageError$2 extends PublicInterfaceError {
     constructor();
 }
 
@@ -1742,7 +2176,7 @@ declare namespace index$4 {
     BelowZeroAmountError$1 as BelowZeroAmountError,
     IncorrectFailUrlFormatError$1 as IncorrectFailUrlFormatError,
     IncorrectSuccessUrlFormatError$1 as IncorrectSuccessUrlFormatError,
-    InsecureKeyUsageError$1 as InsecureKeyUsageError,
+    InsecureKeyUsageError$2 as InsecureKeyUsageError,
     InvalidAmountValueError$1 as InvalidAmountValueError,
     InvalidClientKeyError$1 as InvalidClientKeyError,
     InvalidCustomerKeyError$1 as InvalidCustomerKeyError,
@@ -1770,6 +2204,10 @@ interface TossPaymentsBrandpay {
      * 브랜드페이 결제 비밀번호를 변경하는 창을 띄웁니다. [자세히 >](#brandpaychangepassword)
      */
     changePassword: ChangePassword;
+    /**
+     * 결제 내역을 안내받을 이메일 주소를 변경하는 창을 띄웁니다. [자세히 >](#brandpaychangeemail)
+     */
+    changeEmail: ChangeEmail;
     /**
      * 브랜드페이에 새로운 결제수단을 추가합니다. [자세히 >](#brandpayaddpaymentmethod)
      */
@@ -2518,6 +2956,7 @@ declare namespace index$2 {
  * @throws {@link PublicError.Payment.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Payment.InvalidMetadataError} metadata가 올바르지 않은 경우
  * @throws {@link PublicError.Payment.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Payment.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Payment.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type RequestPayment = RequestCardPaymentWithRedirection & RequestCardPaymentWithPromise & RequestVirtualAccountPaymentWithRedirection & RequestVirtualAccountPaymentWithPromise & RequestTransferPaymentWithRedirection & RequestTransferPaymentWithPromise & RequestMobilePhonePaymentWithRedirection & RequestMobilePhonePaymentWithPromise & RequestGiftCertificatePaymentWithRedirection & RequestGiftCertificatePaymentWithPromise & RequestForeignEasyPayPaymentWithRedirection;
@@ -2887,6 +3326,7 @@ type RequestForeignEasyPayPaymentWithRedirection = (paymentRequest: WithRedirect
  * @throws {@link PublicError.Payment.IncorrectFailUrlFormatError} 가맹점에서 유효하지 않은 failUrl을 넘겨준 경우
  * @throws {@link PublicError.Payment.InvalidMethodTransactionError} 이미 다른 명령을 수행 중인 경우
  * @throws {@link PublicError.Payment.InvalidParametersError} 파라미터가 올바르지 않은 경우
+ * @throws {@link PublicError.Payment.InsecureKeyUsageError} 파라미터에 시크릿 키를 넣은 경우
  * @throws {@link PublicError.Payment.UnknownError} 알 수 없는 오류가 발생한 경우
  */
 type RequestBillingAuth = (billingAuthRequest: BillingAuthRequest) => Promise<void>;
@@ -2920,9 +3360,9 @@ declare class IncorrectSuccessUrlFormatError extends PublicInterfaceError {
 }
 
 /**
- * customer key에 secret key를 사용한 경우 발생합니다.
+ * customerKey나 이 제품의 메서드 파라미터에 시크릿 키를 넣으면 발생합니다.
  */
-declare class InsecureKeyUsageError extends PublicInterfaceError {
+declare class InsecureKeyUsageError$1 extends PublicInterfaceError {
     constructor();
 }
 
@@ -3057,8 +3497,6 @@ type index$1_IncorrectPendingUrlFormatError = IncorrectPendingUrlFormatError;
 declare const index$1_IncorrectPendingUrlFormatError: typeof IncorrectPendingUrlFormatError;
 type index$1_IncorrectSuccessUrlFormatError = IncorrectSuccessUrlFormatError;
 declare const index$1_IncorrectSuccessUrlFormatError: typeof IncorrectSuccessUrlFormatError;
-type index$1_InsecureKeyUsageError = InsecureKeyUsageError;
-declare const index$1_InsecureKeyUsageError: typeof InsecureKeyUsageError;
 type index$1_InvalidAmountCurrencyError = InvalidAmountCurrencyError;
 declare const index$1_InvalidAmountCurrencyError: typeof InvalidAmountCurrencyError;
 type index$1_InvalidAmountValueError = InvalidAmountValueError;
@@ -3099,7 +3537,7 @@ declare namespace index$1 {
     index$1_IncorrectFailUrlFormatError as IncorrectFailUrlFormatError,
     index$1_IncorrectPendingUrlFormatError as IncorrectPendingUrlFormatError,
     index$1_IncorrectSuccessUrlFormatError as IncorrectSuccessUrlFormatError,
-    index$1_InsecureKeyUsageError as InsecureKeyUsageError,
+    InsecureKeyUsageError$1 as InsecureKeyUsageError,
     index$1_InvalidAmountCurrencyError as InvalidAmountCurrencyError,
     index$1_InvalidAmountValueError as InvalidAmountValueError,
     index$1_InvalidClientKeyError as InvalidClientKeyError,
@@ -3156,7 +3594,7 @@ interface TossPaymentsSDK {
      *
      * @throw {@link PublicError.Widgets.InvalidClientKeyError} clientKey가 올바르지 않은 경우
      * @throw {@link PublicError.Widgets.InvalidCustomerKeyError} customerKey가 올바르지 않은 경우
-     * @throw {@link PublicError.Widgets.InsecureKeyUsageError} customerKey에 시크릿키를 사용한 경우
+     * @throw {@link PublicError.Widgets.InsecureKeyUsageError} customerKey나 파라미터에 시크릿 키를 넣은 경우
      * @throw {@link PublicError.Widgets.NotSupportedAPIIndividualKeyError} API 개별 연동 키를 clientKey로 사용한 경우
      * @throw {@link PublicError.Widgets.UnknownError} 알 수 없는 오류가 발생한 경우
      * @returns 아래 메서드를 호출할 수 있는 결제 객체를 반환합니다.
@@ -3181,7 +3619,7 @@ interface TossPaymentsSDK {
      *
      * @throw {@link PublicError.Brandpay.InvalidClientKeyError} clientKey가 올바르지 않은 경우
      * @throw {@link PublicError.Brandpay.InvalidCustomerKeyError} customerKey가 올바르지 않은 경우
-     * @throw {@link PublicError.Brandpay.InsecureKeyUsageError} customerKey에 시크릿키를 사용한 경우
+     * @throw {@link PublicError.Brandpay.InsecureKeyUsageError} customerKey나 파라미터에 시크릿 키를 넣은 경우
      * @throw {@link PublicError.Brandpay.NotSupportedWidgetKeyError} 주문서형, 결제창형 연동 키를 clientKey로 사용한 경우
      * @throw {@link PublicError.Brandpay.UnknownError} 알 수 없는 오류가 발생한 경우
      * @example
@@ -3201,7 +3639,7 @@ interface TossPaymentsSDK {
      *
      * @throw {@link PublicError.Payment.InvalidClientKeyError} clientKey가 올바르지 않은 경우
      * @throw {@link PublicError.Payment.InvalidCustomerKeyError} customerKey가 올바르지 않은 경우
-     * @throw {@link PublicError.Payment.InsecureKeyUsageError} customerKey에 시크릿키를 사용한 경우
+     * @throw {@link PublicError.Payment.InsecureKeyUsageError} customerKey나 파라미터에 시크릿 키를 넣은 경우
      * @throw {@link PublicError.Payment.NotSupportedWidgetKeyError} 주문서형, 결제창형 연동 키를 clientKey로 사용한 경우
      * @throw {@link PublicError.Payment.UnknownError} 알 수 없는 오류가 발생한 경우
      * @example
@@ -3215,6 +3653,7 @@ interface TossPaymentsSDK {
     payment: (params: PaymentInitParams) => TossPaymentsPayment;
 }
 /**
+ * @throw {@link PublicError.InsecureKeyUsageError} clientKey에 시크릿 키를 넣은 경우
  * @example
  * ```javascript
  * // 스크립트 태그 연동방식
@@ -3226,9 +3665,11 @@ interface TossPaymentsSDK {
  * const tossPayments = await loadTossPayments("<WidgetClientKey />");
  * ```
  *
- * @param {string} clientKey 토스페이먼츠 발급하는 클라이언트 키입니다. 개발자센터의 [API 키 메뉴](https://developers.tosspayments.com/my/api-keys)에서 확인할 수 있어요.
+ * @param {string} clientKey 토스페이먼츠가 발급하는 클라이언트 키예요. 개발자센터 [API 키 메뉴](https://developers.tosspayments.com/my/api-keys)에서 확인할 수 있어요. 연동하는 제품에 따라 쓰는 키가 다르고, 맞지 않으면 [에러 코드](/sdk/v2/error-codes)를 받아요.
  *
- * 결제를 연동한다면 [주문서형, 결제창형 연동 키](/reference/using-api/api-keys#주문서형-결제창형-연동-키)를 사용하세요. 브랜드페이, 결제창(구버전), 자동결제(빌링)를 연동한다면 [API 개별 연동 키](/reference/using-api/api-keys#api-개별-연동-키)를 사용하세요.
+ * • **주문서형, 결제창형(구 결제위젯)** — [주문서형, 결제창형 연동 키](/reference/using-api/api-keys#주문서형-결제창형-연동-키), `test_gck`, `live_gck`로 시작해요.
+ *
+ * • **자체창형, 결제창(구버전), 브랜드페이, 자동결제(빌링)** — [API 개별 연동 키](/reference/using-api/api-keys#api-개별-연동-키), `test_ck`, `live_ck`로 시작해요.
  *
  * @returns
  * 아래 메서드를 호출할 수 있는 토스페이먼츠 객체를 반환합니다.
@@ -3322,5 +3763,12 @@ declare class IncompatibleSDKVersionError extends PublicInterfaceError {
 declare class NamespaceChangeRequiredError extends PublicInterfaceError {
     constructor();
 }
+/**
+ * `TossPayments(clientKey)`의 clientKey에 시크릿 키를 넣으면 발생합니다.
+ * `widgets()`, `brandpay()`, `payment()`로 제품을 만든 뒤에는 각 제품의 `InsecureKeyUsageError`가 발생합니다. 코드와 메시지는 같습니다.
+ */
+declare class InsecureKeyUsageError extends PublicInterfaceError {
+    constructor();
+}
 
-export { ANONYMOUS, index$3 as Brandpay, BrandpayInitParams, BrandpaySDKConstructorParams, IncompatibleSDKVersionError, NamespaceChangeRequiredError, index as Payment, PaymentGatewaySDKConstructorParams, PaymentInitParams, TossPayments, TossPaymentsBrandpay, TossPaymentsPayment, TossPaymentsSDK, TossPaymentsWidgets, WidgetAgreementStatus, WidgetAgreementWidget, WidgetInitParams, WidgetPaymentMethodWidget, WidgetPaymentWindow, WidgetSDKConstructorParams, WidgetSelectedPaymentMethod, index$6 as Widgets };
+export { ANONYMOUS, index$3 as Brandpay, BrandpayInitParams, BrandpaySDKConstructorParams, IncompatibleSDKVersionError, InsecureKeyUsageError, NamespaceChangeRequiredError, index as Payment, PaymentGatewaySDKConstructorParams, PaymentInitParams, TossPayments, TossPaymentsBrandpay, TossPaymentsPayment, TossPaymentsSDK, TossPaymentsWidgets, WidgetAgreementStatus, WidgetAgreementWidget, WidgetInitParams, WidgetPaymentMethodWidget, WidgetPaymentWindow, WidgetSDKConstructorParams, WidgetSelectedPaymentMethod, index$6 as Widgets };
